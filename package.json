@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "website",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "start": "holidays2json --pick PT --min && parcel index.html",
+    "build": "holidays2json --pick PT --min && parcel build index.html --dist-dir ./dist",
+    "removeholidays": "holidays2json --pick PT --min"
   },
   "author": "AntonioSergio",
   "license": "ISC",
   "dependencies": {
+    "date-holidays": "^3.14.2",
     "leaflet": "^1.7.1"
   },
   "devDependencies": {

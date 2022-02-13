@@ -1,4 +1,10 @@
-import { COORDS, imgPaths, MAP_ZOOM_LEVEL, markerIconOptions } from './config';
+import {
+  COORDS,
+  imgPaths,
+  MAP_ZOOM_LEVEL,
+  markerIconOptions,
+  OPEN_HOURS,
+} from './config';
 
 ///////////////////////////////////////
 //////////// Modal window /////////////
@@ -42,9 +48,9 @@ const section1 = document.querySelector('#section--1');
 
 // Event Handlers
 /// 'Learn more' button
-btnScrollTo.addEventListener('click', function (e) {
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
+// btnScrollTo.addEventListener('click', function (e) {
+//   section1.scrollIntoView({ behavior: 'smooth' });
+// });
 
 /// Page Navigation
 // Event delegation - listener in the parent
@@ -53,7 +59,8 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   // Matching strategy
   if (e.target.classList.contains('nav__link')) {
     const id = e.target.getAttribute('href');
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+    if (id !== '#')
+      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
 //////////////////////////////////////////////
@@ -158,7 +165,7 @@ const revealSection = function (entries, observer) {
 
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.15,
+  threshold: 0.1,
 });
 
 allSections.forEach(section => {
@@ -297,3 +304,30 @@ const loadMap = function () {
 };
 
 loadMap();
+
+////////////// Send mail////////////////
+const btnSendMail = document.querySelector('.btn--send-mail');
+
+btnSendMail.addEventListener('click', function (e) {
+  e.preventDefault();
+  window.open('mailto:test@example.com');
+});
+
+////////// OPENING HOURS //////////////
+import Holidays from 'date-holidays';
+const openLabel = document.querySelector('.open-hours');
+
+const hd = new Holidays('PT');
+const today = hd.isHoliday(Date.now()) ? 0 : new Date().getDay(); // Sunday is 0
+
+const html = ['sun', 'tue', 'wed', 'thu', 'fri', 'sat', 'mon'].map(
+  day =>
+    `<div>${OPEN_HOURS[day].label}<br>${OPEN_HOURS[day].open}${
+      OPEN_HOURS[day].open ? '-' : 'Encerrado'
+    }${OPEN_HOURS[day].close}</div>`
+);
+
+html[today] = `<b>${html[today]}</b>`;
+html.push(html.shift());
+
+openLabel.innerHTML = html.join('');

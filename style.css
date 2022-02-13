@@ -127,7 +127,7 @@ img {
 /* nav and stickly class at the same time */
 .nav.sticky {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .nav__logo {
@@ -207,10 +207,14 @@ h4 {
 }
 
 .header__img {
-  width: 100%;
+  /* width: 100%; */
   /* grid-column: 2 / 3;
   grid-row: 1 / span 4; */
   transform: translateY(-6rem);
+
+  height: 60vh;
+  width: 80vw; /* must be removed*/
+  margin-top: 10vh;
 }
 
 .header__h1 {
@@ -219,6 +223,14 @@ h4 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  width: 100%;
+}
+
+.open-hours {
+  font-size: medium;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  transform: translate(0%, -3vh);
 }
 
 .highlight {

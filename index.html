@@ -15,7 +15,7 @@
     <title>Clínica Dra Diana Salomé</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <nav class="nav">
         <img
           src="src/img/logo.jpg"
@@ -48,11 +48,17 @@
           alt="Minimalist bank items"
         />
         <div class="header__h1">
-          <h1>Clínica Médica Dentária Dra Diana Salomé</h1>
+          <h1>
+            Clínica Médica Dentária <br />
+            Dra Diana Salomé
+          </h1>
         </div>
 
-        <h4>A simpler banking experience for a simpler life.</h4>
-        <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+        <div class="open-hours">
+          Seg 09h00-18h30 | <b>Ter 09h00-18h30</b> | Qua 09h00-18h30 | Qui
+          09h00-18h30 | Sex 09h00-18h30 | Sab 09h00-18h30 | Dom Encerrado
+        </div>
+        <!-- <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button> -->
       </div>
     </header>
 
@@ -337,7 +343,7 @@
           /></a>
         </li>
       </ul>
-      <img src="src/img/logo.jpg" alt="Logo" class="footer__logo" />
+      <!-- <img src="src/img/logo.jpg" alt="Logo" class="footer__logo" /> -->
       <p class="footer__copyright">
         &copy; Copyright by
         <a class="footer__link twitter-link" target="_blank" href="#"
@@ -361,7 +367,7 @@
         <input type="email" />
         <label>Mensagem</label>
         <input type="text" />
-        <button class="btn">Enviar</button>
+        <button class="btn btn--send-mail">Enviar</button>
       </form>
     </div>
     <div class="overlay hidden"></div>
