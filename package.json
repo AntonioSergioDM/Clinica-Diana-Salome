@@ -1,0 +1,17 @@
+{
+  "name": "clinica-diana",
+  "version": "1.0.0",
+  "description": "website",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "AntonioSergio",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.7.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.3.1"
+  }
+}
