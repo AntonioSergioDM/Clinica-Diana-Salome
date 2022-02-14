@@ -231,6 +231,8 @@ h4 {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   transform: translate(0%, -3vh);
+  text-align: center;
+  vertical-align: middle;
 }
 
 .highlight {

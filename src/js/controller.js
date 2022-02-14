@@ -1,10 +1,4 @@
-import {
-  COORDS,
-  imgPaths,
-  MAP_ZOOM_LEVEL,
-  markerIconOptions,
-  OPEN_HOURS,
-} from './config';
+import { imgPaths } from './config';
 
 ///////////////////////////////////////
 //////////// Modal window /////////////
@@ -37,34 +31,16 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
-/// Modal window - end
-//////////////////////////////////////////////
-//
-//////////////////////////////////////////////
-////////////// Smooth Scrolling //////////////
-// Elements
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+////////////// Send mail////////////////
+const btnSendMail = document.querySelector('.btn--send-mail');
 
-// Event Handlers
-/// 'Learn more' button
-// btnScrollTo.addEventListener('click', function (e) {
-//   section1.scrollIntoView({ behavior: 'smooth' });
-// });
-
-/// Page Navigation
-// Event delegation - listener in the parent
-document.querySelector('.nav__links').addEventListener('click', function (e) {
+btnSendMail.addEventListener('click', function (e) {
   e.preventDefault();
-  // Matching strategy
-  if (e.target.classList.contains('nav__link')) {
-    const id = e.target.getAttribute('href');
-    if (id !== '#')
-      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-  }
+  window.open('mailto:test@example.com');
 });
-//////////////////////////////////////////////
+
 //
+//////////////////////////////////////////////
 //////////////////////////////////////////////
 /////// Tabbed Component - 'Operations' //////
 /// Elements
@@ -94,6 +70,30 @@ tabsContainer.addEventListener('click', function (e) {
   });
 });
 /////////////////////////////////////////////
+//
+////////////// Smooth Scrolling //////////////
+// Elements
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+// Event Handlers
+/// 'Learn more' button
+// btnScrollTo.addEventListener('click', function (e) {
+//   section1.scrollIntoView({ behavior: 'smooth' });
+// });
+
+/// Page Navigation
+// Event delegation - listener in the parent
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    if (id !== '#')
+      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+//////////////////////////////////////////////
 //
 //////////////////////////////////////////////
 //////////// Menu fade animation ////////////
@@ -208,126 +208,17 @@ imgTargets.forEach(img => {
 //
 //////////////////////////////////////////////
 ////////////////// Slider ///////////////////
-const slider = function () {
-  /// Elements
-  const slides = document.querySelectorAll('.slide');
-  const btnLeft = document.querySelector('.slider__btn--left');
-  const btnRight = document.querySelector('.slider__btn--right');
-  const dotContainer = document.querySelector('.dots');
+import sliderView from './Views/sliderView';
+import { TESTIMONIALS } from '../data/testimonials';
 
-  /// State Variables
-  // Current and max slide
-  let curSlide = 0;
-  const maxSlide = slides.length - 1;
-
-  /// Functions
-  const goToSlide = function (slide) {
-    // Side by side
-    slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
-    );
-
-    // Activate dots
-    document
-      .querySelectorAll('.dots__dot')
-      .forEach(dot => dot.classList.remove('dots__dot--active'));
-
-    document
-      .querySelector(`.dots__dot[data-slide="${slide}"]`)
-      .classList.add('dots__dot--active');
-  };
-
-  const nextSlide = function () {
-    // Update current slide
-    curSlide++;
-
-    // Check the limits
-    if (curSlide > maxSlide) curSlide = 0;
-
-    goToSlide(curSlide);
-  };
-
-  const prevSlide = function () {
-    // Update current slide
-    curSlide--;
-
-    // Check the limits
-    if (curSlide < 0) curSlide = maxSlide;
-
-    goToSlide(curSlide);
-  };
-
-  const createDots = function () {
-    slides.forEach((_, i) => {
-      dotContainer.insertAdjacentHTML(
-        'beforeend',
-        `<button class="dots__dot" data-slide="${i}"></button>`
-      );
-    });
-  };
-
-  const init = function () {
-    createDots();
-    goToSlide(curSlide);
-  };
-  init();
-
-  /// Event handlers
-  btnRight.addEventListener('click', nextSlide);
-  btnLeft.addEventListener('click', prevSlide);
-  dotContainer.addEventListener('click', function (e) {
-    // only the dot buttons
-    if (!e.target.classList.contains('dots__dot')) return;
-
-    goToSlide(e.target.dataset.slide);
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') prevSlide();
-    else if (e.key === 'ArrowRight') nextSlide();
-  });
-};
-slider();
+sliderView.create(TESTIMONIALS);
 ////////////////////////////////////////////////////////////////////////////////////////////
+
 ////////////////// MAP //////////////////////////
-import * as L from 'leaflet';
-const loadMap = function () {
-  const myMap = L.map('map').setView(COORDS, MAP_ZOOM_LEVEL);
-  L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(myMap);
-
-  const myIcon = L.icon(markerIconOptions);
-
-  const myMarker = L.marker(COORDS, { icon: myIcon }).addTo(myMap);
-};
-
-loadMap();
-
-////////////// Send mail////////////////
-const btnSendMail = document.querySelector('.btn--send-mail');
-
-btnSendMail.addEventListener('click', function (e) {
-  e.preventDefault();
-  window.open('mailto:test@example.com');
-});
+import mapView from './Views/mapView';
+mapView.loadMap();
 
 ////////// OPENING HOURS //////////////
-import Holidays from 'date-holidays';
-const openLabel = document.querySelector('.open-hours');
-
-const hd = new Holidays('PT');
-const today = hd.isHoliday(Date.now()) ? 0 : new Date().getDay(); // Sunday is 0
-
-const html = ['sun', 'tue', 'wed', 'thu', 'fri', 'sat', 'mon'].map(
-  day =>
-    `<div>${OPEN_HOURS[day].label}<br>${OPEN_HOURS[day].open}${
-      OPEN_HOURS[day].open ? '-' : 'Encerrado'
-    }${OPEN_HOURS[day].close}</div>`
-);
-
-html[today] = `<b>${html[today]}</b>`;
-html.push(html.shift());
-
-openLabel.innerHTML = html.join('');
+import openHoursView from './Views/openHoursView';
+import { OPEN_HOURS } from '../data/openHours';
+openHoursView.render(OPEN_HOURS);

@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "website",
   "scripts": {
-    "start": "holidays2json --pick PT --min && parcel index.html",
-    "build": "holidays2json --pick PT --min && parcel build index.html --dist-dir ./dist",
-    "removeholidays": "holidays2json --pick PT --min"
+    "removeholidays": "holidays2json --pick PT --min",
+    "parcelstart": "parcel index.html",
+    "parcelbuild": "parcel build index.html --dist-dir ./dist",
+    "start": "npm run removeholidays && npm run parcelstart",
+    "build": "npm run removeholidays && npm run parcelbuild"
   },
   "author": "AntonioSergio",
   "license": "ISC",
