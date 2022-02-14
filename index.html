@@ -388,17 +388,19 @@
         Open your bank account <br />
         in just <span class="highlight">5 minutes</span>
       </h2>
-      <form class="modal__form">
-        <label>Nome</label>
-        <input type="text" />
-        <label>Telefone</label>
-        <input type="tel" />
-        <label>Email</label>
-        <input type="email" />
-        <label>Mensagem</label>
-        <input type="text" />
-        <button class="btn btn--send-mail">Enviar</button>
-      </form>
+      <div class="modal__body">
+        <form class="modal__form">
+          <label>Nome</label>
+          <input type="text" name="name" />
+          <label>Telefone</label>
+          <input type="tel" name="phone" />
+          <label>Email</label>
+          <input type="email" name="email" />
+          <label>Mensagem</label>
+          <input type="text" name="message" />
+          <button class="btn btn--send-mail">Enviar</button>
+        </form>
+      </div>
     </div>
     <div class="overlay hidden"></div>
   </body>

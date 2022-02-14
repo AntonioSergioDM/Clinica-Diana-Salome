@@ -1,43 +1,16 @@
 import { imgPaths } from './config';
 
-///////////////////////////////////////
-//////////// Modal window /////////////
-// Elements
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.btn--close-modal');
-const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
-
-//Functions
-const openModal = function (e) {
-  e.preventDefault();
-  modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-};
-
-const closeModal = function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-};
-
-// Event Handlers
-btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
-
-btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
-
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-    closeModal();
-  }
-});
 ////////////// Send mail////////////////
-const btnSendMail = document.querySelector('.btn--send-mail');
+const controlSendEmail = function (data) {
+  const { name, phone, email, message } = data;
+  console.log(name, email, phone, message);
+  // window.open(
+  //   `mailto:test@example.com?subject=Hello There&body=Hi,I found this website and thought you might like it http://www.geocities.com/wowhtml/`
+  // );
 
-btnSendMail.addEventListener('click', function (e) {
-  e.preventDefault();
-  window.open('mailto:test@example.com');
-});
+  // window.open('tel:259 104 774');
+};
+modalView.addHandlerSubmitForm(controlSendEmail);
 
 //
 //////////////////////////////////////////////
@@ -70,7 +43,9 @@ tabsContainer.addEventListener('click', function (e) {
   });
 });
 /////////////////////////////////////////////
+
 //
+
 ////////////// Smooth Scrolling //////////////
 // Elements
 const btnScrollTo = document.querySelector('.btn--scroll-to');
@@ -86,34 +61,31 @@ const section1 = document.querySelector('#section--1');
 // Event delegation - listener in the parent
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault();
-  // Matching strategy
-  if (e.target.classList.contains('nav__link')) {
-    const id = e.target.getAttribute('href');
-    if (id !== '#')
-      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-  }
+  // if not link
+  if (!e.target.classList.contains('nav__link')) return;
+
+  const id = e.target.getAttribute('href');
+  if (id !== '#')
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
 });
-//////////////////////////////////////////////
-//
-//////////////////////////////////////////////
 //////////// Menu fade animation ////////////
 /// Elements
 const nav = document.querySelector('.nav');
 
 /// Functions
 const handleHover = function (e) {
-  if (e.target.classList.contains('nav__link')) {
-    const link = e.target;
-    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-    const logo = link.closest('.nav').querySelector('img');
+  // If not a link
+  if (!e.target.classList.contains('nav__link')) return;
 
-    siblings.forEach(element => {
-      if (element !== link) element.style.opacity = this;
-    });
-    logo.style.opacity = this;
-  }
+  const link = e.target;
+  const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+  const logo = link.closest('.nav').querySelector('img');
+
+  siblings.forEach(element => {
+    if (element !== link) element.style.opacity = this;
+  });
+  logo.style.opacity = this;
 };
-
 /// Event delegation
 // Passing 'argument' into handler
 nav.addEventListener('mouseover', handleHover.bind(0.5));
@@ -221,4 +193,5 @@ mapView.loadMap();
 ////////// OPENING HOURS //////////////
 import openHoursView from './Views/openHoursView';
 import { OPEN_HOURS } from '../data/openHours';
+import modalView from './Views/modalView';
 openHoursView.render(OPEN_HOURS);

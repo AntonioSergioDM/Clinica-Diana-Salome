@@ -10,9 +10,14 @@ class OpenHoursView extends View {
 
     const html = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].map(
       day =>
-        `<div>${this._data[day].label}<br>${this._data[day].open}${
-          this._data[day].open ? ' - ' : 'Encerrado'
-        }${this._data[day].close}</div>`
+        `<div>${this._data[day].label}<br>${this._data[day].open
+          .map(
+            (open, i) =>
+              `${open}${this._data[day].open ? ' - ' : 'Encerrado'}${
+                this._data[day].close[i]
+              }`
+          )
+          .join('<br>')}</div>`
     );
 
     html[today] = `<b>${html[today]}</b>`;
