@@ -49,6 +49,10 @@
   - [ ] Colors
   - [ ] Images
 
+## Other TODOS
+
+- turn styles.css to sass
+
 ## License
 
 Not yet

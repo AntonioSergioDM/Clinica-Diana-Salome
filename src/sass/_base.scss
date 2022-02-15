@@ -1,0 +1,80 @@
+$color-primary: #5ec576;
+$color-secondary: #ffcb03;
+$color-terciary: #ff585f;
+$color-primary-darker: #4bbb7d;
+$color-secondary-darker: #ffbb00;
+$color-terciary-darker: #fd424b;
+$color-primary-opacity: #5ec5763a;
+$color-secondary-opacity: #ffcd0331;
+$color-terciary-opacity: #ff58602d;
+
+$color-grad-primary-1: #9be15d;
+$color-grad-primary-2: #39b385;
+$color-grad-secondary-1: #ffcb03;
+$color-grad-secondary-2: #ffb003;
+
+// Light background
+$color-grey-light-1: #f9f5f3;
+// Light lines
+$color-grey-light-2: #f2efee;
+// Light text (placeholder)
+$color-grey-light-3: #d3c7c3;
+// Normal text
+$color-grey-dark-1: #444;
+// Lighter text
+$color-grey-dark-2: #918581;
+
+$gradient-primary: linear-gradient(
+  to right bottom,
+  $color-grad-primary-1,
+  $color-grad-primary-2
+);
+
+$bp-large: 78.15em; // 1250px
+$bp-medium: 61.25em; // 980px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+$transition-time: all 0.2s;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%; // don't know about this one
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  line-height: 1.9;
+  color: $color-grey-dark-1;
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   min-height: calc(100vh - 2 * 4vw);
+  //   background-image: $gradient;
+  background-color: $color-grey-light-1;
+}
+
+h1 {
+  font-size: 5.5rem;
+  line-height: 1.35;
+}
+
+h4 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
