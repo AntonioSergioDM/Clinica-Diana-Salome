@@ -4,14 +4,14 @@
 
 - Navigation Tab
   - [x] Logic
-  - [ ] Change language
+  - [ ] Change language button
 - Open hours
   - [x] Logic
   - [x] Data
 - Services
   - Logic
     - [ ] Render
-    - [ ] Action
+    - [ ] Action?
 - Map
   - Logic
     - [x] Render
@@ -20,6 +20,7 @@
   - [ ] Style ([TILES.url](https://leaflet-extras.github.io/leaflet-providers/preview/*/))
 - Testimonials
   - [x] Logic
+  - [ ] Style - Arrow buttons
   - [ ] Data
 - FAQ
   - [ ] Logic
@@ -50,8 +51,6 @@
   - [ ] Images
 
 ## Other TODOS
-
-- turn styles.css to sass
 
 ## License
 

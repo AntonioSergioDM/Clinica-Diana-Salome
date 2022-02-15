@@ -4,9 +4,9 @@ import { TESTIMONIALS } from '../data/testimonials';
 import { LANG_LABELS } from '../data/langConfig';
 
 export const state = {
+  language: DEFAULT_LANG,
   openHours: {},
   testimonials: [],
-  language: DEFAULT_LANG,
   labels: {},
 };
 

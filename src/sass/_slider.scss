@@ -6,6 +6,33 @@
 
   /* IN THE END */
   overflow: hidden;
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+
+    border: none;
+    background: $color-grey-light-2;
+    font-family: inherit;
+    color: $color-grey-dark-1;
+    border-radius: 50%;
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 3.25rem;
+    cursor: pointer;
+    place-self: center;
+
+    &--left {
+      left: 6%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--right {
+      right: 6%;
+      transform: translate(50%, -50%);
+    }
+  }
 }
 
 .slide {
@@ -26,32 +53,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  & __btn {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-
-    border: none;
-    background: $color-grey-light-1;
-    font-family: inherit;
-    color: $color-grey-dark-1;
-    border-radius: 50%;
-    height: 5.5rem;
-    width: 5.5rem;
-    font-size: 3.25rem;
-    cursor: pointer;
-
-    &--left {
-      left: 6%;
-      transform: translate(-50%, -50%);
-    }
-
-    &--right {
-      right: 6%;
-      transform: translate(50%, -50%);
-    }
   }
 }
 
