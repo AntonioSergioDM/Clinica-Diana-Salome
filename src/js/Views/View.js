@@ -20,8 +20,6 @@ export default class View {
   _errorMessage = 'Something went wrong :(';
   _message = 'It worked :)';
 
-  _defaultClear = true;
-
   update(data) {
     this._data = data;
     const newMarkup = this._generateMarkup();
@@ -62,7 +60,7 @@ export default class View {
     this._data = data;
 
     const markup = this._generateMarkup();
-    if (this._defaultClear) this._clear();
+    this._clear();
     this._parentElement.insertAdjacentHTML(position, markup);
   }
 

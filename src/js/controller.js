@@ -1,19 +1,5 @@
 import { imgPaths } from './config';
 
-////////////// Send mail////////////////
-import modalView from './Views/modalView';
-
-const controlSendEmail = function (data) {
-  const { name, phone, email, message } = data;
-  console.log(name, email, phone, message);
-  // window.open(
-  //   `mailto:test@example.com?subject=Hello There&body=Hi,I found this website and thought you might like it http://www.geocities.com/wowhtml/`
-  // );
-
-  // window.open('tel:259 104 774');
-};
-modalView.addHandlerSubmitForm(controlSendEmail);
-
 //
 //////////////////////////////////////////////
 //////////////////////////////////////////////
@@ -59,40 +45,6 @@ const section1 = document.querySelector('#section--1');
 //   section1.scrollIntoView({ behavior: 'smooth' });
 // });
 
-/// Page Navigation
-import navView from './Views/navView';
-
-const controlNavLinkClick = function (id) {
-  if (id !== '#')
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-};
-navView.addHandlerLinkClicked(controlNavLinkClick);
-/////////// Sticky navigation tab ///////////
-/// Elements - some are defined above
-//nav
-//section1
-const nav = document.querySelector('.nav');
-
-const header = document.querySelector('.header');
-
-/// Intersection Observer API
-// const stickyNav = function (entries, observer) {
-//   const [entry] = entries;
-//   if (!entry.isIntersecting) nav.classList.add('sticky');
-//   else nav.classList.remove('sticky');
-// };
-
-// const navHeight = nav.getBoundingClientRect().height;
-// const obsOptions = {
-//   root: null, //null corresponds to viewport
-//   threshold: 0,
-//   rootMargin: `-${navHeight}px`,
-// };
-
-// const headerObserver = new IntersectionObserver(stickyNav, obsOptions);
-// headerObserver.observe(header);
-
-/////////////////////////////////////////////
 //
 //////////////////////////////////////////////
 /////// Revealing elements on scroll  ////////
@@ -154,19 +106,43 @@ imgTargets.forEach(img => {
 
 /////////////////////////////////////////////
 //
-//////////////////////////////////////////////
-////////////////// Slider ///////////////////
+import * as model from './model';
+
+//////////////// PAGE NAVIGATION ////////////////
+import navView from './Views/navView';
+const controlNavLinkClick = function (id) {
+  if (id !== '#')
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+};
+navView.render(model.state.labels);
+navView.addHandlerLinkClicked(controlNavLinkClick);
+
+//////////////// SECTION TITLES ////////////////
+import sectionTitlesView from './Views/sectionTitlesView';
+sectionTitlesView.render(model.state.labels);
+
+//////////////////// SLIDER ////////////////////
 import sliderView from './Views/sliderView';
-import { TESTIMONIALS } from '../data/testimonials';
+sliderView.create(model.state.testimonials);
 
-sliderView.create(TESTIMONIALS);
-////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////// MAP /////////////////////
+import map from './Views/map';
+map.loadMap();
 
-////////////////// MAP //////////////////////////
-import mapView from './Views/mapView';
-mapView.loadMap();
-
-////////// OPENING HOURS //////////////
+/////////////// OPENING HOURS ///////////////
 import openHoursView from './Views/openHoursView';
-import { OPEN_HOURS } from '../data/openHours';
-openHoursView.render(OPEN_HOURS);
+openHoursView.render(model.state.openHours);
+
+//////////////// MODAL WINDOW ////////////////
+import modalView from './Views/modalView';
+
+const controlSendEmail = function (data) {
+  const { name, phone, email, message } = data;
+  console.log(name, email, phone, message);
+  // window.open(
+  //   `mailto:test@example.com?subject=Hello There&body=Hi,I found this website and thought you might like it http://www.geocities.com/wowhtml/`
+  // );
+
+  // window.open('tel:259 104 774');
+};
+modalView.addHandlerSubmitForm(controlSendEmail);

@@ -1,17 +1,17 @@
+import { LOGO_URL } from '../config';
 import View from './View';
 
 class NavView extends View {
-  _parentElement = document.querySelector('.nav');
+  _parentElement = document.querySelector('.nav__links'); // <ul> element
 
-  _logo = this._parentElement.querySelector('img');
-  _linksListEl = this._parentElement.querySelector('.nav__links'); // <ul> element
-  _links = this._parentElement.querySelectorAll('.nav__link'); // list of <a> elements
+  _nav = this._parentElement.closest('.nav');
+  _logo = this._nav.querySelector('img');
 
   constructor() {
     super();
     this._addHandlerHover();
 
-    const navHeight = this._parentElement.getBoundingClientRect().height;
+    const navHeight = this._nav.getBoundingClientRect().height;
     const obsOptions = {
       root: null, //null corresponds to viewport
       threshold: 0,
@@ -22,11 +22,11 @@ class NavView extends View {
       this._sticky.bind(this),
       obsOptions
     );
-    stickyObserver.observe(this._parentElement.parentElement);
+    stickyObserver.observe(this._nav.parentElement);
   }
 
   addHandlerLinkClicked(handler) {
-    this._linksListEl.addEventListener(
+    this._parentElement.addEventListener(
       'click',
       function (e) {
         e.preventDefault();
@@ -57,7 +57,7 @@ class NavView extends View {
 
       const link = e.target;
 
-      this._links.forEach(element => {
+      this._parentElement.querySelectorAll('.nav__link').forEach(element => {
         if (!element.isEqualNode(link)) element.style.opacity = opacity;
       });
       this._logo.style.opacity = opacity;
@@ -67,8 +67,29 @@ class NavView extends View {
   /** To be used as a callback in an observer*/
   _sticky(entries) {
     const [entry] = entries;
-    if (!entry.isIntersecting) this._parentElement.classList.add('sticky');
-    else this._parentElement.classList.remove('sticky');
+    if (!entry.isIntersecting) this._nav.classList.add('sticky');
+    else this._nav.classList.remove('sticky');
+  }
+
+  _generateMarkup() {
+    return `
+      <li class="nav__item">
+        <a class="nav__link" href="#section--1">${this._data.sec1.title}</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#section--2">${this._data.sec2.title}</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#section--3">${this._data.sec3.title}</a>
+      </li>
+      <li class="nav__item">
+        <a 
+          class="nav__link nav__link--btn btn--show-modal" 
+          href="#">
+            ${this._data.contact}
+        </a>
+      </li>
+    `;
   }
 }
 

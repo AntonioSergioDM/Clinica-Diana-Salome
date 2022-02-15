@@ -13,9 +13,9 @@ class OpenHoursView extends View {
         `<div>${this._data[day].label}<br>${this._data[day].open
           .map(
             (open, i) =>
-              `${open}${this._data[day].open ? ' - ' : 'Encerrado'}${
-                this._data[day].close[i]
-              }`
+              `${open}${
+                this._data[day].open[i] ? ' - ' : this._data.closeLabel
+              }${this._data[day].close[i]}`
           )
           .join('<br>')}</div>`
     );

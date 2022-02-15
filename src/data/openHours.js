@@ -3,38 +3,43 @@
 export const OPEN_HOURS = {
   // always in the format hh:mm or empty string if closed
   mon: {
-    label: 'Segunda',
-    open: ['09h00', '14h30'],
+    open: ['09h30', '14h30'],
     close: ['12h30', '19h30'],
   },
   tue: {
-    label: 'Terça',
-    open: ['09h00'],
-    close: ['18h00'],
+    open: ['09h30', '14h30'],
+    close: ['12h30', '19h30'],
   },
   wed: {
-    label: 'Quarta',
-    open: ['09h00'],
-    close: ['18h00'],
+    open: ['09h30', '14h30'],
+    close: ['12h30', '19h30'],
   },
   thu: {
-    label: 'Quinta',
-    open: ['09h00'],
-    close: ['18h00'],
+    open: ['09h30', '14h30'],
+    close: ['12h30', '19h30'],
   },
   fri: {
-    label: 'Sexta',
-    open: ['09h00'],
-    close: ['18h00'],
+    open: ['09h30', '14h30'],
+    close: ['12h30', '19h30'],
   },
   sat: {
-    label: 'Sábado',
-    open: ['09h00'],
-    close: ['18h00'],
+    open: ['09h30'],
+    close: ['12h30'],
   },
   sun: {
-    label: 'Dom e Fer',
     open: [''],
     close: [''],
   },
+  closeLabel: 'Encerrado',
+};
+
+export const WEEK_LABELS = {
+  pt: ['Dom e Fer', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+  // prettier-ignore
+  en: ['Sun and Holidays', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday'],
+};
+
+export const CLOSE_LABELS = {
+  pt: 'Encerrado',
+  en: 'Closed',
 };

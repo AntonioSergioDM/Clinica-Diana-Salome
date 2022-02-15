@@ -1,4 +1,3 @@
-import View from './View';
 import * as L from 'leaflet';
 import {
   COORDS,
@@ -7,9 +6,7 @@ import {
   TILES,
 } from '../Config/mapConfig';
 
-class MapView extends View {
-  _parentElement = document.querySelector('.section--2');
-  _defaultClear = false;
+class Map {
   _mapID = 'map';
 
   // From configuration file
@@ -24,12 +21,9 @@ class MapView extends View {
 
     const myIcon = L.icon(this._markerOptions);
 
-    const myMarker = L.marker(this._coord, { icon: myIcon }).addTo(myMap);
-  }
-
-  _generateMarkup() {
-    return `<div class="map" id="${this._mapID}"></div>`;
+    /* const myMarker = */
+    L.marker(this._coord, { icon: myIcon }).addTo(myMap);
   }
 }
 
-export default new MapView();
+export default new Map();
