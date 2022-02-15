@@ -1,6 +1,8 @@
 import { imgPaths } from './config';
 
 ////////////// Send mail////////////////
+import modalView from './Views/modalView';
+
 const controlSendEmail = function (data) {
   const { name, phone, email, message } = data;
   console.log(name, email, phone, message);
@@ -48,7 +50,7 @@ tabsContainer.addEventListener('click', function (e) {
 
 ////////////// Smooth Scrolling //////////////
 // Elements
-const btnScrollTo = document.querySelector('.btn--scroll-to');
+// const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
 // Event Handlers
@@ -58,63 +60,37 @@ const section1 = document.querySelector('#section--1');
 // });
 
 /// Page Navigation
-// Event delegation - listener in the parent
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  e.preventDefault();
-  // if not link
-  if (!e.target.classList.contains('nav__link')) return;
+import navView from './Views/navView';
 
-  const id = e.target.getAttribute('href');
+const controlNavLinkClick = function (id) {
   if (id !== '#')
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-});
-//////////// Menu fade animation ////////////
-/// Elements
-const nav = document.querySelector('.nav');
-
-/// Functions
-const handleHover = function (e) {
-  // If not a link
-  if (!e.target.classList.contains('nav__link')) return;
-
-  const link = e.target;
-  const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-  const logo = link.closest('.nav').querySelector('img');
-
-  siblings.forEach(element => {
-    if (element !== link) element.style.opacity = this;
-  });
-  logo.style.opacity = this;
 };
-/// Event delegation
-// Passing 'argument' into handler
-nav.addEventListener('mouseover', handleHover.bind(0.5));
-nav.addEventListener('mouseout', handleHover.bind(1));
-/////////////////////////////////////////////
-//
-//////////////////////////////////////////////
+navView.addHandlerLinkClicked(controlNavLinkClick);
 /////////// Sticky navigation tab ///////////
 /// Elements - some are defined above
 //nav
 //section1
+const nav = document.querySelector('.nav');
+
 const header = document.querySelector('.header');
 
 /// Intersection Observer API
-const stickyNav = function (entries, observer) {
-  const [entry] = entries;
-  if (!entry.isIntersecting) nav.classList.add('sticky');
-  else nav.classList.remove('sticky');
-};
+// const stickyNav = function (entries, observer) {
+//   const [entry] = entries;
+//   if (!entry.isIntersecting) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// };
 
-const navHeight = nav.getBoundingClientRect().height;
-const obsOptions = {
-  root: null, //null corresponds to viewport
-  threshold: 0,
-  rootMargin: `-${navHeight}px`,
-};
+// const navHeight = nav.getBoundingClientRect().height;
+// const obsOptions = {
+//   root: null, //null corresponds to viewport
+//   threshold: 0,
+//   rootMargin: `-${navHeight}px`,
+// };
 
-const headerObserver = new IntersectionObserver(stickyNav, obsOptions);
-headerObserver.observe(header);
+// const headerObserver = new IntersectionObserver(stickyNav, obsOptions);
+// headerObserver.observe(header);
 
 /////////////////////////////////////////////
 //
@@ -193,5 +169,4 @@ mapView.loadMap();
 ////////// OPENING HOURS //////////////
 import openHoursView from './Views/openHoursView';
 import { OPEN_HOURS } from '../data/openHours';
-import modalView from './Views/modalView';
 openHoursView.render(OPEN_HOURS);

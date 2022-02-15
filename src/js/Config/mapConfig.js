@@ -1,23 +1,21 @@
 /**coordinates of the clinic */
-export const COORDS = [41.2993892, -7.757643];
+export const COORDS = [41.29822701133623, -7.747412611051245];
 export const MAP_ZOOM_LEVEL = 13;
 
 /** Images for marker on map */
 import markerIconPath from '../../img/mapIcon.png';
-import markerIconShadowPath from '../../img/logo.jpg';
 
 /** Map icon options - https://leafletjs.com/reference.html#icon */
 export const MARKER_ICON_OPTIONS = {
   iconUrl: markerIconPath,
-  iconSize: [38, 95],
-  iconAnchor: [22, 94],
-  popupAnchor: [-3, -76],
-  shadowUrl: markerIconShadowPath,
-  shadowSize: [68, 95],
-  shadowAnchor: [22, 94],
+  iconSize: [100, 100],
+  iconAnchor: [50, 100],
+  // popupAnchor: [-3, -76],
 };
 
-/** Map tiles - //https://leafletjs.com/reference.html#tilelayer */
+/** Map tiles
+ * DOC: https://leafletjs.com/reference.html#tilelayer
+ * Providers (url): https://leaflet-extras.github.io/leaflet-providers/preview/*/
 export const TILES = {
   url: 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
   opt: {
