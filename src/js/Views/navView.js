@@ -1,4 +1,3 @@
-import { LOGO_URL } from '../config';
 import View from './View';
 
 class NavView extends View {
@@ -65,7 +64,7 @@ class NavView extends View {
     };
   }
 
-  /** To be used as a callback in an observer*/
+  /** To be used as a callback in the observer*/
   _sticky(entries) {
     const [entry] = entries;
     if (!entry.isIntersecting) this._nav.classList.add('sticky');

@@ -2,32 +2,32 @@
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 /////// Tabbed Component - 'Operations' //////
-/// Elements
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
+// /// Elements
+// const tabs = document.querySelectorAll('.operations__tab');
+// const tabsContainer = document.querySelector('.operations__tab-container');
+// const tabsContent = document.querySelectorAll('.operations__content');
 
-/// Event handlers
-// event delegation
-tabsContainer.addEventListener('click', function (e) {
-  // get the clicked button (even if the <span> is pressed)
-  const clicked = e.target.closest('.operations__tab');
+// /// Event handlers
+// // event delegation
+// tabsContainer.addEventListener('click', function (e) {
+//   // get the clicked button (even if the <span> is pressed)
+//   const clicked = e.target.closest('.operations__tab');
 
-  // Guard Clause - stops if click is on the tab and not on buttons
-  if (!clicked) return;
+//   // Guard Clause - stops if click is on the tab and not on buttons
+//   if (!clicked) return;
 
-  // change style - 'active' style
-  tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
-  clicked.classList.add('operations__tab--active');
+//   // change style - 'active' style
+//   tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+//   clicked.classList.add('operations__tab--active');
 
-  // Activate content area
-  const data = `operations__content--${clicked.dataset.tab}`;
-  tabsContent.forEach(element => {
-    if (element.classList.contains(data))
-      element.classList.add('operations__content--active');
-    else element.classList.remove('operations__content--active');
-  });
-});
+//   // Activate content area
+//   const data = `operations__content--${clicked.dataset.tab}`;
+//   tabsContent.forEach(element => {
+//     if (element.classList.contains(data))
+//       element.classList.add('operations__content--active');
+//     else element.classList.remove('operations__content--active');
+//   });
+// });
 /////////////////////////////////////////////
 
 //
@@ -69,6 +69,10 @@ map.loadMap();
 /////////////// OPENING HOURS ///////////////
 import openHoursView from './Views/openHoursView';
 openHoursView.render(model.state.openHours);
+
+/////////////// FOOTER ///////////////
+import footerView from './Views/footerView';
+footerView.render(model.state.footer);
 
 //////////////// MODAL WINDOW ////////////////
 import modalView from './Views/modalView';

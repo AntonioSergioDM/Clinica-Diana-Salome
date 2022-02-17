@@ -2,57 +2,73 @@
 
 ## Website Features
 
+- Section Titles and Intros
+  - [x] Logic
 - Navigation Tab
   - [x] Logic
-  - [ ] Change language button
+  - [ ] Language buttons
 - Open hours
   - [x] Logic
-  - [x] Data
 - Services
-  - Logic
-    - [x] Render
-    - [x] Action
-- Map
-  - Logic
-    - [x] Render
-    - [ ] Action - Open Maps with directions
-  - [ ] Icon
-  - [ ] Style ([TILES.url](https://leaflet-extras.github.io/leaflet-providers/preview/*/))
+  - [x] Logic
+  - [x] Action - Link to wiki
+- Map :map:
+  - [x] Logic
+  - [ ] Action - Open Maps with directions
 - Testimonials
   - [x] Logic
-  - [ ] Style - Fix arrow buttons (to svg?)
-  - [ ] Data
 - FAQ
   - [ ] Logic
-  - [ ] Data
 - Contact form:
   - [x] Modal Logic
+  - [ ] Multi-language support
   - [ ] Choose how to contact:
     - ~~mailto + form~~
     - mailto + name input
     - mailto link + phone link
     - PostMail API
     - Form submition with netlify
+- Footer
+  - [x] Logic
+  - [ ] Decide what to put
+  - [ ] Action - Do something on click
 - Multi-languages
   - Logic
-    - [x] Labels
+    - [x] Titles and intros
     - [x] Open hours
-    - [ ] Services
+    - [x] Services
     - [x] Testimonials
+    - [ ] Contacts
     - [ ] FAQ
-  - Data - pt & en
-    - [x] Labels
+    - [x] Footer
+  - Data - pt & en - add more in the Config and data folders
+    - [x] Titles and intros
     - [x] Open hours
     - [ ] Services
     - [ ] Testimonials
+    - [ ] Contacts
     - [ ] FAQ
-- Style
-  - [ ] Colors
-  - [ ] Images
+    - [x] Footer
+
+## Website Style
+
+- [ ] Colors
+- [ ] Images
+- Map
+  - [ ] Icon
+  - [ ] Design ([TILES.url](https://leaflet-extras.github.io/leaflet-providers/preview/*/))
+- Testimonials
+  - [ ] Fix arrow buttons (to svg?)
+- Nav
+  - [ ] Opaque (change color?) on hover
+  -
 
 ## Other TODOS
 
-Sperate the sections? only one at a time?
+- [ ] Mobile compatible
+- [ ] ??? Lazy-load data using fetch and json
+- [ ] ??? 'Separate' the sections - only one at a time
+- [ ] ??? Team
 
 ## License
 

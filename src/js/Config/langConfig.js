@@ -14,12 +14,6 @@ export const LANG_LABELS = {
       intro: 'O que os nossos pacientes dizem de nós',
     },
     contact: 'Contacte-nos',
-    footer: {
-      item1: 'Sobre nós',
-      item2: 'Serviços',
-      item3: 'Equipa',
-      item4: 'Contactos',
-    },
   },
   en: {
     sec1: {
@@ -35,11 +29,23 @@ export const LANG_LABELS = {
       intro: 'Our patients opinions',
     },
     contact: 'Contact us',
-    footer: {
-      item1: 'About us',
-      item2: 'Treatments',
-      item3: 'Team',
-      item4: 'Contacts',
-    },
   },
+};
+
+/** footer elements names */
+export const LANG_FOOTER = {
+  pt: [
+    { name: 'Sobre nós' },
+    { name: 'Tratamentos' },
+    { name: 'Equipa' },
+    { name: 'FAQ' },
+    { name: 'Contactos' },
+  ],
+  en: [
+    { name: 'About us' },
+    { name: 'Treatments' },
+    { name: 'Team' },
+    { name: 'FAQ' },
+    { name: 'Contacts' },
+  ],
 };

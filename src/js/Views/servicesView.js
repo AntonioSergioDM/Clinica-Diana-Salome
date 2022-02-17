@@ -82,7 +82,7 @@ class ServicesView extends View {
         data.link
           ? `
           <a href="${data.link}" target="_blanck"> 
-            <button class="btn--text btn--scroll-to">Learn more</button> 
+            <button class="btn--text btn--scroll-to">${this._data.learnMore}</button> 
           </a>
           `
           : ''

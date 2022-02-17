@@ -6,6 +6,11 @@ import img2 from 'url:../img/logo.jpg';
 import imgLazy3 from 'url:../img/logo-lazy.jpg';
 import img3 from 'url:../img/logo.jpg';
 
+export const LEARN_MORE_BTN = {
+  pt: 'Saiba mais',
+  en: 'Learn more',
+};
+
 export const SERVICES = {
   pt: [
     {
@@ -35,27 +40,27 @@ export const SERVICES = {
   ],
   en: [
     {
-      title: 'Operation 1',
+      title: 'Treatment 1',
       imageLazy: imgLazy1,
       image: img1,
       icon: 'monitor', //not sure
-      text: 'Text of Operation 1',
+      text: 'Text of Treatment 1',
       link: 'https://www.wikipedia.com',
     },
     {
-      title: 'Operation 2',
+      title: 'Treatment 2',
       imageLazy: imgLazy2,
       image: img2,
       icon: 'trending-up', //not sure
-      text: 'Text of Operation 2',
+      text: 'Text of Treatment 2',
       link: 'https://www.wikipedia.com',
     },
     {
-      title: 'Operation 3',
+      title: 'Treatment 3',
       imageLazy: imgLazy3,
       image: img3,
       icon: 'credit-card', //not sure
-      text: 'Text of Operation 3',
+      text: 'Text of Treatment 3',
       link: 'https://www.wikipedia.com',
     },
   ],

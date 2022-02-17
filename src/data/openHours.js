@@ -30,13 +30,20 @@ export const OPEN_HOURS = {
     open: [''],
     close: [''],
   },
-  closeLabel: 'Encerrado',
 };
 
 export const WEEK_LABELS = {
-  pt: ['Dom e Fer', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+  pt: [
+    'Domingo e Feriado',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+  ],
   // prettier-ignore
-  en: ['Sun and Holidays', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday'],
+  en: ['Sunday and Holidays', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday'],
 };
 
 export const CLOSE_LABELS = {

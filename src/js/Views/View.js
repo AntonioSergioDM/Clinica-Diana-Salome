@@ -1,7 +1,6 @@
-// Import icons - the url to use to acess it because of using parcel to compress transpilling and polyfiling our code
+// Import icons - the url to use to acess it because of using parcel to compress, transpilling and polyfiling our code
 
 import icons from 'url:../../img/icons.svg';
-import { imgPaths } from '../config';
 
 /**
  * Defines the functions and paths common to all the Views

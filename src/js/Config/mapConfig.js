@@ -1,6 +1,6 @@
 /**coordinates of the clinic */
 export const COORDS = [41.29822701133623, -7.747412611051245];
-export const MAP_ZOOM_LEVEL = 13;
+export const MAP_ZOOM_LEVEL = 15;
 
 /** Images for marker on map */
 import markerIconPath from '../../img/mapIcon.png';
