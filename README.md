@@ -14,7 +14,7 @@
   - [x] Action - Link to wiki
 - Map :map:
   - [x] Logic
-  - [ ] Action - Open Maps with directions
+  - [x] Action - Open Maps with directions
 - Testimonials
   - [x] Logic
 - FAQ
@@ -38,6 +38,7 @@
     - [x] Open hours
     - [x] Services
     - [x] Testimonials
+    - [x] Map
     - [ ] Contacts
     - [ ] FAQ
     - [x] Footer
@@ -46,6 +47,7 @@
     - [x] Open hours
     - [ ] Services
     - [ ] Testimonials
+    - [x] Map
     - [ ] Contacts
     - [ ] FAQ
     - [x] Footer
@@ -57,6 +59,7 @@
 - Map
   - [ ] Icon
   - [ ] Design ([TILES.url](https://leaflet-extras.github.io/leaflet-providers/preview/*/))
+  - [ ] Popup
 - Testimonials
   - [ ] Fix arrow buttons (to svg?)
 - Nav

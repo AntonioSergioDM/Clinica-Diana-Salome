@@ -10,7 +10,7 @@ export const MARKER_ICON_OPTIONS = {
   iconUrl: markerIconPath,
   iconSize: [100, 100],
   iconAnchor: [50, 100],
-  // popupAnchor: [-3, -76],
+  popupAnchor: [0, -100],
 };
 
 /** Map tiles
@@ -22,4 +22,9 @@ export const TILES = {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   },
+};
+
+export const POPUP_TEXT = {
+  pt: 'Direções',
+  en: 'See Directions',
 };

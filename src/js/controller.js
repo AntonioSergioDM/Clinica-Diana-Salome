@@ -65,6 +65,7 @@ sliderView.create(model.state.testimonials);
 ///////////////////// MAP /////////////////////
 import map from './Views/map';
 map.loadMap();
+map.setLang(model.state.language);
 
 /////////////// OPENING HOURS ///////////////
 import openHoursView from './Views/openHoursView';
