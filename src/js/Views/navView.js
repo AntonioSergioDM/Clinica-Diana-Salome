@@ -11,6 +11,7 @@ class NavView extends View {
     super();
     this._addHandlerHover();
 
+    // Sticky
     const navHeight = this._nav.getBoundingClientRect().height;
     const obsOptions = {
       root: null, //null corresponds to viewport

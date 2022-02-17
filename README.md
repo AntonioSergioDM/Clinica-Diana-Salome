@@ -10,8 +10,8 @@
   - [x] Data
 - Services
   - Logic
-    - [ ] Render
-    - [ ] Action?
+    - [x] Render
+    - [x] Action
 - Map
   - Logic
     - [x] Render
@@ -20,7 +20,7 @@
   - [ ] Style ([TILES.url](https://leaflet-extras.github.io/leaflet-providers/preview/*/))
 - Testimonials
   - [x] Logic
-  - [ ] Style - Arrow buttons
+  - [ ] Style - Fix arrow buttons (to svg?)
   - [ ] Data
 - FAQ
   - [ ] Logic
@@ -51,6 +51,8 @@
   - [ ] Images
 
 ## Other TODOS
+
+Sperate the sections? only one at a time?
 
 ## License
 

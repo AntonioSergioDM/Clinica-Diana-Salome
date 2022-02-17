@@ -1,5 +1,3 @@
-import { imgPaths } from './config';
-
 //
 //////////////////////////////////////////////
 //////////////////////////////////////////////
@@ -34,92 +32,31 @@ tabsContainer.addEventListener('click', function (e) {
 
 //
 
-////////////// Smooth Scrolling //////////////
-// Elements
-// const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-
-// Event Handlers
-/// 'Learn more' button
-// btnScrollTo.addEventListener('click', function (e) {
-//   section1.scrollIntoView({ behavior: 'smooth' });
-// });
-
-//
-//////////////////////////////////////////////
-/////// Revealing elements on scroll  ////////
-/// Elements
-const allSections = document.querySelectorAll('.section');
-
-/// Intersection Observer
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-
-  entry.target.classList.remove('section--hidden');
-
-  //only works once
-  observer.unobserve(entry.target);
-};
-
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.1,
-});
-
-allSections.forEach(section => {
-  section.classList.add('section--hidden');
-  sectionObserver.observe(section);
-});
-
 /////////////////////////////////////////////
 //
 //////////////////////////////////////////////
-/////////// Lazy Loading Images /////////////
-/// Elements
-const imgTargets = document.querySelectorAll('img[data-src]');
-
-const loadImg = function (entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-
-  // Replace src with data-src
-  entry.target.src = imgPaths[`imgLazy${entry.target.dataset.src}`];
-
-  entry.target.addEventListener('load', function () {
-    entry.target.classList.remove('lazy-img');
-  });
-  // Remove observer
-  observer.unobserve(entry.target);
-};
-
-const imgObserver = new IntersectionObserver(loadImg, {
-  root: null,
-  threshold: 0,
-  rootMargin: '+200px',
-});
-imgTargets.forEach(img => {
-  imgObserver.observe(img);
-});
-
 /////////////////////////////////////////////
 //
 import * as model from './model';
+
+/////////////////// SERVICES /////////////////////
+import servicesView from './Views/servicesView';
+servicesView.render(model.state.services);
 
 //////////////// PAGE NAVIGATION ////////////////
 import navView from './Views/navView';
 const controlNavLinkClick = function (id) {
   if (id !== '#')
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  else modalView.openWindow();
 };
+
 navView.render(model.state.labels);
 navView.addHandlerLinkClicked(controlNavLinkClick);
 
 //////////////// SECTION TITLES ////////////////
-import sectionTitlesView from './Views/sectionTitlesView';
-sectionTitlesView.render(model.state.labels);
+import sectionView from './Views/sectionView';
+sectionView.render(model.state.labels);
 
 //////////////////// SLIDER ////////////////////
 import sliderView from './Views/sliderView';

@@ -12,7 +12,7 @@ class ModalView extends View {
 
   constructor() {
     super();
-    this._addHandlerShowWindow();
+    // this._addHandlerShowWindow();
     this._addHandlerHideWindow();
   }
 
@@ -31,13 +31,13 @@ class ModalView extends View {
     );
   }
 
-  _addHandlerShowWindow() {
-    this._btnsOpenModal.forEach(
-      function (btn) {
-        btn.addEventListener('click', this._toggleWindow.bind(this));
-      }.bind(this)
-    );
-  }
+  // _addHandlerShowWindow() {
+  //   this._btnsOpenModal.forEach(
+  //     function (btn) {
+  //       btn.addEventListener('click', this._toggleWindow.bind(this));
+  //     }.bind(this)
+  //   );
+  // }
 
   _addHandlerHideWindow() {
     [this._btnCloseModal, this._overlayElement].forEach(el =>
@@ -54,6 +54,9 @@ class ModalView extends View {
 
   closeWindow() {
     if (this.isWindowOpen()) this._toggleWindow();
+  }
+  openWindow() {
+    if (!this.isWindowOpen()) this._toggleWindow();
   }
 
   isWindowOpen() {
