@@ -17,6 +17,15 @@
     transition: $transition-time;
   }
 
+  &__langs {
+    // justify-content: flex-start;
+    margin-left: 1rem;
+    margin-right: auto;
+  }
+  &__lang {
+    margin-left: 1rem;
+  }
+
   &__links {
     display: flex;
     align-items: center;

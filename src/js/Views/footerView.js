@@ -5,6 +5,10 @@ import insta from 'url:../../img/instagram.png';
 class FooterView extends View {
   _parentElement = document.querySelector('.footer__nav');
 
+  update(...args) {
+    this.render(...args);
+  }
+
   _generateMarkup() {
     return (
       this._data.map(data => this._generateItem(data)).join('') +

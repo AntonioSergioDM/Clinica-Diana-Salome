@@ -25,6 +25,18 @@ class NavView extends View {
     stickyObserver.observe(this._nav.parentElement);
   }
 
+  addHandlerLanguage(handler) {
+    this._nav
+      .querySelector('.nav__langs')
+      .addEventListener('click', function (e) {
+        e.preventDefault();
+        if (!e.target.classList.contains('nav__lang')) return;
+
+        const lang = e.target.textContent;
+        handler(lang);
+      });
+  }
+
   addHandlerLinkClicked(handler) {
     this._parentElement.addEventListener(
       'click',

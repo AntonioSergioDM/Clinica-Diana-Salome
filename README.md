@@ -6,13 +6,13 @@
   - [x] Logic
 - Navigation Tab
   - [x] Logic
-  - [ ] Language buttons
+  - [x] Language buttons
 - Open hours
   - [x] Logic
 - Services
   - [x] Logic
   - [x] Action - Link to wiki
-- Map :map:
+- Map
   - [x] Logic
   - [x] Action - Open Maps with directions
 - Testimonials
@@ -20,8 +20,8 @@
 - FAQ
   - [ ] Logic
 - Contact form:
+  - [ ] Logic
   - [x] Modal Logic
-  - [ ] Multi-language support
   - [ ] Choose how to contact:
     - ~~mailto + form~~
     - mailto + name input
@@ -64,11 +64,12 @@
   - [ ] Fix arrow buttons (to svg?)
 - Nav
   - [ ] Opaque (change color?) on hover
-  -
+  - [ ] Language buttons
 
 ## Other TODOS
 
 - [ ] Mobile compatible
+- [ ] Review footers update logic
 - [ ] ??? Lazy-load data using fetch and json
 - [ ] ??? 'Separate' the sections - only one at a time
 - [ ] ??? Team

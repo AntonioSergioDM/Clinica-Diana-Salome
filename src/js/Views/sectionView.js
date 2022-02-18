@@ -29,8 +29,8 @@ class SectionTitlesView extends View {
   render(data, ...others) {
     this._overrideSuper(super.render.bind(this), data, ...others);
   }
-  upload(data, ...others) {
-    this._overrideSuper(super.upload.bind(this), data, ...others);
+  update(data, ...others) {
+    this._overrideSuper(super.update.bind(this), data, ...others);
   }
 
   _overrideSuper(superFunction, data, ...others) {

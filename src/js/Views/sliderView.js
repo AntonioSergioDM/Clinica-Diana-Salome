@@ -3,11 +3,11 @@ import View from './View';
 class SliderView extends View {
   _parentElement = document.querySelector('.slider');
 
-  create = async function (data) {
-    this.render(data, 'beforeend');
+  render(data) {
+    super.render(data, 'beforeend');
     this._init();
     this._addEventHandlers();
-  };
+  }
 
   _init() {
     this._slides = this._parentElement.querySelectorAll('.slide');

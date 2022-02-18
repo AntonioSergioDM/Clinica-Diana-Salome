@@ -4,6 +4,10 @@ import Holidays from 'date-holidays';
 class OpenHoursView extends View {
   _parentElement = document.querySelector('.open-hours');
 
+  update(...args) {
+    this.render(...args);
+  }
+
   _generateMarkup() {
     const hd = new Holidays('PT');
     const today = hd.isHoliday(Date.now()) ? 0 : new Date().getDay(); // Sunday is 0

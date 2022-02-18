@@ -28,3 +28,11 @@ export const POPUP_TEXT = {
   pt: 'Direções',
   en: 'See Directions',
 };
+
+export const POPUP_OPTIONS = {
+  maxWdth: 250,
+  minWidth: 100,
+  autoClose: true,
+  closeOnClick: false,
+  // className: `${workout.type}-popup`,
+};

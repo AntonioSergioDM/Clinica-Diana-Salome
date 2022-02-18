@@ -38,46 +38,49 @@
 /////////////////////////////////////////////
 //
 import * as model from './model';
+import navView from './Views/navView';
+import openHoursView from './Views/openHoursView';
+import sectionView from './Views/sectionView';
+import servicesView from './Views/servicesView';
+import map from './Views/map';
+import sliderView from './Views/sliderView';
+import footerView from './Views/footerView';
+import modalView from './Views/modalView';
 
 /////////////////// SERVICES /////////////////////
-import servicesView from './Views/servicesView';
-servicesView.render(model.state.services);
 
 //////////////// PAGE NAVIGATION ////////////////
-import navView from './Views/navView';
 const controlNavLinkClick = function (id) {
   if (id !== '#')
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   else modalView.openWindow();
 };
+const controlLang = function (lang) {
+  if (lang === model.state.language) return;
 
-navView.render(model.state.labels);
-navView.addHandlerLinkClicked(controlNavLinkClick);
+  model.changeLang(lang);
+
+  navView.update(model.state.labels);
+  openHoursView.update(model.state.openHours);
+  sectionView.update(model.state.labels);
+  footerView.update(model.state.footer);
+  servicesView.update(model.state.services);
+  sliderView.update(model.state.testimonials);
+
+  map.setLang(model.state.language);
+};
 
 //////////////// SECTION TITLES ////////////////
-import sectionView from './Views/sectionView';
-sectionView.render(model.state.labels);
 
 //////////////////// SLIDER ////////////////////
-import sliderView from './Views/sliderView';
-sliderView.create(model.state.testimonials);
 
 ///////////////////// MAP /////////////////////
-import map from './Views/map';
-map.loadMap();
-map.setLang(model.state.language);
 
 /////////////// OPENING HOURS ///////////////
-import openHoursView from './Views/openHoursView';
-openHoursView.render(model.state.openHours);
 
 /////////////// FOOTER ///////////////
-import footerView from './Views/footerView';
-footerView.render(model.state.footer);
 
 //////////////// MODAL WINDOW ////////////////
-import modalView from './Views/modalView';
-
 const controlSendEmail = function (data) {
   const { name, phone, email, message } = data;
   console.log(name, email, phone, message);
@@ -88,3 +91,22 @@ const controlSendEmail = function (data) {
   // window.open('tel:259 104 774');
 };
 modalView.addHandlerSubmitForm(controlSendEmail);
+
+const init = function () {
+  // Render
+  navView.render(model.state.labels);
+  openHoursView.render(model.state.openHours);
+  sectionView.render(model.state.labels);
+  footerView.render(model.state.footer);
+  servicesView.render(model.state.services);
+  sliderView.render(model.state.testimonials);
+
+  // Map
+  map.loadMap();
+  map.setLang(model.state.language);
+
+  // Handlers
+  navView.addHandlerLinkClicked(controlNavLinkClick);
+  navView.addHandlerLanguage(controlLang);
+};
+init();
