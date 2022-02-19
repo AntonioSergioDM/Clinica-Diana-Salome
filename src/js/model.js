@@ -3,6 +3,7 @@ import { CLOSE_LABELS, OPEN_HOURS, WEEK_LABELS } from '../data/openHours';
 import { TESTIMONIALS } from '../data/testimonials';
 import { LANG_FOOTER, LANG_LABELS } from './Config/langConfig';
 import { LEARN_MORE_BTN, SERVICES } from '../data/services';
+import { FAQ } from '../data/faq';
 
 // import OPEN_HOURS_URL from 'url:../data/test.json.data';
 // (async function (url) {
@@ -17,6 +18,7 @@ export const state = {
   openHours: {},
   services: [],
   testimonials: [],
+  faq: [],
   footer: {},
 };
 
@@ -43,12 +45,16 @@ const loadServices = function () {
 const loadTestimonials = function () {
   state.testimonials = TESTIMONIALS[state.language];
 };
+const loadFAQ = function () {
+  state.faq = FAQ[state.language];
+};
 
 const load = function () {
   loadLabels();
   loadOpenHours();
   loadServices();
   loadTestimonials();
+  loadFAQ();
 };
 
 /**

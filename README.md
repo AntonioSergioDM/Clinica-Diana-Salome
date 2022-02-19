@@ -54,25 +54,27 @@
 
 ## Website Style
 
-- [ ] Colors
+- [ ] Colors ([\_base.scss](./src/sass/_base.scss))
 - [ ] Images
 - Map
-  - [ ] Icon
-  - [ ] Design ([TILES.url](https://leaflet-extras.github.io/leaflet-providers/preview/*/))
-  - [ ] Popup
+  - [ ] Icon ([markerIconPath](./src/js/Config/mapConfig.js))
+  - [ ] Design ([TILES.url](./src/js/Config/mapConfig.js) - providers)
+  - [ ] Popup ([\_map.scss](./src/sass/_map.scss))
 - Testimonials
   - [ ] Fix arrow buttons (to svg?)
 - Nav
-  - [ ] Opaque (change color?) on hover
-  - [ ] Language buttons
+  - [ ] Opaque (change color?) on hover ([\_nav.scss](./src/sass/_nav.scss))
+  - [ ] Language buttons ([\_nav.scss](./src/sass/_nav.scss))
 
 ## Other TODOS
 
 - [ ] Mobile compatible
-- [ ] Review footers update logic
 - [ ] ??? Lazy-load data using fetch and json
 - [ ] ??? 'Separate' the sections - only one at a time
 - [ ] ??? Team
+- Code
+  - [ ] Review footers update logic ([footer.js](./src/js/Views/footerView.js))
+  - [ ] ??? Join all load functions in [model.js](./src/js/model.js)
 
 ## License
 

@@ -1,0 +1,22 @@
+.faq {
+  display: block;
+  list-style: none;
+  margin: auto;
+  max-width: 23cm;
+
+  &__question {
+    border: 2px;
+    border-color: $color-grey-dark-1;
+    cursor: pointer;
+  }
+
+  &__answer {
+    display: none;
+    margin-left: 2rem;
+    text-align: justify;
+
+    &--active {
+      display: block;
+    }
+  }
+}

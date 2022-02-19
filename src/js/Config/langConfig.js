@@ -13,6 +13,10 @@ export const LANG_LABELS = {
       title: 'Testemunhos',
       intro: 'O que os nossos pacientes dizem de nós',
     },
+    sec4: {
+      title: 'FAQ',
+      intro: 'O que os nos custumam perguntar',
+    },
     contact: 'Contacte-nos',
   },
   en: {
@@ -27,6 +31,10 @@ export const LANG_LABELS = {
     sec3: {
       title: 'Testimonials',
       intro: 'Our patients opinions',
+    },
+    sec4: {
+      title: 'FAQ',
+      intro: 'Questions for us',
     },
     contact: 'Contact us',
   },

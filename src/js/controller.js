@@ -46,8 +46,7 @@ import map from './Views/map';
 import sliderView from './Views/sliderView';
 import footerView from './Views/footerView';
 import modalView from './Views/modalView';
-
-/////////////////// SERVICES /////////////////////
+import faqView from './Views/faqView';
 
 //////////////// PAGE NAVIGATION ////////////////
 const controlNavLinkClick = function (id) {
@@ -63,22 +62,32 @@ const controlLang = function (lang) {
   navView.update(model.state.labels);
   openHoursView.update(model.state.openHours);
   sectionView.update(model.state.labels);
-  footerView.update(model.state.footer);
   servicesView.update(model.state.services);
   sliderView.update(model.state.testimonials);
+  faqView.update(model.state.faq);
+  footerView.update(model.state.footer);
 
   map.setLang(model.state.language);
 };
 
-//////////////// SECTION TITLES ////////////////
+////////////////// OPENING HOURS //////////////////
 
-//////////////////// SLIDER ////////////////////
+///////////////// SECTION TITLES /////////////////
+
+/////////////////// SERVICES /////////////////////
 
 ///////////////////// MAP /////////////////////
 
-/////////////// OPENING HOURS ///////////////
+//////////////////// SLIDER ////////////////////
 
-/////////////// FOOTER ///////////////
+///////////////////// FAQ /////////////////////
+document.querySelector('.faq').addEventListener('click', function (e) {
+  const question = e.target.closest('.faq__question');
+
+  if (!question) return;
+
+  faqView.showAnswer(question.dataset.id);
+});
 
 //////////////// MODAL WINDOW ////////////////
 const controlSendEmail = function (data) {
@@ -90,16 +99,21 @@ const controlSendEmail = function (data) {
 
   // window.open('tel:259 104 774');
 };
-modalView.addHandlerSubmitForm(controlSendEmail);
 
+/////////////////// FOOTER ///////////////////
+
+/////////////////////////////////////////////////
+//////////////// Initialization ////////////////
+///////////////////////////////////////////////
 const init = function () {
   // Render
   navView.render(model.state.labels);
   openHoursView.render(model.state.openHours);
   sectionView.render(model.state.labels);
-  footerView.render(model.state.footer);
   servicesView.render(model.state.services);
   sliderView.render(model.state.testimonials);
+  faqView.render(model.state.faq);
+  footerView.render(model.state.footer);
 
   // Map
   map.loadMap();
@@ -108,5 +122,6 @@ const init = function () {
   // Handlers
   navView.addHandlerLinkClicked(controlNavLinkClick);
   navView.addHandlerLanguage(controlLang);
+  modalView.addHandlerSubmitForm(controlSendEmail);
 };
 init();
