@@ -18,7 +18,7 @@
 - Testimonials
   - [x] Logic
 - FAQ
-  - [ ] Logic
+  - [x] Logic
 - Contact form:
   - [ ] Logic
   - [x] Modal Logic
@@ -32,6 +32,10 @@
   - [x] Logic
   - [ ] Decide what to put
   - [ ] Action - Do something on click
+- About Us
+  - [ ] Logic
+- Team
+  - [ ] Logic
 - Multi-languages
   - Logic
     - [x] Titles and intros
@@ -40,8 +44,10 @@
     - [x] Testimonials
     - [x] Map
     - [ ] Contacts
-    - [ ] FAQ
+    - [x] FAQ
     - [x] Footer
+    - [ ] About Us
+    - [ ] Team
   - Data - pt & en - add more in the Config and data folders
     - [x] Titles and intros
     - [x] Open hours
@@ -51,6 +57,8 @@
     - [ ] Contacts
     - [ ] FAQ
     - [x] Footer
+    - [ ] About Us
+    - [ ] Team
 
 ## Website Style
 
@@ -65,6 +73,9 @@
 - Nav
   - [ ] Opaque (change color?) on hover ([\_nav.scss](./src/sass/_nav.scss))
   - [ ] Language buttons ([\_nav.scss](./src/sass/_nav.scss))
+- FAQ
+  - [ ] All style ([\_faq.scss](./src/sass/_faq.scss))
+  -
 
 ## Other TODOS
 

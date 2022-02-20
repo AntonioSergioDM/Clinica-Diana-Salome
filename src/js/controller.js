@@ -81,13 +81,18 @@ const controlLang = function (lang) {
 //////////////////// SLIDER ////////////////////
 
 ///////////////////// FAQ /////////////////////
-document.querySelector('.faq').addEventListener('click', function (e) {
-  const question = e.target.closest('.faq__question');
+const controlFAQ = function (id) {
+  if (faqView.isActive(id)) {
+    faqView.hideAnswer(id);
+    return;
+  }
 
-  if (!question) return;
+  model.state.faq.forEach((_, i) => {
+    if (i != id) faqView.hideAnswer(i);
+  });
 
-  faqView.showAnswer(question.dataset.id);
-});
+  faqView.showAnswer(id, { behavior: 'smooth' });
+};
 
 //////////////// MODAL WINDOW ////////////////
 const controlSendEmail = function (data) {
@@ -122,6 +127,7 @@ const init = function () {
   // Handlers
   navView.addHandlerLinkClicked(controlNavLinkClick);
   navView.addHandlerLanguage(controlLang);
+  faqView.addHandlerQuestion(controlFAQ);
   modalView.addHandlerSubmitForm(controlSendEmail);
 };
 init();

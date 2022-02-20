@@ -5,15 +5,19 @@
   max-width: 23cm;
 
   &__question {
-    border: 2px;
-    border-color: $color-grey-dark-1;
+    // padding-top: $nav-heigth;
+    // margin: $nav-heigth 0;
+    // border-style: inset;
+    // border: 2px;
+    border-color: black; //$color-grey-dark-1;
     cursor: pointer;
+    font-size: 2rem;
   }
 
   &__answer {
     display: none;
     margin-left: 2rem;
-    text-align: justify;
+    font-size: 1.5rem;
 
     &--active {
       display: block;
