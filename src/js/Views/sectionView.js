@@ -37,9 +37,9 @@ class SectionTitlesView extends View {
     this._allData = data;
     this._sections.forEach(
       function (section) {
-        const i = section.getAttribute('id').split('-').at(-1);
+        const id = section.getAttribute('id').split('-').at(-1);
         this._parentElement = section.querySelector('.section__title');
-        superFunction(data[`sec${i}`], ...others);
+        superFunction(data[id], ...others);
       }.bind(this)
     );
   }

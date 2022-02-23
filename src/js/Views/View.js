@@ -1,6 +1,4 @@
-// Import icons - the url to use to acess it because of using parcel to compress, transpilling and polyfiling our code
-
-import icons from 'url:../../img/icons.svg';
+import { ICON_PATH } from '../config';
 
 /**
  * Defines the functions and paths common to all the Views
@@ -13,7 +11,7 @@ export default class View {
    * Path to icons - because of parcel
    * @protected
    */
-  _icons = icons;
+  _icons = ICON_PATH;
 
   // Default messages - to be overwrite in the children classes
   _errorMessage = 'Something went wrong :(';

@@ -1,6 +1,7 @@
-import img1 from 'url:../img/logo.jpg';
-import img2 from 'url:../img/facebook.png';
-import img3 from 'url:../img/instagram.png';
+import img1 from 'url:../img/teamMember.png';
+import img2 from 'url:../img/teamMember1.png';
+import img3 from 'url:../img/teamMember.png';
+
 export const TESTIMONIALS = {
   pt: [
     {

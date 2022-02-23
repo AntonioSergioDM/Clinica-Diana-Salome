@@ -2,24 +2,25 @@
 
 ## Website Features
 
-- Section Titles and Intros
+- [Section Titles and Intros](./src/js/Views/sectionView.js)
   - [x] Logic
-- Navigation Tab
+- [Navigation Tab](./src/js/Views/navView.js)
   - [x] Logic
   - [x] Language buttons
-- Open hours
+- [Open hours](./src/js/Views/openHoursView.js)
   - [x] Logic
-- Services
+- [Services](./src/js/Views/servicesView.js)
   - [x] Logic
   - [x] Action - Link to wiki
-- Map
+- [Map](./src/js/Views/map.js)
   - [x] Logic
   - [x] Action - Open Maps with directions
-- Testimonials
+- [Testimonials](./src/js/Views/sliderView.js)
   - [x] Logic
-- FAQ
+- [FAQ](./src/js/Views/faqView.js)
   - [x] Logic
-- Contact form:
+  - [ ] Action - Smooth scrolling (without nav bar over the question)
+- [Contact form](./src/js/Views/modalView.js):
   - [ ] Logic
   - [x] Modal Logic
   - [ ] Choose how to contact:
@@ -28,13 +29,15 @@
     - mailto link + phone link
     - PostMail API
     - Form submition with netlify
-- Footer
-  - [x] Logic
-  - [ ] Decide what to put
-  - [ ] Action - Do something on click
-- About Us
+- [Contact]()
   - [ ] Logic
-- Team
+- [Footer](./src/js/Views/footerView.js)
+  - [ ] Logic
+  - [ ] Decide what to put
+  - [ ] Action - Do something on click (w/smooth scroll)
+- [About Us]()
+  - [ ] Logic
+- [Team]()
   - [ ] Logic
 - Multi-languages
   - Logic
@@ -75,17 +78,20 @@
   - [ ] Language buttons ([\_nav.scss](./src/sass/_nav.scss))
 - FAQ
   - [ ] All style ([\_faq.scss](./src/sass/_faq.scss))
-  -
+- Footer
+  - [ ] Social media
 
 ## Other TODOS
 
+- [ ] Polyfilling and transpiling
 - [ ] Mobile compatible
-- [ ] ??? Lazy-load data using fetch and json
-- [ ] ??? 'Separate' the sections - only one at a time
-- [ ] ??? Team
+- [ ] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)
+- [ ] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)
+- [ ] ¿¿¿ Dark mode ???
 - Code
-  - [ ] Review footers update logic ([footer.js](./src/js/Views/footerView.js))
-  - [ ] ??? Join all load functions in [model.js](./src/js/model.js)
+  - [ ] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???
+  - [ ] ¿¿¿ Create parent class to the nav&footer bars ???
+  - [ ] contact us button reference
 
 ## License
 

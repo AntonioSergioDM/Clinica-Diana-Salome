@@ -1,9 +1,10 @@
 import { AVAIL_LANG, DEFAULT_LANG, LOGO_URL, WEEK_ORDER } from './config';
 import { CLOSE_LABELS, OPEN_HOURS, WEEK_LABELS } from '../data/openHours';
 import { TESTIMONIALS } from '../data/testimonials';
-import { LANG_FOOTER, LANG_LABELS } from './Config/langConfig';
+import { FOOTER, LANG_LABELS, NAV } from './Config/langConfig';
 import { LEARN_MORE_BTN, SERVICES } from '../data/services';
 import { FAQ } from '../data/faq';
+import { CHRONOLOGY } from '../data/about';
 
 // import OPEN_HOURS_URL from 'url:../data/test.json.data';
 // (async function (url) {
@@ -19,14 +20,23 @@ export const state = {
   services: [],
   testimonials: [],
   faq: [],
-  footer: {},
+  nav: [],
+  footer: [],
+  chrono: [],
 };
 
 const loadLabels = function () {
   state.labels = LANG_LABELS[state.language];
   state.labels.logo = LOGO_URL;
 
-  state.footer = LANG_FOOTER[state.language];
+  state.footer = FOOTER.map(id => ({
+    ...state.labels[id],
+    id,
+  }));
+  state.nav = NAV.map(id => ({
+    ...state.labels[id],
+    id,
+  }));
 };
 const loadOpenHours = function () {
   WEEK_ORDER.forEach(
@@ -48,6 +58,9 @@ const loadTestimonials = function () {
 const loadFAQ = function () {
   state.faq = FAQ[state.language];
 };
+const loadcChrono = function () {
+  state.chrono = CHRONOLOGY[state.language];
+};
 
 const load = function () {
   loadLabels();
@@ -55,6 +68,7 @@ const load = function () {
   loadServices();
   loadTestimonials();
   loadFAQ();
+  loadcChrono();
 };
 
 /**

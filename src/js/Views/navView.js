@@ -72,6 +72,9 @@ class NavView extends View {
       this._parentElement.querySelectorAll('.nav__link').forEach(element => {
         if (!element.isEqualNode(link)) element.style.opacity = opacity;
       });
+      this._nav.querySelectorAll('.nav__lang').forEach(element => {
+        if (!element.isEqualNode(link)) element.style.opacity = opacity;
+      });
       this._logo.style.opacity = opacity;
     };
   }
@@ -84,23 +87,27 @@ class NavView extends View {
   }
 
   _generateMarkup() {
+    return this._data.map(data => this._generateItem(data)).join(''); // equal to footerView
+  }
+  _generateItem(data) {
+    if (data.id === 'contact') return this._generateBtnContact(data);
+
     return `
-      <li class="nav__item">
-        <a class="nav__link" href="#section--1">${this._data.sec1.title}</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="#section--2">${this._data.sec2.title}</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="#section--3">${this._data.sec3.title}</a>
-      </li>
-      <li class="nav__item">
-        <a 
-          class="nav__link nav__link--btn btn--show-modal" 
-          href="#">
-            ${this._data.contact}
-        </a>
-      </li>
+    <li class="nav__item">
+      <a class="nav__link" href="#section--${data.id}">${data.title}</a>
+    </li>
+    `;
+  }
+
+  _generateBtnContact(data) {
+    return `
+    <li class="nav__item">
+      <a 
+        class="nav__link nav__link--btn btn--show-modal" 
+        href="#">
+          ${data.nav}
+      </a>
+    </li>
     `;
   }
 }

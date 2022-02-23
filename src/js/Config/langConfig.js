@@ -1,59 +1,70 @@
 /** Labels to use based on language */
 export const LANG_LABELS = {
   pt: {
-    sec1: {
+    services: {
       title: 'Tratamentos',
       intro: 'Os tratamentos que temos para oferecer',
     },
-    sec2: {
+    map: {
       title: 'Localização',
       intro: 'Venha ter connosco',
     },
-    sec3: {
+    testimonials: {
       title: 'Testemunhos',
       intro: 'O que os nossos pacientes dizem de nós',
     },
-    sec4: {
+    faq: {
       title: 'FAQ',
       intro: 'O que os nos custumam perguntar',
     },
-    contact: 'Contacte-nos',
+    about: {
+      title: 'Sobre nós',
+      intro: 'As nossas conquistas',
+    },
+    team: {
+      title: 'Equipa',
+      intro: 'A nossa fantástica equipa',
+    },
+    contact: {
+      title: 'Contactos',
+      intro: '',
+      nav: 'Contacte-nos',
+    },
   },
   en: {
-    sec1: {
+    services: {
       title: 'Treatments',
       intro: 'Treatments to offer',
     },
-    sec2: {
+    map: {
       title: 'Location',
       intro: 'Come to us',
     },
-    sec3: {
+    testimonials: {
       title: 'Testimonials',
       intro: 'Our patients opinions',
     },
-    sec4: {
+    faq: {
       title: 'FAQ',
       intro: 'Questions for us',
     },
-    contact: 'Contact us',
+    about: {
+      title: 'About Us',
+      intro: 'Our achievments',
+    },
+    team: {
+      title: 'Team',
+      intro: 'Our amazing team',
+    },
+    contact: {
+      title: 'Contacts',
+      intro: '',
+      nav: 'Contact us',
+    },
   },
 };
 
-/** footer elements names */
-export const LANG_FOOTER = {
-  pt: [
-    { name: 'Sobre nós' },
-    { name: 'Tratamentos' },
-    { name: 'Equipa' },
-    { name: 'FAQ' },
-    { name: 'Contactos' },
-  ],
-  en: [
-    { name: 'About us' },
-    { name: 'Treatments' },
-    { name: 'Team' },
-    { name: 'FAQ' },
-    { name: 'Contacts' },
-  ],
-};
+/** nav section names */
+export const NAV = ['about', 'services', 'map', 'contact'];
+/** footer section names */
+export const FOOTER = ['about', 'services', 'team', 'faq', 'contact'];

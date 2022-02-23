@@ -1,0 +1,89 @@
+.chrono {
+  // display: grid;
+  // grid-template-columns: 4fr 1fr 4fr;
+  transform: translate(0%, -3vh);
+  text-align: center;
+  vertical-align: middle;
+  width: 90%;
+  margin: auto;
+
+  &__year {
+    // grid-column: 1 / span 3;
+
+    & .year {
+      padding: 1rem 2rem;
+      font-size: 4rem;
+      border-radius: 6rem;
+      border-color: $color-primary;
+      border-width: 1rem;
+      // background-color: $color-grey-light-1;
+    }
+  }
+
+  &__space {
+    height: 15rem;
+    background-color: none; //$color-primary;
+    &-half {
+      height: 7rem;
+      background-color: none;
+    }
+  }
+  &__point {
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    grid-column: 2;
+    justify-items: center;
+
+    & img {
+      max-width: 90%;
+    }
+
+    // date
+    & h4 {
+      color: $color-primary;
+    }
+    // text
+    & h3 {
+      color: $color-grey-dark-2;
+    }
+  }
+  &__middle {
+    grid-column: 2;
+    // font-size: 1rem;
+    // height: 4rem;
+    // width: 8rem;
+    fill: $color-primary;
+    background-color: $color-grey-light-1;
+    margin: auto;
+  }
+  &__left {
+    grid-column: 1;
+    text-align: right;
+    font-size: 3rem;
+    margin: auto;
+    justify-self: right;
+  }
+  &__right {
+    grid-column: 3;
+    text-align: left;
+    font-size: 3rem;
+    margin: auto;
+    justify-self: left;
+  }
+
+  &__line {
+    position: absolute;
+    top: 2%;
+    left: 48.5%;
+    width: 3%;
+    height: 90%;
+    background-color: $color-primary;
+    z-index: -1;
+  }
+  .placeholder {
+    // display: block;
+    width: 70vw;
+    margin-left: 17vw;
+    // margin-right: auto;
+  }
+}

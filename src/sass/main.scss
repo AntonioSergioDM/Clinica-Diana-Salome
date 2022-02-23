@@ -6,6 +6,10 @@
 
 @import 'section';
 
+@import 'chrono';
+
+@import 'features';
+
 @import 'map';
 
 @import 'slider';
@@ -16,5 +20,6 @@
 @import 'modal';
 
 @import 'footer';
-@import 'operations'; //not used
-@import 'features';
+
+//not used
+@import 'operations';

@@ -41,12 +41,13 @@ import * as model from './model';
 import navView from './Views/navView';
 import openHoursView from './Views/openHoursView';
 import sectionView from './Views/sectionView';
+import chronoView from './Views/chronoView';
 import servicesView from './Views/servicesView';
 import map from './Views/map';
 import sliderView from './Views/sliderView';
+import faqView from './Views/faqView';
 import footerView from './Views/footerView';
 import modalView from './Views/modalView';
-import faqView from './Views/faqView';
 
 //////////////// PAGE NAVIGATION ////////////////
 const controlNavLinkClick = function (id) {
@@ -59,10 +60,11 @@ const controlLang = function (lang) {
 
   model.changeLang(lang);
 
-  navView.update(model.state.labels);
+  navView.update(model.state.nav);
   openHoursView.update(model.state.openHours);
   sectionView.update(model.state.labels);
   servicesView.update(model.state.services);
+  chronoView.update(model.state.chrono);
   sliderView.update(model.state.testimonials);
   faqView.update(model.state.faq);
   footerView.update(model.state.footer);
@@ -112,9 +114,10 @@ const controlSendEmail = function (data) {
 ///////////////////////////////////////////////
 const init = function () {
   // Render
-  navView.render(model.state.labels);
+  navView.render(model.state.nav);
   openHoursView.render(model.state.openHours);
   sectionView.render(model.state.labels);
+  chronoView.render(model.state.chrono);
   servicesView.render(model.state.services);
   sliderView.render(model.state.testimonials);
   faqView.render(model.state.faq);
