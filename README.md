@@ -35,8 +35,9 @@
   - [ ] Logic
   - [ ] Decide what to put
   - [ ] Action - Do something on click (w/smooth scroll)
-- [About Us]()
-  - [ ] Logic
+- [About Us](./src/js/Views/chronoView.js)
+  - [x] Logic
+  - [x] Action - scroll smooth
 - [Team]()
   - [ ] Logic
 - Multi-languages
@@ -46,7 +47,8 @@
     - [x] Services
     - [x] Testimonials
     - [x] Map
-    - [ ] Contacts
+    - [ ] Contact
+    - [ ] Contact form
     - [x] FAQ
     - [x] Footer
     - [ ] About Us
@@ -57,7 +59,8 @@
     - [ ] Services
     - [ ] Testimonials
     - [x] Map
-    - [ ] Contacts
+    - [ ] Contact
+    - [ ] Contact form
     - [ ] FAQ
     - [x] Footer
     - [ ] About Us
@@ -75,7 +78,7 @@
   - [ ] Fix arrow buttons (to svg?)
 - Nav
   - [ ] Opaque (change color?) on hover ([\_nav.scss](./src/sass/_nav.scss))
-  - [ ] Language buttons ([\_nav.scss](./src/sass/_nav.scss))
+  - [ ] Language buttons underline ([\_nav.scss](./src/sass/_nav.scss))
 - FAQ
   - [ ] All style ([\_faq.scss](./src/sass/_faq.scss))
 - Footer

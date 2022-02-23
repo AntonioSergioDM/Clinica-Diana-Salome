@@ -4,6 +4,20 @@ import View from './View';
 class ChronoView extends View {
   _parentElement = document.querySelector('.chrono');
 
+  constructor() {
+    super();
+    this.addHandlerYear();
+  }
+
+  addHandlerYear() {
+    this._parentElement.addEventListener('click', function (e) {
+      const element = e.target;
+
+      if (!element.classList.contains('year')) return;
+
+      element.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
   update(...args) {
     return this.render(...args);
   }
