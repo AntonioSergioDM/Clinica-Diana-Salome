@@ -27,7 +27,7 @@ export const LANG_LABELS = {
     },
     contacts: {
       title: 'Contactos',
-      intro: '',
+      intro: 'Fale connosco',
       nav: 'Contacte-nos',
     },
   },
@@ -58,7 +58,7 @@ export const LANG_LABELS = {
     },
     contacts: {
       title: 'Contacts',
-      intro: '',
+      intro: 'Talk to us',
       nav: 'Contact us',
     },
   },

@@ -10,10 +10,10 @@ class SectionTitlesView extends View {
 
   constructor() {
     super();
-    this._sections.forEach(section => {
-      section.classList.add('section--hidden');
-      this._observer.observe(section);
-    });
+    // this._sections.forEach(section => {
+    //   section.classList.add('section--hidden');
+    //   this._observer.observe(section);
+    // });
   }
 
   _revealSection(entries, observer) {

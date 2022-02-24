@@ -33,15 +33,7 @@ class ChronoView extends View {
             }
           }.bind(this)
         )
-        .join('') +
-      this._generateItem({
-        date: 'Hoje',
-        text: 'Estamos à sua espera',
-        image: IMG_TODAY,
-        icon: 'icon-disc',
-        // icon: 'icon-more-horizontal',
-      }) +
-      this._generateLine()
+        .join('') + this._generateLine()
     );
   }
 

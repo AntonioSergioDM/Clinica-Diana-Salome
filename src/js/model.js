@@ -4,8 +4,9 @@ import { TESTIMONIALS } from '../data/testimonials';
 import { FOOTER, LANG_LABELS, NAV } from './Config/langConfig';
 import { LEARN_MORE_BTN, SERVICES } from '../data/services';
 import { FAQ } from '../data/faq';
-import { CHRONOLOGY } from '../data/about';
+import { CHRONOLOGY, TODAY_ACHIEV } from '../data/about';
 import { TEAM } from '../data/team';
+import { CONTACTS } from '../data/contacts';
 
 // import OPEN_HOURS_URL from 'url:../data/test.json.data';
 // (async function (url) {
@@ -25,6 +26,7 @@ export const state = {
   nav: [],
   footer: [],
   team: { members: [], description: '', _descriptions: [] },
+  contacts: [],
 };
 
 const loadLabels = function () {
@@ -62,12 +64,18 @@ const loadFAQ = function () {
 };
 const loadChrono = function () {
   state.chrono = CHRONOLOGY[state.language];
+  const year = new Date().getFullYear();
+  if (!state.chrono.includes(year)) state.chrono.push(year);
+  state.chrono.push(TODAY_ACHIEV[state.language]);
 };
 const loadTeam = function () {
   TEAM[state.language].forEach((person, i) => {
     state.team.members[i] = { name: person.name, image: person.image };
     state.team._descriptions[i] = person.description;
   });
+};
+const loadContacts = function () {
+  state.contacts = CONTACTS[state.language];
 };
 
 const load = function () {
@@ -78,6 +86,7 @@ const load = function () {
   loadFAQ();
   loadChrono();
   loadTeam();
+  loadContacts();
 };
 
 /**

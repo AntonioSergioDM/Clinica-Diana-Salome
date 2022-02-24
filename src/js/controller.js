@@ -1,42 +1,3 @@
-//
-//////////////////////////////////////////////
-//////////////////////////////////////////////
-/////// Tabbed Component - 'Contacts' //////
-/// Elements
-const tabs = document.querySelectorAll('.contacts__tab');
-const tabsContainer = document.querySelector('.contacts__tab-container');
-const tabsContent = document.querySelectorAll('.contacts__content');
-
-/// Event handlers
-// event delegation
-tabsContainer.addEventListener('click', function (e) {
-  // get the clicked button (even if the <span> is pressed)
-  const clicked = e.target.closest('.contacts__tab');
-
-  // Guard Clause - stops if click is on the tab and not on buttons
-  if (!clicked) return;
-
-  // change style - 'active' style
-  tabs.forEach(tab => tab.classList.remove('contacts__tab--active'));
-  clicked.classList.add('contacts__tab--active');
-
-  // Activate content area
-  const data = `contacts__content--${clicked.dataset.tab}`;
-  tabsContent.forEach(element => {
-    if (element.classList.contains(data))
-      element.classList.add('contacts__content--active');
-    else element.classList.remove('contacts__content--active');
-  });
-});
-/////////////////////////////////////////////
-
-//
-
-/////////////////////////////////////////////
-//
-//////////////////////////////////////////////
-/////////////////////////////////////////////
-//
 import * as model from './model';
 import navView from './Views/navView';
 import openHoursView from './Views/openHoursView';
@@ -49,6 +10,7 @@ import faqView from './Views/faqView';
 import footerView from './Views/footerView';
 import modalView from './Views/modalView';
 import teamView from './Views/teamView';
+import contactsView from './Views/contactsView';
 
 //////////////// PAGE NAVIGATION ////////////////
 const controlNavLinkClick = function (id) {
@@ -70,6 +32,7 @@ const controlLang = function (lang) {
   sliderView.update(model.state.testimonials);
   faqView.update(model.state.faq);
   footerView.update(model.state.footer);
+  contactsView.update(model.state.contacts);
 
   map.setLang(model.state.language);
 };
@@ -136,6 +99,7 @@ const init = function () {
   sliderView.render(model.state.testimonials);
   faqView.render(model.state.faq).addHandlerQuestion(controlFAQ);
   footerView.render(model.state.footer);
+  contactsView.render(model.state.contacts);
 
   // Map
   map.loadMap().setLang(model.state.language);

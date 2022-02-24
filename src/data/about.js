@@ -4,6 +4,20 @@ import img3 from 'url:../img/temp_cake.jpg';
 import imgToday from 'url:../img/logo.jpg';
 
 export const IMG_TODAY = imgToday;
+export const TODAY_ACHIEV = {
+  pt: {
+    date: 'Hoje',
+    text: 'Estamos à sua espera',
+    image: imgToday,
+    // icon:'icon-disc'
+  },
+  en: {
+    date: 'Today',
+    text: 'We are waiting for you',
+    image: imgToday,
+    // icon:'icon-disc'
+  },
+};
 
 // Temporary - just for placeholder
 const months = {
@@ -36,7 +50,6 @@ export const CHRONOLOGY = {
       text: 'Lorem ipsum dolor sit amet',
       image: img3,
     },
-    2022,
   ],
   en: [
     2019,
@@ -56,6 +69,5 @@ export const CHRONOLOGY = {
       text: 'Lorem ipsum dolor sit amet',
       image: img3,
     },
-    2022,
   ],
 };

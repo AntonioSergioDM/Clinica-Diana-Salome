@@ -29,15 +29,15 @@
     - mailto link + phone link
     - PostMail API
     - Form submition with netlify
-- [Contact]()
-  - [ ] Logic
+- [Contact](./src/js/Views/contactsView.js)
+  - [x] Logic
 - [Footer](./src/js/Views/footerView.js)
   - [ ] Logic
   - [ ] Decide what to put
   - [ ] Action - Do something on click (w/smooth scroll)
 - [About Us](./src/js/Views/chronoView.js)
   - [x] Logic
-  - [x] Action - scroll smooth
+  - [ ] Action - Smooth scrolling (without nav bar over the year)
 - [Team](./src/js/Views/teamView.js)
   - [x] Logic
 - Multi-languages
@@ -47,11 +47,11 @@
     - [x] Services
     - [x] Testimonials
     - [x] Map
-    - [ ] Contact
+    - [x] Contact
     - [ ] Contact form
     - [x] FAQ
     - [x] Footer
-    - [ ] About Us
+    - [x] About Us
     - [x] Team
   - Data - pt & en - add more in the Config and data folders
     - [x] Titles and intros
