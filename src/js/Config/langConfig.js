@@ -25,7 +25,7 @@ export const LANG_LABELS = {
       title: 'Equipa',
       intro: 'A nossa fantástica equipa',
     },
-    contact: {
+    contacts: {
       title: 'Contactos',
       intro: '',
       nav: 'Contacte-nos',
@@ -56,7 +56,7 @@ export const LANG_LABELS = {
       title: 'Team',
       intro: 'Our amazing team',
     },
-    contact: {
+    contacts: {
       title: 'Contacts',
       intro: '',
       nav: 'Contact us',
@@ -65,6 +65,6 @@ export const LANG_LABELS = {
 };
 
 /** nav section names */
-export const NAV = ['about', 'services', 'map', 'contact'];
+export const NAV = ['about', 'services', 'map', 'contacts'];
 /** footer section names */
-export const FOOTER = ['about', 'services', 'team', 'faq', 'contact'];
+export const FOOTER = ['about', 'services', 'team', 'faq', 'contacts'];

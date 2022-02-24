@@ -16,6 +16,7 @@ class ServicesView extends View {
   render(...args) {
     super.render(...args);
     this._addLazyLoading();
+    return this;
   }
 
   _addLazyLoading() {
@@ -24,6 +25,7 @@ class ServicesView extends View {
     imgTargets.forEach(img => {
       this._imgObserver.observe(img);
     });
+    return this;
   }
 
   _loadImg(entries, observer) {

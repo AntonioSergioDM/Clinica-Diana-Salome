@@ -52,9 +52,16 @@
     // font-size: 1rem;
     // height: 4rem;
     // width: 8rem;
-    fill: $color-primary;
-    background-color: $color-grey-light-1;
+    fill: $color-grey-light-1;
+    background-color: $color-primary;
     margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
   }
   &__left {
     grid-column: 1;
@@ -76,7 +83,7 @@
     top: 2%;
     left: 48.5%;
     width: 3%;
-    height: 90%;
+    height: 88%;
     background-color: $color-primary;
     z-index: -1;
   }

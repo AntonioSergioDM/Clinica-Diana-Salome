@@ -29,6 +29,7 @@ class ModalView extends View {
         handler(data);
       }.bind(this)
     );
+    return this;
   }
 
   // _addHandlerShowWindow() {
@@ -50,13 +51,16 @@ class ModalView extends View {
         if (e.key === 'Escape' && this.isWindowOpen()) this.closeWindow();
       }.bind(this)
     );
+    return this;
   }
 
   closeWindow() {
     if (this.isWindowOpen()) this._toggleWindow();
+    return this;
   }
   openWindow() {
     if (!this.isWindowOpen()) this._toggleWindow();
+    return this;
   }
 
   isWindowOpen() {
@@ -66,6 +70,7 @@ class ModalView extends View {
   _toggleWindow() {
     this._overlayElement.classList.toggle('hidden');
     this._windowElement.classList.toggle('hidden');
+    return this;
   }
 
   _generateMarkup() {

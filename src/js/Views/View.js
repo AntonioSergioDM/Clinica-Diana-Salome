@@ -47,6 +47,8 @@ export default class View {
       });
     } catch {
       this.render(data);
+    } finally {
+      return this;
     }
   }
 
@@ -65,6 +67,7 @@ export default class View {
     const markup = this._generateMarkup();
     this._clear();
     this._parentElement.insertAdjacentHTML(position, markup);
+    return this;
   }
 
   renderSpinner(position = 'afterbegin', clearParent = true) {
@@ -78,6 +81,7 @@ export default class View {
 
     if (clearParent) this._clear();
     this._parentElement.insertAdjacentHTML(position, markup);
+    return this;
   }
 
   renderError(
@@ -98,6 +102,7 @@ export default class View {
 
     if (clearParent) this._clear();
     this._parentElement.insertAdjacentHTML(position, markup);
+    return this;
   }
 
   renderMessage(
@@ -118,9 +123,11 @@ export default class View {
 
     if (clearParent) this._clear();
     this._parentElement.insertAdjacentHTML(position, markup);
+    return this;
   }
 
   _clear() {
     this._parentElement.innerHTML = '';
+    return this;
   }
 }

@@ -6,6 +6,7 @@ class OpenHoursView extends View {
 
   update(...args) {
     this.render(...args);
+    return this;
   }
 
   _generateMarkup() {

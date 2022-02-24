@@ -12,10 +12,12 @@ class TeamView extends View {
 
       handler(person.dataset.id);
     });
+    return this;
   }
 
   setDescription(html = '') {
     this._descriptionElement.innerHTML = html;
+    return this;
   }
 
   changeActiveMember(id = -1) {
@@ -24,11 +26,13 @@ class TeamView extends View {
         ? person.classList.add('active')
         : person.classList.remove('active')
     );
+    return this;
   }
 
   update(...args) {
     super.update(...args);
     this.setDescription();
+    return this;
   }
 
   _generateMarkup() {

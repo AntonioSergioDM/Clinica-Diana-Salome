@@ -97,7 +97,7 @@
   - [ ] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???
   - [ ] ¿¿¿ Create parent class to the nav&footer bars ???
   - [ ] contact us button reference
-  - [ ] Update method to work always
+  - [ ] Update method to work always (special atention at openhours, footer, chrono)
 
 ## License
 

@@ -4,9 +4,8 @@ class SliderView extends View {
   _parentElement = document.querySelector('.slider');
 
   render(data) {
-    super.render(data, 'beforeend');
-    this._init();
-    this._addEventHandlers();
+    super.render(data, 'beforeend')._init()._addEventHandlers();
+    return this;
   }
 
   _init() {
@@ -20,6 +19,8 @@ class SliderView extends View {
 
     this._createDots();
     this.goToSlide();
+
+    return this;
   }
 
   _addEventHandlers() {
@@ -28,6 +29,8 @@ class SliderView extends View {
     this._dotContainer.addEventListener('click', this._dotClicked.bind(this));
 
     document.addEventListener('keydown', this._arrowClicked.bind(this));
+
+    return this;
   }
 
   _arrowClicked(e) {
@@ -56,6 +59,8 @@ class SliderView extends View {
     document
       .querySelector(`.dots__dot[data-slide="${slide}"]`)
       .classList.add('dots__dot--active');
+
+    return this;
   }
 
   nextSlide() {
@@ -85,6 +90,7 @@ class SliderView extends View {
         `<button class="dots__dot" data-slide="${i}"></button>`
       );
     });
+    return this;
   }
 
   _generateMarkup() {

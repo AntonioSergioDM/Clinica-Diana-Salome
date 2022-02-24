@@ -11,6 +11,7 @@ class FAQView extends View {
 
       handler(question.dataset.id);
     });
+    return this;
   }
 
   isActive(id) {
@@ -22,10 +23,12 @@ class FAQView extends View {
   showAnswer(id, scrollOpts = { behavior: 'smooth' }) {
     const answer = this._getAnswerElementById(id);
 
-    if (!answer) return;
+    if (!answer) return this;
 
     answer.classList.add('faq__answer--active');
     answer.parentElement.scrollIntoView(scrollOpts);
+
+    return this;
   }
 
   hideAnswer(id) {

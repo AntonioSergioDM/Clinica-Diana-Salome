@@ -35,6 +35,7 @@ class NavView extends View {
         const lang = e.target.textContent;
         handler(lang);
       });
+    return this;
   }
 
   addHandlerLinkClicked(handler) {
@@ -49,6 +50,7 @@ class NavView extends View {
         handler(id);
       }.bind(this)
     );
+    return this;
   }
 
   _addHandlerHover() {
@@ -60,6 +62,7 @@ class NavView extends View {
       'mouseout',
       this._hoverOpacity(1).bind(this)
     );
+    return this;
   }
 
   _hoverOpacity(opacity) {
@@ -84,13 +87,15 @@ class NavView extends View {
     const [entry] = entries;
     if (!entry.isIntersecting) this._nav.classList.add('sticky');
     else this._nav.classList.remove('sticky');
+
+    return this;
   }
 
   _generateMarkup() {
     return this._data.map(data => this._generateItem(data)).join(''); // equal to footerView
   }
   _generateItem(data) {
-    if (data.id === 'contact') return this._generateBtnContact(data);
+    if (data.id === 'contacts') return this._generateBtnContact(data);
 
     return `
     <li class="nav__item">

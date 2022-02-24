@@ -29,9 +29,11 @@ class SectionTitlesView extends View {
 
   render(data, ...others) {
     this._overrideSuper(super.render.bind(this), data, ...others);
+    return this;
   }
   update(data, ...others) {
     this._overrideSuper(super.update.bind(this), data, ...others);
+    return this;
   }
 
   _overrideSuper(superFunction, data, ...others) {
@@ -43,6 +45,7 @@ class SectionTitlesView extends View {
         superFunction(data[id], ...others);
       }.bind(this)
     );
+    return this;
   }
 
   _generateMarkup() {

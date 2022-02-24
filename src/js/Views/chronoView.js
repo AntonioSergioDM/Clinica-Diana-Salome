@@ -17,6 +17,7 @@ class ChronoView extends View {
 
       element.scrollIntoView({ behavior: 'smooth' });
     });
+    return this;
   }
 
   _generateMarkup() {
@@ -37,7 +38,8 @@ class ChronoView extends View {
         date: 'Hoje',
         text: 'Estamos à sua espera',
         image: IMG_TODAY,
-        icon: 'icon-more-horizontal',
+        icon: 'icon-disc',
+        // icon: 'icon-more-horizontal',
       }) +
       this._generateLine()
     );
@@ -67,7 +69,7 @@ class ChronoView extends View {
       <div class="chrono__middle">
         <svg>
           <use 
-            xlink:href="${this._icons}#${data.icon || 'icon-more-vertical'}
+            xlink:href="${this._icons}#${data.icon || 'icon-disc'}
           "></use>
         </svg>
       </div>

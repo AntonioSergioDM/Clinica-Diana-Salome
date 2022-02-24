@@ -1,33 +1,33 @@
 //
 //////////////////////////////////////////////
 //////////////////////////////////////////////
-/////// Tabbed Component - 'Operations' //////
-// /// Elements
-// const tabs = document.querySelectorAll('.operations__tab');
-// const tabsContainer = document.querySelector('.operations__tab-container');
-// const tabsContent = document.querySelectorAll('.operations__content');
+/////// Tabbed Component - 'Contacts' //////
+/// Elements
+const tabs = document.querySelectorAll('.contacts__tab');
+const tabsContainer = document.querySelector('.contacts__tab-container');
+const tabsContent = document.querySelectorAll('.contacts__content');
 
-// /// Event handlers
-// // event delegation
-// tabsContainer.addEventListener('click', function (e) {
-//   // get the clicked button (even if the <span> is pressed)
-//   const clicked = e.target.closest('.operations__tab');
+/// Event handlers
+// event delegation
+tabsContainer.addEventListener('click', function (e) {
+  // get the clicked button (even if the <span> is pressed)
+  const clicked = e.target.closest('.contacts__tab');
 
-//   // Guard Clause - stops if click is on the tab and not on buttons
-//   if (!clicked) return;
+  // Guard Clause - stops if click is on the tab and not on buttons
+  if (!clicked) return;
 
-//   // change style - 'active' style
-//   tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
-//   clicked.classList.add('operations__tab--active');
+  // change style - 'active' style
+  tabs.forEach(tab => tab.classList.remove('contacts__tab--active'));
+  clicked.classList.add('contacts__tab--active');
 
-//   // Activate content area
-//   const data = `operations__content--${clicked.dataset.tab}`;
-//   tabsContent.forEach(element => {
-//     if (element.classList.contains(data))
-//       element.classList.add('operations__content--active');
-//     else element.classList.remove('operations__content--active');
-//   });
-// });
+  // Activate content area
+  const data = `contacts__content--${clicked.dataset.tab}`;
+  tabsContent.forEach(element => {
+    if (element.classList.contains(data))
+      element.classList.add('contacts__content--active');
+    else element.classList.remove('contacts__content--active');
+  });
+});
 /////////////////////////////////////////////
 
 //
@@ -83,9 +83,7 @@ const controlLang = function (lang) {
 ///////////////////// TEAM /////////////////////
 const controlTeam = function (id) {
   model.changeTeamMember(id);
-  teamView.setDescription(model.state.team.description);
-
-  teamView.changeActiveMember(id);
+  teamView.setDescription(model.state.team.description).changeActiveMember(id);
 };
 
 /////////////////// SERVICES /////////////////////
@@ -126,24 +124,23 @@ const controlSendEmail = function (data) {
 ///////////////////////////////////////////////
 const init = function () {
   // Render
-  navView.render(model.state.nav);
+  navView
+    .render(model.state.nav)
+    .addHandlerLinkClicked(controlNavLinkClick)
+    .addHandlerLanguage(controlLang);
   openHoursView.render(model.state.openHours);
   sectionView.render(model.state.labels);
   chronoView.render(model.state.chrono);
+  teamView.render(model.state.team.members).addHandlerClickMember(controlTeam);
   servicesView.render(model.state.services);
   sliderView.render(model.state.testimonials);
-  faqView.render(model.state.faq);
+  faqView.render(model.state.faq).addHandlerQuestion(controlFAQ);
   footerView.render(model.state.footer);
 
   // Map
-  map.loadMap();
-  map.setLang(model.state.language);
+  map.loadMap().setLang(model.state.language);
 
   // Handlers
-  navView.addHandlerLinkClicked(controlNavLinkClick);
-  navView.addHandlerLanguage(controlLang);
-  teamView.addHandlerClickMember(controlTeam);
-  faqView.addHandlerQuestion(controlFAQ);
   modalView.addHandlerSubmitForm(controlSendEmail);
 };
 init();

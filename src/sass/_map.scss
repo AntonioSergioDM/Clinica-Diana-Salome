@@ -1,8 +1,21 @@
+$map-width: 50vw;
+
 #map {
   flex: 1;
   height: 50vh;
-  width: 50vw;
+  width: $map-width;
   background-color: #f3f3f3;
-  margin-left: 25vw;
+  margin: auto;
   z-index: 1;
+}
+
+.address {
+  padding-top: 1.5rem;
+  display: flex;
+
+  p {
+    margin: auto;
+    width: $map-width;
+    font-size: 1.5rem;
+  }
 }

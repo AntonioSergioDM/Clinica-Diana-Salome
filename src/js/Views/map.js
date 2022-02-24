@@ -35,16 +35,21 @@ class Map {
     this._myMarker.addTo(this._myMap);
 
     this.addHandler();
+
+    return this;
   }
 
   setLang(lang) {
     this._popupText = POPUP_TEXT[lang];
     this._marker.setPopupContent(this._generateMarkup());
+    return this;
   }
 
   addHandler() {
     this._createMarker();
     this._myMap.on('click', this._setMarker.bind(this));
+
+    return this;
   }
 
   _setMarker(mapEvent) {
@@ -55,6 +60,8 @@ class Map {
       .setLatLng(this._coords)
       .setPopupContent(this._generateMarkup())
       .openPopup();
+
+    return this;
   }
 
   _createMarker() {
@@ -63,6 +70,8 @@ class Map {
       .addTo(this._myMap)
       .bindPopup(this._popup)
       .setPopupContent(this._generateMarkup());
+
+    return this;
   }
 
   _generateMarkup() {
