@@ -7,6 +7,7 @@ class SectionTitlesView extends View {
     root: null,
     threshold: 0.1,
   });
+
   constructor() {
     super();
     this._sections.forEach(section => {

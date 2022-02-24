@@ -18,30 +18,36 @@ export default class View {
   _message = 'It worked :)';
 
   update(data) {
-    this._data = data;
-    const newMarkup = this._generateMarkup();
+    try {
+      this._data = data;
+      const newMarkup = this._generateMarkup();
 
-    const newDOM = document.createRange().createContextualFragment(newMarkup);
-    const newElements = Array.from(newDOM.querySelectorAll('*'));
+      const newDOM = document.createRange().createContextualFragment(newMarkup);
+      const newElements = Array.from(newDOM.querySelectorAll('*'));
 
-    const currElements = Array.from(this._parentElement.querySelectorAll('*'));
+      const currElements = Array.from(
+        this._parentElement.querySelectorAll('*')
+      );
 
-    newElements.forEach((newEl, i) => {
-      const currEl = currElements[i];
+      newElements.forEach((newEl, i) => {
+        const currEl = currElements[i];
 
-      // Update changed text
-      if (
-        newEl.firstChild?.nodeValue.trim() !== '' &&
-        !newEl.isEqualNode(currEl)
-      )
-        currEl.textContent = newEl.textContent;
+        // Update changed text
+        if (
+          newEl.firstChild?.nodeValue.trim() !== '' &&
+          !newEl.isEqualNode(currEl)
+        )
+          currEl.textContent = newEl.textContent;
 
-      // Update changed attributes
-      if (!newEl.isEqualNode(currEl))
-        Array.from(newEl.attributes).forEach(attr => {
-          currEl.setAttribute(attr.name, attr.value);
-        });
-    });
+        // Update changed attributes
+        if (!newEl.isEqualNode(currEl))
+          Array.from(newEl.attributes).forEach(attr => {
+            currEl.setAttribute(attr.name, attr.value);
+          });
+      });
+    } catch {
+      this.render(data);
+    }
   }
 
   /**

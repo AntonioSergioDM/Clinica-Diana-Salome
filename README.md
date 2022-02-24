@@ -38,8 +38,8 @@
 - [About Us](./src/js/Views/chronoView.js)
   - [x] Logic
   - [x] Action - scroll smooth
-- [Team]()
-  - [ ] Logic
+- [Team](./src/js/Views/teamView.js)
+  - [x] Logic
 - Multi-languages
   - Logic
     - [x] Titles and intros
@@ -52,7 +52,7 @@
     - [x] FAQ
     - [x] Footer
     - [ ] About Us
-    - [ ] Team
+    - [x] Team
   - Data - pt & en - add more in the Config and data folders
     - [x] Titles and intros
     - [x] Open hours
@@ -83,6 +83,8 @@
   - [ ] All style ([\_faq.scss](./src/sass/_faq.scss))
 - Footer
   - [ ] Social media
+- Team
+  - [ ] Change description animation
 
 ## Other TODOS
 
@@ -95,6 +97,7 @@
   - [ ] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???
   - [ ] ¿¿¿ Create parent class to the nav&footer bars ???
   - [ ] contact us button reference
+  - [ ] Update method to work always
 
 ## License
 

@@ -18,9 +18,6 @@ class ChronoView extends View {
       element.scrollIntoView({ behavior: 'smooth' });
     });
   }
-  update(...args) {
-    return this.render(...args);
-  }
 
   _generateMarkup() {
     this._numItem = 0;

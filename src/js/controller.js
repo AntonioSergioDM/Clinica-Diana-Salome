@@ -48,6 +48,7 @@ import sliderView from './Views/sliderView';
 import faqView from './Views/faqView';
 import footerView from './Views/footerView';
 import modalView from './Views/modalView';
+import teamView from './Views/teamView';
 
 //////////////// PAGE NAVIGATION ////////////////
 const controlNavLinkClick = function (id) {
@@ -63,8 +64,9 @@ const controlLang = function (lang) {
   navView.update(model.state.nav);
   openHoursView.update(model.state.openHours);
   sectionView.update(model.state.labels);
-  servicesView.update(model.state.services);
   chronoView.update(model.state.chrono);
+  teamView.update(model.state.team.members);
+  servicesView.update(model.state.services);
   sliderView.update(model.state.testimonials);
   faqView.update(model.state.faq);
   footerView.update(model.state.footer);
@@ -75,6 +77,16 @@ const controlLang = function (lang) {
 ////////////////// OPENING HOURS //////////////////
 
 ///////////////// SECTION TITLES /////////////////
+
+///////////////////// ABOUT /////////////////////
+
+///////////////////// TEAM /////////////////////
+const controlTeam = function (id) {
+  model.changeTeamMember(id);
+  teamView.setDescription(model.state.team.description);
+
+  teamView.changeActiveMember(id);
+};
 
 /////////////////// SERVICES /////////////////////
 
@@ -130,6 +142,7 @@ const init = function () {
   // Handlers
   navView.addHandlerLinkClicked(controlNavLinkClick);
   navView.addHandlerLanguage(controlLang);
+  teamView.addHandlerClickMember(controlTeam);
   faqView.addHandlerQuestion(controlFAQ);
   modalView.addHandlerSubmitForm(controlSendEmail);
 };

@@ -5,6 +5,7 @@ import { FOOTER, LANG_LABELS, NAV } from './Config/langConfig';
 import { LEARN_MORE_BTN, SERVICES } from '../data/services';
 import { FAQ } from '../data/faq';
 import { CHRONOLOGY } from '../data/about';
+import { TEAM } from '../data/team';
 
 // import OPEN_HOURS_URL from 'url:../data/test.json.data';
 // (async function (url) {
@@ -17,12 +18,13 @@ export const state = {
   language: DEFAULT_LANG,
   labels: {},
   openHours: {},
+  chrono: [],
   services: [],
   testimonials: [],
   faq: [],
   nav: [],
   footer: [],
-  chrono: [],
+  team: { members: [], description: '', _descriptions: [] },
 };
 
 const loadLabels = function () {
@@ -58,8 +60,14 @@ const loadTestimonials = function () {
 const loadFAQ = function () {
   state.faq = FAQ[state.language];
 };
-const loadcChrono = function () {
+const loadChrono = function () {
   state.chrono = CHRONOLOGY[state.language];
+};
+const loadTeam = function () {
+  TEAM[state.language].forEach((person, i) => {
+    state.team.members[i] = { name: person.name, image: person.image };
+    state.team._descriptions[i] = person.description;
+  });
 };
 
 const load = function () {
@@ -68,7 +76,18 @@ const load = function () {
   loadServices();
   loadTestimonials();
   loadFAQ();
-  loadcChrono();
+  loadChrono();
+  loadTeam();
+};
+
+/**
+ * Changes the description to the id nth member description. Defaults to No Active Members
+ * @param {number} id
+ * @returns Active team member description
+ */
+export const changeTeamMember = function (id = -1) {
+  state.team.description = state.team._descriptions[id] || '';
+  return state.team.description;
 };
 
 /**
