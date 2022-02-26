@@ -23,7 +23,7 @@
   - [x] Logic
   - [ ] Action - Smooth scrolling (without nav bar over the question)
   - [x] Change icon on active
-- [Contact form](./src/js/Views/modalView.js):
+  <!-- - [Contact form](./src/js/Views/modalView.js):
   - [ ] Logic
   - [x] Modal Logic
   - [ ] Choose how to contact:
@@ -31,7 +31,7 @@
     - mailto + name input
     - mailto link + phone link
     - PostMail API
-    - Form submition with netlify
+    - Form submition with netlify -->
 - [Contact](./src/js/Views/contactsView.js)
   - [x] Logic
 - [Footer](./src/js/Views/footerView.js)
@@ -63,7 +63,6 @@
     - [ ] Testimonials
     - [x] Map
     - [ ] Contact
-    - [ ] Contact form
     - [ ] FAQ
     - [x] Footer
     - [ ] About Us
@@ -87,7 +86,7 @@
 - Footer
   - [ ] Social media
 - Team
-  - [ ] Change description animation
+  - [ ] Change description animation (like in the headerView)
 
 ## Other TODOS
 
