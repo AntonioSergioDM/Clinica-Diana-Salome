@@ -1,4 +1,4 @@
-import imgDiana from 'url:../img/teamMember1.png';
+import imgDiana from 'url:../img/diana.jpg';
 import img2 from 'url:../img/teamMember.png';
 import imgCris from 'url:../img/teamMember1.png';
 

@@ -71,11 +71,13 @@ class ContentView extends ListView {
   }
 }
 
-class ContactsView {
+class ContactsView extends View {
+  _parentElement = document.querySelector('.contacts');
   _tabView = new TabView();
   _contentView = new ContentView();
 
   constructor() {
+    super();
     this._tabView.addHandlerTab(this.setActive.bind(this));
   }
 

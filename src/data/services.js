@@ -1,10 +1,10 @@
 /**Path to full image of lazy image with data-src="1" */
 import imgLazy1 from 'url:../img/logo-lazy.jpg';
-import img1 from 'url:../img/logo.jpg';
+import img1 from 'url:../img/dentes.jpeg';
 import imgLazy2 from 'url:../img/logo-lazy.jpg';
-import img2 from 'url:../img/logo.jpg';
+import img2 from 'url:../img/crianca2.jpeg';
 import imgLazy3 from 'url:../img/logo-lazy.jpg';
-import img3 from 'url:../img/logo.jpg';
+import img3 from 'url:../img/diana1.jpeg';
 
 export const LEARN_MORE_BTN = {
   pt: 'Saiba mais',
@@ -14,15 +14,15 @@ export const LEARN_MORE_BTN = {
 export const SERVICES = {
   pt: [
     {
-      title: 'Serviço 1',
+      title: 'Aparelho Dentário',
       imageLazy: imgLazy1,
       image: img1,
       icon: 'monitor', //not sure
-      text: 'Texto do serviço 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim est, rutrum non commodo id, venenatis vitae elit. Praesent posuere elit sapien, eu malesuada nibh suscipit ac. Donec vitae purus neque. Vestibulum mollis sapien in risus tempus sollicitudin. Proin porta porta sodales. Suspendisse at porttitor nisi. Vestibulum vitae erat volutpat, fringilla purus nec, mollis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
-      link: 'https://www.wikipedia.com',
+      text: 'O uso do aparelho dentário permite corrigir a orientação dos dentes',
+      link: 'https://pt.wikipedia.org/wiki/Aparelho_ortod%C3%B4ntico',
     },
     {
-      title: 'Serviço 2',
+      title: 'Cheque Dentista',
       imageLazy: imgLazy2,
       image: img2,
       icon: 'trending-up', //not sure

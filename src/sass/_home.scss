@@ -1,0 +1,26 @@
+.home {
+  &__body {
+    display: grid;
+    grid-template: 2fr 1fr / auto auto;
+    // justify-content: center;
+    // flex-wrap: wrap;
+    // margin: auto;
+    &__img {
+      max-width: 60%;
+      // float: right;
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      margin: auto;
+
+      // margin: auto 0 auto auto;
+      // align-self: flex-end;
+    }
+    & .btn--text {
+      // float: left;
+      grid-column: 1;
+    }
+    & .section__header {
+      margin: auto auto 0 0;
+    }
+  }
+}

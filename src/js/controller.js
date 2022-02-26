@@ -1,3 +1,8 @@
+// Polyfiling
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
+
+// import the model and views
 import * as model from './model';
 import navView from './Views/navView';
 import openHoursView from './Views/openHoursView';
@@ -11,13 +16,74 @@ import footerView from './Views/footerView';
 import modalView from './Views/modalView';
 import teamView from './Views/teamView';
 import contactsView from './Views/contactsView';
+import headerView from './Views/headerView';
+import homeView from './Views/homeView';
 
-//////////////// PAGE NAVIGATION ////////////////
-const controlNavLinkClick = function (id) {
-  if (id !== '#')
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-  else modalView.openWindow();
+// Change ID in URL
+// window.history.pushState(null, '', `#${model.state.recipe.id}`);
+// get ID in URL
+// const id = window.location.hash.slice(1);
+// control when changeid in url
+// ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+
+const controlDisplay = function () {
+  // Get ID in URL
+  const id = window.location.hash.slice(1);
+  // if (!id) return;
+
+  [
+    chronoView,
+    servicesView,
+    sliderView,
+    faqView,
+    teamView,
+    contactsView,
+    openHoursView,
+    map,
+    homeView,
+  ].forEach(view => view.hide());
+
+  switch (id) {
+    case 'about':
+      chronoView.show().scroll();
+      break;
+    case 'team':
+      teamView.show().scroll();
+      break;
+    case 'services':
+      servicesView.show().scroll();
+      break;
+    case 'faq':
+      faqView.show().scroll();
+      break;
+    case 'home':
+      homeView.show();
+      sliderView.show();
+      map.show();
+      openHoursView.show();
+      headerView.scroll();
+      break;
+    case 'contacts':
+      map.show();
+      openHoursView.show();
+      contactsView.show().scroll();
+      break;
+    default:
+      window.history.pushState(null, '', '#home');
+      location.reload();
+  }
 };
+['hashchange', 'load'].forEach(ev =>
+  window.addEventListener(ev, controlDisplay)
+);
+//////////////// PAGE NAVIGATION ////////////////
+// const controlNavLinkClick = function (id) {
+//   window.history.pushState(null, '', `#${id}`);
+//   console.log('controlLinkClick', id);
+//   if (id) document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+//   else modalView.openWindow();
+// };
+
 const controlLang = function (lang) {
   if (lang === model.state.language) return;
 
@@ -89,17 +155,21 @@ const init = function () {
   // Render
   navView
     .render(model.state.nav)
-    .addHandlerLinkClicked(controlNavLinkClick)
+    // .addHandlerLinkClicked(controlNavLinkClick)
     .addHandlerLanguage(controlLang);
   openHoursView.render(model.state.openHours);
   sectionView.render(model.state.labels);
   chronoView.render(model.state.chrono);
-  teamView.render(model.state.team.members).addHandlerClickMember(controlTeam);
+  teamView
+    .render(model.state.team.members)
+    .setDescription(model.state.team.description)
+    .addHandlerClickMember(controlTeam);
   servicesView.render(model.state.services);
   sliderView.render(model.state.testimonials);
   faqView.render(model.state.faq).addHandlerQuestion(controlFAQ);
   footerView.render(model.state.footer);
   contactsView.render(model.state.contacts);
+  homeView.render(model.state.home);
 
   // Map
   map.loadMap().setLang(model.state.language);

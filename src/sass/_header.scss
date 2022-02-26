@@ -1,6 +1,6 @@
 .header {
-  padding: 0 3rem;
-  height: 100vh;
+  padding: 1% 3rem 0;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,28 +11,35 @@
   }
 
   &__img {
-    transform: translateY(-6rem);
-    height: 60vh;
-    width: 80vw; /* must be removed*/
-    margin-top: 10vh;
+    // transform: translateY(-6rem);
+    height: 500px;
+    width: 900px; /* must be removed*/
+    overflow: hidden;
+    // margin-top: $nav-heigth;
     filter: brightness(70%);
+
+    // opacity: 1;
+    transition: opacity 3s;
+    &.fade {
+      opacity: 0;
+      transition: opacity 3s;
+    }
+    &.img2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      translate: -100% 0;
+    }
   }
 
   &__h1 {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: $color-grey-light-1;
     width: 100%;
+    // margin-top: auto;
+    // margin-bottom: 2%;
   }
-}
-
-.open-hours {
-  font-size: medium;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  transform: translate(0%, -3vh);
-  text-align: center;
-  vertical-align: middle;
 }

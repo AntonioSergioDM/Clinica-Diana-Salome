@@ -7,6 +7,8 @@
 - [Navigation Tab](./src/js/Views/navView.js)
   - [x] Logic
   - [x] Language buttons
+- [Header](./src/js/Views/headerView.js)
+  - [x] Logic
 - [Open hours](./src/js/Views/openHoursView.js)
   - [x] Logic
 - [Services](./src/js/Views/servicesView.js)
@@ -20,6 +22,7 @@
 - [FAQ](./src/js/Views/faqView.js)
   - [x] Logic
   - [ ] Action - Smooth scrolling (without nav bar over the question)
+  - [x] Change icon on active
 - [Contact form](./src/js/Views/modalView.js):
   - [ ] Logic
   - [x] Modal Logic
@@ -32,12 +35,13 @@
 - [Contact](./src/js/Views/contactsView.js)
   - [x] Logic
 - [Footer](./src/js/Views/footerView.js)
-  - [ ] Logic
-  - [ ] Decide what to put
-  - [ ] Action - Do something on click (w/smooth scroll)
+  - [x] Logic
+  - [x] Decide what to put
+  - [x] Action - Do something on click (w/smooth scroll)
 - [About Us](./src/js/Views/chronoView.js)
   - [x] Logic
   - [ ] Action - Smooth scrolling (without nav bar over the year)
+  - [ ] Line with rigth heigth
 - [Team](./src/js/Views/teamView.js)
   - [x] Logic
 - Multi-languages
@@ -48,7 +52,6 @@
     - [x] Testimonials
     - [x] Map
     - [x] Contact
-    - [ ] Contact form
     - [x] FAQ
     - [x] Footer
     - [x] About Us
@@ -90,14 +93,14 @@
 
 - [ ] Polyfilling and transpiling
 - [ ] Mobile compatible
-- [ ] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)
+- [x] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)
 - [ ] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)
 - [ ] ¿¿¿ Dark mode ???
 - Code
   - [ ] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???
   - [ ] ¿¿¿ Create parent class to the nav&footer bars ???
-  - [ ] contact us button reference
-  - [ ] Update method to work always (special atention at openhours, footer, chrono)
+  - [x] contact reference
+  - [ ] .update() method to work always (special atention at openhours, footer, chrono)
 
 ## License
 

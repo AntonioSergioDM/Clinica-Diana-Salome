@@ -22,10 +22,10 @@
 
   &__space {
     height: 15rem;
-    background-color: none; //$color-primary;
+    background-color: transparent; //$color-primary;
     &-half {
       height: 7rem;
-      background-color: none;
+      background-color: transparent;
     }
   }
   &__point {
@@ -36,6 +36,7 @@
 
     & img {
       max-width: 90%;
+      box-shadow: 3px 3px 5px 3px $color-grey-dark-2;
     }
 
     // date
@@ -83,8 +84,17 @@
     top: 2%;
     left: 48.5%;
     width: 3%;
-    height: 88%;
+    height: 95%;
     background-color: $color-primary;
-    z-index: -1;
+    z-index: -2;
+    &-half {
+      position: absolute;
+      top: 91%;
+      left: 0;
+      width: 100%;
+      height: 9%;
+      background-color: $color-grey-light-1;
+      z-index: -1;
+    }
   }
 }

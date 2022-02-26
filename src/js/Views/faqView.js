@@ -5,44 +5,55 @@ class FAQView extends View {
 
   addHandlerQuestion(handler) {
     this._parentElement.addEventListener('click', function (e) {
-      const question = e.target.closest('.faq__question');
+      const header = e.target.closest('.faq__header');
 
-      if (!question) return;
+      if (!header) return;
 
-      handler(question.dataset.id);
+      handler(header.closest('.faq__question').dataset.id);
     });
     return this;
   }
 
   isActive(id) {
-    return this._getAnswerElementById(id)?.classList.contains(
-      'faq__answer--active'
-    );
+    this._setQuestionAndAnswer(id);
+    return this._answer?.classList.contains('faq__answer--active');
   }
 
   showAnswer(id, scrollOpts = { behavior: 'smooth' }) {
-    const answer = this._getAnswerElementById(id);
+    this._setQuestionAndAnswer(id);
 
-    if (!answer) return this;
+    if (!this._answer) return this;
 
-    answer.classList.add('faq__answer--active');
-    answer.parentElement.scrollIntoView(scrollOpts);
+    this._answer.classList.add('faq__answer--active');
+    this._question.scrollIntoView(scrollOpts);
+    this._changeChevron('up');
 
     return this;
   }
 
   hideAnswer(id) {
-    const answer = this._getAnswerElementById(id);
+    this._setQuestionAndAnswer(id);
 
-    if (!answer) return;
+    if (!this._answer) return;
 
-    answer.classList.remove('faq__answer--active');
+    this._answer.classList.remove('faq__answer--active');
+    this._changeChevron('down');
+    return this;
   }
 
-  _getAnswerElementById(id) {
-    return this._parentElement.querySelector(
-      `.faq__question[data-id="${id}"] .faq__answer`
+  _changeChevron(direction) {
+    this._question.querySelector(
+      'use'
+    ).href.baseVal = `${this._icons}#icon-chevron-${direction}`;
+    return this;
+  }
+
+  _setQuestionAndAnswer(id) {
+    this._question = this._parentElement.querySelector(
+      `.faq__question[data-id="${id}"]`
     );
+    this._answer = this._question?.querySelector('.faq__answer');
+    return this;
   }
 
   _generateMarkup() {
@@ -52,8 +63,15 @@ class FAQView extends View {
   _generateQuestion(data, i) {
     return `
     <li class="faq__question" data-id="${i}">
-      <div class="faq__header">${data.question}</div>
-      <div class="faq__answer">${data.answer}</div>
+      <div class="faq__header">
+        ${data.question}
+        <span>
+          <svg>
+            <use xlink:href="${this._icons}#icon-chevron-down"></use>
+          </svg>
+        </span>
+      </div>
+      <div class="faq__answer"><p>${data.answer}</p></div>
     </li>
     `;
   }

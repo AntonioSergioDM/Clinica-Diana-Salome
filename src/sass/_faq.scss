@@ -2,22 +2,47 @@
   display: block;
   list-style: none;
   margin: auto;
-  max-width: 23cm;
+  width: 70vw;
 
   &__question {
-    // padding-top: $nav-heigth;
-    // margin: $nav-heigth 0;
-    // border-style: inset;
-    // border: 2px;
-    border-color: black; //$color-grey-dark-1;
+    border: 2px solid $color-grey-light-3;
+    margin: 2rem auto;
+  }
+
+  &__header {
+    padding: 1rem 2rem;
     cursor: pointer;
-    font-size: 2rem;
+    display: flex;
+    font-weight: 500;
+    font-size: 3rem;
+    color: $color-grey-dark-2;
+
+    & span {
+      background-color: $color-grey-light-2;
+      margin: auto 2% auto auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+      border: 2px solid $color-grey-dark-2;
+      & svg {
+        fill: $color-grey-dark-2;
+        height: 2rem;
+        width: 2rem;
+      }
+    }
   }
 
   &__answer {
     display: none;
-    margin-left: 2rem;
-    font-size: 1.5rem;
+    margin: auto 5% 0;
+    padding: 2%;
+    font-size: 2rem;
+    border-top: 4px solid $color-grey-light-2;
+    // transition: $transition-time;
 
     &--active {
       display: block;

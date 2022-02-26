@@ -21,7 +21,7 @@ export const CONTACTS = {
     {
       title: 'Email',
       value: 'clinica.mail@gmail.com',
-      text: 'Envie-nos um e-mail!',
+      text: 'Envie-nos <br> um e-mail!',
       link: 'mailto:xxxxxxxx',
       image: imgEmail,
     },
@@ -44,8 +44,8 @@ export const CONTACTS = {
     {
       title: 'Email',
       value: 'clinica.mail@gmail.com',
-      text: 'Send us an e-mail!',
-      link: 'mailto:xxxxxxxx',
+      text: 'Send us <br> an e-mail!',
+      link: 'mailto:clinica.mail@gmail.com',
       image: imgEmail,
     },
   ],

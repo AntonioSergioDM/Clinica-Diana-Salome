@@ -7,6 +7,7 @@ import { FAQ } from '../data/faq';
 import { CHRONOLOGY, TODAY_ACHIEV } from '../data/about';
 import { TEAM } from '../data/team';
 import { CONTACTS } from '../data/contacts';
+import { HOME } from '../data/home';
 
 // import OPEN_HOURS_URL from 'url:../data/test.json.data';
 // (async function (url) {
@@ -27,6 +28,7 @@ export const state = {
   footer: [],
   team: { members: [], description: '', _descriptions: [] },
   contacts: [],
+  home: [],
 };
 
 const loadLabels = function () {
@@ -77,6 +79,10 @@ const loadTeam = function () {
 const loadContacts = function () {
   state.contacts = CONTACTS[state.language];
 };
+const loadHome = function () {
+  state.home = HOME[state.language];
+  state.home.learnMore = LEARN_MORE_BTN[state.language];
+};
 
 const load = function () {
   loadLabels();
@@ -87,6 +93,7 @@ const load = function () {
   loadChrono();
   loadTeam();
   loadContacts();
+  loadHome();
 };
 
 /**

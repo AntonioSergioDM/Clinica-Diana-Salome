@@ -1,10 +1,11 @@
 import { ICON_PATH } from '../config';
+import OverView from './OverView';
 
 /**
  * Defines the functions and paths common to all the Views
  * @abstract
  */
-export default class View {
+export default class View extends OverView {
   _data;
 
   /**

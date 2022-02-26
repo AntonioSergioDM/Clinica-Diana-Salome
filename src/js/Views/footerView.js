@@ -15,7 +15,7 @@ class FooterView extends View {
   _generateItem(data) {
     return `
     <li class="footer__item">
-      <a class="footer__link" href="#section--${data.id}">${data.title}</a>
+      <a class="footer__link" href="#${data.id}">${data.title}</a>
     </li>
     `;
   }

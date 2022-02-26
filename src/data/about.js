@@ -1,7 +1,7 @@
-import img1 from 'url:../img/temp_chair.jpg';
+import img1 from 'url:../img/paciente1.jpeg';
 import img2 from 'url:../img/temp_xray.jpg';
-import img3 from 'url:../img/temp_cake.jpg';
-import imgToday from 'url:../img/logo.jpg';
+import img3 from 'url:../img/operacao1.jpeg';
+import imgToday from 'url:../img/selfie2.jpeg';
 
 export const IMG_TODAY = imgToday;
 export const TODAY_ACHIEV = {
@@ -41,13 +41,13 @@ export const CHRONOLOGY = {
     },
     {
       date: randomDate('pt'),
-      text: 'Lorem ipsum dolor sit amet',
+      text: 'Primeiro Raio-X',
       image: img2,
     },
     2020,
     {
       date: randomDate('pt'),
-      text: 'Lorem ipsum dolor sit amet',
+      text: 'Acordo com MediCare',
       image: img3,
     },
   ],

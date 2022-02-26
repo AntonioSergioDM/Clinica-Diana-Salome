@@ -1,3 +1,8 @@
+/** nav section names */
+export const NAV = ['about', 'services', 'contacts'];
+/** footer section names */
+export const FOOTER = ['about', 'services', 'team', 'faq', 'contacts'];
+
 /** Labels to use based on language */
 export const LANG_LABELS = {
   pt: {
@@ -15,7 +20,7 @@ export const LANG_LABELS = {
     },
     faq: {
       title: 'FAQ',
-      intro: 'O que os nos custumam perguntar',
+      intro: 'O que os nos costumam perguntar',
     },
     about: {
       title: 'Sobre nós',
@@ -28,7 +33,10 @@ export const LANG_LABELS = {
     contacts: {
       title: 'Contactos',
       intro: 'Fale connosco',
-      nav: 'Contacte-nos',
+    },
+    openhours: {
+      title: 'Horário',
+      intro: '',
     },
   },
   en: {
@@ -59,12 +67,10 @@ export const LANG_LABELS = {
     contacts: {
       title: 'Contacts',
       intro: 'Talk to us',
-      nav: 'Contact us',
+    },
+    openhours: {
+      title: 'Working Hours',
+      intro: '',
     },
   },
 };
-
-/** nav section names */
-export const NAV = ['about', 'services', 'map', 'contacts'];
-/** footer section names */
-export const FOOTER = ['about', 'services', 'team', 'faq', 'contacts'];

@@ -4,12 +4,17 @@
   align-items: center;
   height: $nav-heigth;
   width: 100%;
-  padding: 1 6rem;
+  padding: 1% 2%;
   z-index: 100;
+  background-color: $color-primary-opacity;
+
+  &:hover {
+    background-color: $color-terciary;
+  }
 
   &.sticky {
     position: fixed;
-    background-color: $color-primary-opacity;
+    // background-color: $color-primary-opacity;
   }
 
   &__logo {
@@ -39,7 +44,7 @@
   &__link {
     &:link,
     &:visited {
-      font-size: 1.7rem;
+      font-size: medium;
       font-weight: 400;
       color: inherit;
       text-decoration: none;

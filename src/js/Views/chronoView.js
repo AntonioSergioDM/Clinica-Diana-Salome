@@ -38,7 +38,8 @@ class ChronoView extends View {
   }
 
   _generateLine() {
-    return `<div class="chrono__line"></div>`;
+    return `<div class="chrono__line"></div>
+    <div class="chrono__line-half"></div>`;
   }
 
   _generateYear(year) {

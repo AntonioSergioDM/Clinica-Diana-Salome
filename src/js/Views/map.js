@@ -7,10 +7,13 @@ import {
   POPUP_TEXT,
   TILES,
 } from '../Config/mapConfig';
+import OverView from './OverView';
 
-class Map {
+class Map extends OverView {
   // DOM reference
   _mapID = 'map';
+
+  _parentElement = document.getElementById(this._mapID);
 
   // From configuration file
   // map

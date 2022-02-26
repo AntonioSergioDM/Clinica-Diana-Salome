@@ -71,11 +71,13 @@ class ServicesView extends View {
   _generateDescription(data) {
     return `
 		<div class="features__feature">
+      <!-- 
       <div class="features__icon">
         <svg>
           <use xlink:href="${this._icons}#icon-${data.icon}"></use>
         </svg>
       </div>
+      -->
 			<h5 class="features__header">${data.title}</h5>
 			<p>
 				${data.text}

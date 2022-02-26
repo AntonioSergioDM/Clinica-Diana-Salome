@@ -1,0 +1,25 @@
+.open-hours {
+  font-size: small;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 80%;
+  list-style: none;
+  transform: translate(0, -3rem);
+
+  .day {
+    white-space: nowrap;
+    padding: 1%;
+    margin: 0 auto;
+    width: max-content;
+    // border-left: 2px solid $color-primary;
+    // border-right: 2px solid $color-primary;
+
+    &.today {
+      font-weight: bold;
+    }
+  }
+}

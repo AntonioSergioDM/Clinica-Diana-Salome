@@ -22,7 +22,7 @@ class NavView extends View {
       this._sticky.bind(this),
       obsOptions
     );
-    stickyObserver.observe(this._nav.parentElement);
+    stickyObserver.observe(document.querySelector('.header'));
   }
 
   addHandlerLanguage(handler) {
@@ -38,20 +38,20 @@ class NavView extends View {
     return this;
   }
 
-  addHandlerLinkClicked(handler) {
-    this._parentElement.addEventListener(
-      'click',
-      function (e) {
-        e.preventDefault();
-        // if not link
-        if (!e.target.classList.contains('nav__link')) return;
+  // addHandlerLinkClicked(handler) {
+  //   this._parentElement.addEventListener(
+  //     'click',
+  //     function (e) {
+  //       e.preventDefault();
+  //       // if not link
+  //       if (!e.target.classList.contains('nav__link')) return;
 
-        const id = e.target.getAttribute('href');
-        handler(id);
-      }.bind(this)
-    );
-    return this;
-  }
+  //       const id = e.target.getAttribute('href').slice(1);
+  //       handler(id);
+  //     }.bind(this)
+  //   );
+  //   return this;
+  // }
 
   _addHandlerHover() {
     this._parentElement.addEventListener(
@@ -95,11 +95,9 @@ class NavView extends View {
     return this._data.map(data => this._generateItem(data)).join(''); // equal to footerView
   }
   _generateItem(data) {
-    if (data.id === 'contacts') return this._generateBtnContact(data);
-
     return `
     <li class="nav__item">
-      <a class="nav__link" href="#section--${data.id}">${data.title}</a>
+      <a class="nav__link" href="#${data.id}">${data.title}</a>
     </li>
     `;
   }
