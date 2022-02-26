@@ -1,4 +1,6 @@
 import img1 from 'url:../img/logo.jpg';
+import img2 from 'url:../img/logo.jpg';
+
 export const HOME = {
   pt: [
     {
@@ -10,7 +12,7 @@ export const HOME = {
     {
       title: 'Tratamentos',
       text: 'Saiba o que podemos fazer por si',
-      image: img1,
+      image: img2,
       href: 'services',
     },
   ],
@@ -20,6 +22,12 @@ export const HOME = {
       text: 'See what we have been doing',
       image: img1,
       href: 'about',
+    },
+    {
+      title: 'Treatments',
+      text: 'See what we can do for you',
+      image: img2,
+      href: 'services',
     },
   ],
 };

@@ -18,11 +18,11 @@ export default class View extends OverView {
   _errorMessage = 'Something went wrong :(';
   _message = 'It worked :)';
 
-  update(data) {
-    try {
-      this._data = data;
-      const newMarkup = this._generateMarkup();
+  update(data, position = 'afterbegin') {
+    this._data = data;
+    const newMarkup = this._generateMarkup();
 
+    try {
       const newDOM = document.createRange().createContextualFragment(newMarkup);
       const newElements = Array.from(newDOM.querySelectorAll('*'));
 
@@ -47,10 +47,10 @@ export default class View extends OverView {
           });
       });
     } catch {
-      this.render(data);
-    } finally {
-      return this;
+      this._clear();
+      this._parentElement.insertAdjacentHTML(position, newMarkup);
     }
+    return this;
   }
 
   /**

@@ -30,7 +30,9 @@ const controlDisplay = function () {
   // Get ID in URL
   const id = window.location.hash.slice(1);
   // if (!id) return;
+  console.log('conrtrolDisplay', id);
 
+  homeView.loading();
   [
     chronoView,
     servicesView,
@@ -45,32 +47,31 @@ const controlDisplay = function () {
 
   switch (id) {
     case 'about':
-      chronoView.show().scroll();
+      chronoView.show();
       break;
     case 'team':
-      teamView.show().scroll();
+      teamView.show();
       break;
     case 'services':
-      servicesView.show().scroll();
+      servicesView.show();
       break;
     case 'faq':
-      faqView.show().scroll();
+      faqView.show();
+      break;
+    case 'contacts':
+      contactsView.show();
+      map.show();
+      openHoursView.show();
       break;
     case 'home':
       homeView.show();
       sliderView.show();
       map.show();
       openHoursView.show();
-      headerView.scroll();
-      break;
-    case 'contacts':
-      map.show();
-      openHoursView.show();
-      contactsView.show().scroll();
       break;
     default:
       window.history.pushState(null, '', '#home');
-      location.reload();
+      controlDisplay();
   }
 };
 ['hashchange', 'load'].forEach(ev =>
