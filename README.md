@@ -44,6 +44,10 @@
   - [ ] Line with rigth heigth
 - [Team](./src/js/Views/teamView.js)
   - [x] Logic
+- [Agreements](./src/js/Views/agreementsView.js)
+
+  - [x] Logic
+
 - Multi-languages
   - Logic
     - [x] Titles and intros
@@ -82,7 +86,7 @@
   - [ ] Opaque (change color?) on hover ([\_nav.scss](./src/sass/_nav.scss))
   - [ ] Language buttons underline ([\_nav.scss](./src/sass/_nav.scss))
 - FAQ
-  - [ ] All style ([\_faq.scss](./src/sass/_faq.scss))
+  - [x] All style ([\_faq.scss](./src/sass/_faq.scss))
 - Footer
   - [ ] Social media
 - Team
@@ -96,7 +100,7 @@
 - [ ] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)
 - [ ] ¿¿¿ Dark mode ???
 - Code
-  - [ ] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???
+  - [ ] ~~¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???~~
   - [ ] ¿¿¿ Create parent class to the nav&footer bars ???
   - [x] contact reference
   - [ ] .update() method to work always (special atention at openhours, footer, chrono)

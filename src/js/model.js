@@ -8,6 +8,7 @@ import { CHRONOLOGY, TODAY_ACHIEV } from '../data/about';
 import { TEAM } from '../data/team';
 import { CONTACTS } from '../data/contacts';
 import { HOME } from '../data/home';
+import { AGREEMENTS } from '../data/agreements';
 
 // import OPEN_HOURS_URL from 'url:../data/test.json.data';
 // (async function (url) {
@@ -29,6 +30,7 @@ export const state = {
   team: { members: [], description: '', _descriptions: [] },
   contacts: [],
   home: [],
+  agreements: [],
 };
 
 const loadLabels = function () {
@@ -83,6 +85,9 @@ const loadHome = function () {
   state.home = HOME[state.language];
   state.home.learnMore = LEARN_MORE_BTN[state.language];
 };
+const loadAgreements = function () {
+  state.agreements = AGREEMENTS;
+};
 
 const load = function () {
   loadLabels();
@@ -94,6 +99,7 @@ const load = function () {
   loadTeam();
   loadContacts();
   loadHome();
+  loadAgreements();
 };
 
 /**

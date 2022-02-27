@@ -1,0 +1,16 @@
+.agreements {
+  margin: auto;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 75vw;
+  &__item {
+    margin: auto;
+    padding: 1%;
+  }
+  &__img {
+    height: 100px;
+    width: 200px;
+    object-fit: contain;
+  }
+}

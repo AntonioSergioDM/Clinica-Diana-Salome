@@ -1,5 +1,5 @@
 /** nav section names */
-export const NAV = ['about', 'services', 'contacts'];
+export const NAV = ['about', 'services', 'team', 'contacts'];
 /** footer section names */
 export const FOOTER = ['about', 'services', 'team', 'faq', 'contacts'];
 
@@ -38,6 +38,10 @@ export const LANG_LABELS = {
       title: 'Horário',
       intro: '',
     },
+    agreements: {
+      title: 'Acordos e Protocolos',
+      intro: '',
+    },
   },
   en: {
     services: {
@@ -70,6 +74,10 @@ export const LANG_LABELS = {
     },
     openhours: {
       title: 'Working Hours',
+      intro: '',
+    },
+    agreements: {
+      title: 'Insurance and agreements',
       intro: '',
     },
   },

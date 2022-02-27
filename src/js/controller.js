@@ -18,6 +18,7 @@ import teamView from './Views/teamView';
 import contactsView from './Views/contactsView';
 import headerView from './Views/headerView';
 import homeView from './Views/homeView';
+import agreementsView from './Views/agreementsView';
 
 // Change ID in URL
 // window.history.pushState(null, '', `#${model.state.recipe.id}`);
@@ -30,7 +31,6 @@ const controlDisplay = function () {
   // Get ID in URL
   const id = window.location.hash.slice(1);
   // if (!id) return;
-  console.log('conrtrolDisplay', id);
 
   homeView.loading();
   [
@@ -43,6 +43,7 @@ const controlDisplay = function () {
     openHoursView,
     map,
     homeView,
+    agreementsView,
   ].forEach(view => view.hide());
 
   switch (id) {
@@ -65,6 +66,7 @@ const controlDisplay = function () {
       break;
     case 'home':
       homeView.show();
+      agreementsView.show();
       sliderView.show();
       map.show();
       openHoursView.show();
@@ -100,6 +102,7 @@ const controlLang = function (lang) {
   faqView.update(model.state.faq);
   footerView.update(model.state.footer);
   contactsView.update(model.state.contacts);
+  // agreementsView.update(model.state.agreements);
 
   map.setLang(model.state.language);
 };
@@ -171,6 +174,7 @@ const init = function () {
   footerView.render(model.state.footer);
   contactsView.render(model.state.contacts);
   homeView.render(model.state.home);
+  agreementsView.render(model.state.agreements);
 
   // Map
   map.loadMap().setLang(model.state.language);
