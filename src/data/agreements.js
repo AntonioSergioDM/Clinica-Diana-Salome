@@ -3,18 +3,18 @@ import img2 from 'url:../img/agreements/ADMG.png';
 import img3 from 'url:../img/agreements/Agilcare.png';
 import img4 from 'url:../img/agreements/UBHPlan.png';
 import img5 from 'url:../img/agreements/SAMS Quadros.png';
-import img6 from 'url:../img/agreements/Associação Sindical de Professores Licensiados.png';
-import img7 from 'url:../img/agreements/Serviço Médico Permanente.png';
+import img6 from 'url:../img/agreements/Associacao Sindical de Professores Licensiados.png';
+import img7 from 'url:../img/agreements/Serviço Medico Permanente.png';
 import img8 from 'url:../img/agreements/MeltiMalon.png';
 import img9 from 'url:../img/agreements/sorriso.png';
 import img10 from 'url:../img/agreements/BS Care.png';
 import img11 from 'url:../img/agreements/placeholder.png';
 import img12 from 'url:../img/agreements/SS GNR.png';
-import img13 from 'url:../img/agreements/Bombeiros Voluntários Cruz Verde.png';
-import img14 from 'url:../img/agreements/Bombeiros Voluntários Cruz Branca.png';
-import img15 from 'url:../img/agreements/Laboratório Pioledo Unilabs.png';
+import img13 from 'url:../img/agreements/Bombeiros Voluntarios Cruz Verde.png';
+import img14 from 'url:../img/agreements/Bombeiros Voluntarios Cruz Branca.png';
+import img15 from 'url:../img/agreements/Laboratorio Pioledo Unilabs.png';
 import img16 from 'url:../img/agreements/placeholder.png';
-import img17 from 'url:../img/agreements/Farmácia Baptista.png';
+import img17 from 'url:../img/agreements/Farmacia Baptista.png';
 import img18 from 'url:../img/agreements/GimnosCult Ginásio.png';
 
 export const AGREEMENTS = [
