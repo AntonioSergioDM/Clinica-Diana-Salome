@@ -15,7 +15,7 @@ import img14 from 'url:../img/agreements/Bombeiros Voluntarios Cruz Branca.png';
 import img15 from 'url:../img/agreements/Laboratorio Pioledo Unilabs.png';
 import img16 from 'url:../img/agreements/placeholder.png';
 import img17 from 'url:../img/agreements/Farmacia Baptista.png';
-import img18 from 'url:../img/agreements/GimnosCult Ginásio.png';
+import img18 from 'url:../img/agreements/GimnosCult Ginasio.png';
 
 export const AGREEMENTS = [
   { title: 'Medicare', image: img1 },
