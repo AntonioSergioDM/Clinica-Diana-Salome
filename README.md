@@ -45,32 +45,29 @@
 - [Team](./src/js/Views/teamView.js)
   - [x] Logic
 - [Agreements](./src/js/Views/agreementsView.js)
-
   - [x] Logic
-
 - Multi-languages
-  - Logic
-    - [x] Titles and intros
-    - [x] Open hours
-    - [x] Services
-    - [x] Testimonials
-    - [x] Map
-    - [x] Contact
-    - [x] FAQ
-    - [x] Footer
-    - [x] About Us
-    - [x] Team
-  - Data - pt & en - add more in the Config and data folders
-    - [x] Titles and intros
-    - [x] Open hours
-    - [ ] Services
-    - [ ] Testimonials
-    - [x] Map
-    - [ ] Contact
-    - [ ] FAQ
-    - [x] Footer
-    - [ ] About Us
-    - [ ] Team
+  - [x] Titles and intros
+  - [x] Open hours
+  - [x] Services
+  - [x] Testimonials
+  - [x] Map
+  - [x] Contact
+  - [x] FAQ
+  - [x] Footer
+  - [x] About Us
+  - [x] Team
+- Data - pt & en - add more in the Config and data folders
+  - [x] Titles and intros
+  - [x] Open hours
+  - [ ] Services
+  - [ ] Testimonials
+  - [x] Map
+  - [ ] Contact
+  - [ ] FAQ
+  - [x] Footer
+  - [ ] About Us
+  - [ ] Team
 
 ## Website Style
 

@@ -1,7 +1,7 @@
-import img1 from 'url:../img/paciente1.jpeg';
-import img2 from 'url:../img/temp_xray.jpg';
-import img3 from 'url:../img/operacao1.jpeg';
-import imgToday from 'url:../img/selfie2.jpeg';
+import img1 from 'url:../img/chrono/paciente1.jpeg';
+import img2 from 'url:../img/chrono/temp_xray.jpg';
+import img3 from 'url:../img/chrono/operacao1.jpeg';
+import imgToday from 'url:../img/chrono/selfie2.jpeg';
 
 export const IMG_TODAY = imgToday;
 export const TODAY_ACHIEV = {

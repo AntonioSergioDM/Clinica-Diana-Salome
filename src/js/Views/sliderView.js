@@ -94,15 +94,21 @@ class SliderView extends View {
   }
 
   _generateMarkup() {
+    return (
+      this._data.map(this._generateItem.bind(this)).join('') +
+      this._generateExtraMarkup()
+    );
+  }
+
+  _generateExtraMarkup() {
     return `
-        ${this._data.map(this._generateMarkupTestimonial.bind(this)).join('')}
         <button class="slider__btn slider__btn--left">&larr;</button>
         <button class="slider__btn slider__btn--right">&rarr;</button>
         <div class="dots"></div>
-  `;
+      `;
   }
 
-  _generateMarkupTestimonial(testimonial, index) {
+  _generateItem(testimonial, index) {
     return `
     <div class="slide slide--${index}">
         <div class="testimonial">

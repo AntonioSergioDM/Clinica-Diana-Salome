@@ -57,10 +57,10 @@ class FAQView extends View {
   }
 
   _generateMarkup() {
-    return this._data.map(this._generateQuestion.bind(this)).join('');
+    return this._data.map(this._generateItem.bind(this)).join('');
   }
 
-  _generateQuestion(data, i) {
+  _generateItem(data, i) {
     return `
     <li class="faq__question" data-id="${i}">
       <div class="faq__header">

@@ -15,7 +15,8 @@
 
   &__img {
     width: 90%;
-
+    object-fit: cover;
+    box-shadow: 3px 3px 5px 3px $color-grey-dark-2;
     // flex: 45%;
   }
 

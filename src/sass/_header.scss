@@ -14,15 +14,16 @@
     // transform: translateY(-6rem);
     height: 500px;
     width: 900px; /* must be removed*/
-    overflow: hidden;
+    object-fit: cover;
     // margin-top: $nav-heigth;
     filter: brightness(70%);
 
+    $fade-time: 2s;
     // opacity: 1;
-    transition: opacity 3s;
+    transition: opacity $fade-time;
     &.fade {
       opacity: 0;
-      transition: opacity 3s;
+      transition: opacity $fade-time;
     }
     &.img2 {
       position: absolute;

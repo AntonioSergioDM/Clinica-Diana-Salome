@@ -4,13 +4,7 @@ class HomeView extends View {
   _parentElement = document.querySelector('.home');
 
   _generateMarkup() {
-    return this._data
-      .map(
-        function (section) {
-          return this._generateItem(section);
-        }.bind(this)
-      )
-      .join('');
+    return this._data.map(this._generateItem.bind(this)).join('');
   }
   _generateItem(data) {
     return `

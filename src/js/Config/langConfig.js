@@ -1,7 +1,7 @@
 /** nav section names */
 export const NAV = ['about', 'services', 'team', 'contacts'];
-/** footer section names */
-export const FOOTER = ['about', 'services', 'team', 'faq', 'contacts'];
+/** footer section names */ //prettier-ignore
+export const FOOTER = ['about', 'services', 'agreements', 'team', 'faq', 'contacts'];
 
 /** Labels to use based on language */
 export const LANG_LABELS = {

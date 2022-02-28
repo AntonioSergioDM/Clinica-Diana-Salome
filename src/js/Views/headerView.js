@@ -6,29 +6,34 @@ class HeaderView extends View {
 
   _images = IMAGES_HEADER;
   _currentImg = 0;
+  _currentDiv = 0;
 
   constructor() {
     super();
     this.render('empty');
     this._imgElements = this._parentElement.querySelectorAll('.header__img');
-    setInterval(this.nextImage.bind(this), IMG_TIMER_SEC * 1000);
-    this._imgElements.forEach(
-      function (el) {
-        el.addEventListener(
-          'load',
-          function (e) {
-            this._imgElements.forEach(el => el.classList.toggle('fade'));
-          }.bind(this)
-        );
-      }.bind(this)
-    );
+    this.addHandlerLoad(this.changeVisibleImage.bind(this));
+    setInterval(this.loadNextImage.bind(this), IMG_TIMER_SEC * 1000);
   }
-  nextImage() {
+
+  loadNextImage() {
     this._currentImg++;
     if (this._currentImg >= this._images.length) this._currentImg = 0;
 
-    this._imgElements[this._currentImg % 2].src =
-      this._images[this._currentImg];
+    this._currentDiv ? (this._currentDiv = 0) : (this._currentDiv = 1);
+
+    this._imgElements[this._currentDiv].src = this._images[this._currentImg];
+    return this;
+  }
+
+  changeVisibleImage() {
+    this._imgElements.forEach(el => el.classList.toggle('fade'));
+    return this;
+  }
+
+  addHandlerLoad(handler) {
+    this._imgElements.forEach(el => el.addEventListener('load', handler));
+    return this;
   }
 
   _generateMarkup() {

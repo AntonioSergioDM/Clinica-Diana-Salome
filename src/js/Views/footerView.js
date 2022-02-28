@@ -6,10 +6,7 @@ class FooterView extends View {
   _parentElement = document.querySelector('.footer__nav');
 
   _generateMarkup() {
-    return (
-      this._data.map(data => this._generateItem(data)).join('') +
-      this._generateSocial()
-    );
+    return this._data.map(this._generateItem).join('') + this._generateSocial();
   }
 
   _generateItem(data) {

@@ -3,29 +3,29 @@ import View from './View';
 class SectionTitlesView extends View {
   _sections = document.querySelectorAll('.section[id]');
 
-  _observer = new IntersectionObserver(this._revealSection, {
-    root: null,
-    threshold: 0.1,
-  });
+  // _observer = new IntersectionObserver(this._revealSection, {
+  //   root: null,
+  //   threshold: 0.1,
+  // });
 
-  constructor() {
-    super();
-    // this._sections.forEach(section => {
-    //   section.classList.add('section--hidden');
-    //   this._observer.observe(section);
-    // });
-  }
+  // constructor() {
+  //   super();
+  //   this._sections.forEach(section => {
+  //     section.classList.add('section--hidden');
+  //     this._observer.observe(section);
+  //   });
+  // }
 
-  _revealSection(entries, observer) {
-    const [entry] = entries;
+  // _revealSection(entries, observer) {
+  //   const [entry] = entries;
 
-    if (!entry.isIntersecting) return;
+  //   if (!entry.isIntersecting) return;
 
-    entry.target.classList.remove('section--hidden');
+  //   entry.target.classList.remove('section--hidden');
 
-    //only works once
-    observer.unobserve(entry.target);
-  }
+  //   //only works once
+  //   observer.unobserve(entry.target);
+  // }
 
   render(data, ...others) {
     this._overrideSuper(super.render.bind(this), data, ...others);

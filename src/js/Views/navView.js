@@ -92,7 +92,7 @@ class NavView extends View {
   }
 
   _generateMarkup() {
-    return this._data.map(data => this._generateItem(data)).join(''); // equal to footerView
+    return this._data.map(this._generateItem).join('');
   }
   _generateItem(data) {
     return `

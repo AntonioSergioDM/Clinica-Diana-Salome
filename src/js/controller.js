@@ -19,6 +19,7 @@ import contactsView from './Views/contactsView';
 import headerView from './Views/headerView';
 import homeView from './Views/homeView';
 import agreementsView from './Views/agreementsView';
+import OverView from './Views/OverView';
 
 // Change ID in URL
 // window.history.pushState(null, '', `#${model.state.recipe.id}`);
@@ -32,21 +33,13 @@ const controlDisplay = function () {
   const id = window.location.hash.slice(1);
   // if (!id) return;
 
-  homeView.loading();
-  [
-    chronoView,
-    servicesView,
-    sliderView,
-    faqView,
-    teamView,
-    contactsView,
-    openHoursView,
-    map,
-    homeView,
-    agreementsView,
-  ].forEach(view => view.hide());
+  OverView.hideAll().loading();
 
   switch (id) {
+    case 'development':
+      OverView.showAll();
+      modalView.closeWindow();
+      break;
     case 'about':
       chronoView.show();
       break;
@@ -64,7 +57,11 @@ const controlDisplay = function () {
       map.show();
       openHoursView.show();
       break;
+    case 'agreements':
+      agreementsView.show();
+      break;
     case 'home':
+      headerView.show();
       homeView.show();
       agreementsView.show();
       sliderView.show();
@@ -75,6 +72,7 @@ const controlDisplay = function () {
       window.history.pushState(null, '', '#home');
       controlDisplay();
   }
+  OverView.scroll2Top();
 };
 ['hashchange', 'load'].forEach(ev =>
   window.addEventListener(ev, controlDisplay)
@@ -96,7 +94,7 @@ const controlLang = function (lang) {
   openHoursView.update(model.state.openHours);
   sectionView.update(model.state.labels);
   chronoView.update(model.state.chrono);
-  teamView.update(model.state.team.members);
+  teamView.update(model.state.team); //.members);
   servicesView.update(model.state.services);
   sliderView.update(model.state.testimonials);
   faqView.update(model.state.faq);
@@ -114,10 +112,10 @@ const controlLang = function (lang) {
 ///////////////////// ABOUT /////////////////////
 
 ///////////////////// TEAM /////////////////////
-const controlTeam = function (id) {
-  model.changeTeamMember(id);
-  teamView.setDescription(model.state.team.description).changeActiveMember(id);
-};
+// const controlTeam = function (id) {
+//   model.changeTeamMember(id);
+//   teamView.setDescription(model.state.team.description).changeActiveMember(id);
+// };
 
 /////////////////// SERVICES /////////////////////
 
@@ -164,10 +162,9 @@ const init = function () {
   openHoursView.render(model.state.openHours);
   sectionView.render(model.state.labels);
   chronoView.render(model.state.chrono);
-  teamView
-    .render(model.state.team.members)
-    .setDescription(model.state.team.description)
-    .addHandlerClickMember(controlTeam);
+  teamView.render(model.state.team); //.members)
+  // .setDescription(model.state.team.description)
+  // .addHandlerClickMember(controlTeam);
   servicesView.render(model.state.services);
   sliderView.render(model.state.testimonials);
   faqView.render(model.state.faq).addHandlerQuestion(controlFAQ);

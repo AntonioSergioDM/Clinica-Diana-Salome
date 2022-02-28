@@ -73,10 +73,11 @@ const loadChrono = function () {
   state.chrono.push(TODAY_ACHIEV[state.language]);
 };
 const loadTeam = function () {
-  TEAM[state.language].forEach((person, i) => {
-    state.team.members[i] = { name: person.name, image: person.image };
-    state.team._descriptions[i] = person.description;
-  });
+  state.team = TEAM[state.language];
+  // TEAM[state.language].forEach((person, i) => {
+  //   state.team.members[i] = { name: person.name, image: person.image };
+  //   state.team._descriptions[i] = person.description;
+  // });
 };
 const loadContacts = function () {
   state.contacts = CONTACTS[state.language];

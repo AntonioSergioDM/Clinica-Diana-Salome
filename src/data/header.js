@@ -7,4 +7,4 @@ import img5 from 'url:../img/crianca1.jpeg';
 export const IMAGES_HEADER = [img1, img2, img3, img4, img5];
 
 /**time to change images in the header */
-export const IMG_TIMER_SEC = 3;
+export const IMG_TIMER_SEC = 4;

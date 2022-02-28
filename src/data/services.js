@@ -1,10 +1,10 @@
 /**Path to full image of lazy image with data-src="1" */
 import imgLazy1 from 'url:../img/logo-lazy.jpg';
-import img1 from 'url:../img/dentes.jpeg';
+import img1 from 'url:../img/services/dentes.jpeg';
 import imgLazy2 from 'url:../img/logo-lazy.jpg';
-import img2 from 'url:../img/crianca2.jpeg';
+import img2 from 'url:../img/services/crianca2.jpeg';
 import imgLazy3 from 'url:../img/logo-lazy.jpg';
-import img3 from 'url:../img/diana1.jpeg';
+import img3 from 'url:../img/services/diana1.jpeg';
 
 export const LEARN_MORE_BTN = {
   pt: 'Saiba mais',

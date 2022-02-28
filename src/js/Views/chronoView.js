@@ -1,4 +1,3 @@
-import { IMG_TODAY } from '../../data/about';
 import View from './View';
 
 class ChronoView extends View {
@@ -23,23 +22,21 @@ class ChronoView extends View {
   _generateMarkup() {
     this._numItem = 0;
     return (
-      this._data
-        .map(
-          function (data) {
-            if (typeof data === 'number') return this._generateYear(data);
-            else {
-              this._numItem++;
-              return this._generateItem(data);
-            }
-          }.bind(this)
-        )
-        .join('') + this._generateLine()
+      this._data.map(this._generateItem.bind(this)).join('') +
+      this._generateExtraMarkup()
     );
   }
 
-  _generateLine() {
-    return `<div class="chrono__line"></div>
-    <div class="chrono__line-half"></div>`;
+  _generateExtraMarkup() {
+    return this._generateLine();
+  }
+
+  _generateItem(data) {
+    if (typeof data === 'number') return this._generateYear(data);
+    else {
+      this._numItem++;
+      return this._generateEvent(data);
+    }
   }
 
   _generateYear(year) {
@@ -49,7 +46,7 @@ class ChronoView extends View {
     `;
   }
 
-  _generateItem(data) {
+  _generateEvent(data) {
     const image = data => `<img src="${data.image}" alt="${data.text}" />`;
     const text = data => `<h4>${data.date}</h4><h3>${data.text}</h3>`;
 
@@ -71,6 +68,11 @@ class ChronoView extends View {
       </div>
     </div>
     `;
+  }
+
+  _generateLine() {
+    return `<div class="chrono__line"></div>
+    <div class="chrono__line-half"></div>`;
   }
 }
 

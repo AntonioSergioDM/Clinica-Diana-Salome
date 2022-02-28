@@ -2,19 +2,13 @@
   margin: auto;
   max-width: 90%;
 
-  &__people {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  &__person {
+  &__tab {
     text-align: center;
     margin: 4% 3%;
     border-bottom: 5px solid $color-grey-light-3;
     transition: $transition-time;
 
-    &.active {
+    &--active {
       border-color: $color-primary;
     }
 
@@ -22,10 +16,18 @@
       border: 1px solid $color-grey-light-3;
       width: 240px;
       height: 240px;
-      overflow: hidden;
+      object-fit: cover;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
-  &__description {
+
+  &__content {
+    display: none;
     font-size: medium;
     width: max(60%, 400px);
     // min-width: 500px;
@@ -33,5 +35,9 @@
     margin: auto;
     padding-top: 2rem;
     transition: $transition-time;
+    &--active {
+      display: block;
+      opacity: 1;
+    }
   }
 }

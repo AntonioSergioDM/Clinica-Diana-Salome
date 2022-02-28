@@ -20,9 +20,9 @@ export const CONTACTS = {
     },
     {
       title: 'Email',
-      value: 'clinica.mail@gmail.com',
+      value: 'clinicadianasalome@gmail.com',
       text: 'Envie-nos <br> um e-mail!',
-      link: 'mailto:xxxxxxxx',
+      link: 'mailto:clinicadianasalome@gmail.com',
       image: imgEmail,
     },
   ],
@@ -43,9 +43,9 @@ export const CONTACTS = {
     },
     {
       title: 'Email',
-      value: 'clinica.mail@gmail.com',
+      value: 'clinicadianasalome@gmail.com',
       text: 'Send us <br> an e-mail!',
-      link: 'mailto:clinica.mail@gmail.com',
+      link: 'mailto:clinicadianasalome@gmail.com',
       image: imgEmail,
     },
   ],

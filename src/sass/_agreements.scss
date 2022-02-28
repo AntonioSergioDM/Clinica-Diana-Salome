@@ -4,13 +4,20 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 75vw;
+  $height: 100px;
+  $width: 200px;
   &__item {
     margin: auto;
-    padding: 1%;
+    width: $width;
+    font-size: large;
+    font-weight: 700;
+    text-align: left;
+    color: $color-grey-dark-1;
   }
   &__img {
-    height: 100px;
-    width: 200px;
+    height: $height;
+    width: $width;
     object-fit: contain;
+    // box-shadow: 3px 3px 5px 3px $color-grey-dark-2;
   }
 }
