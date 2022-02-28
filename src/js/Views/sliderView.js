@@ -1,13 +1,7 @@
 import View from './View';
 
-class SliderView extends View {
-  _parentElement = document.querySelector('.slider');
-
-  render(data) {
-    super.render(data, 'beforeend')._init()._addEventHandlers();
-    return this;
-  }
-
+/** @abstract */
+export default class SliderView extends View {
   _init() {
     this._slides = this._parentElement.querySelectorAll('.slide');
     this._btnLeft = this._parentElement.querySelector('.slider__btn--left');
@@ -17,16 +11,21 @@ class SliderView extends View {
     this._curSlide = 0;
     this._maxSlide = this._slides.length - 1;
 
-    this._createDots();
+    if (this._dotContainer) this._createDots();
     this.goToSlide();
 
     return this;
   }
 
+  render(data) {
+    super.render(data, 'beforeend')._init()._addEventHandlers();
+    return this;
+  }
+
   _addEventHandlers() {
-    this._btnRight.addEventListener('click', this.nextSlide.bind(this));
-    this._btnLeft.addEventListener('click', this.prevSlide.bind(this));
-    this._dotContainer.addEventListener('click', this._dotClicked.bind(this));
+    this._btnRight?.addEventListener('click', this.nextSlide.bind(this));
+    this._btnLeft?.addEventListener('click', this.prevSlide.bind(this));
+    this._dotContainer?.addEventListener('click', this._dotClicked.bind(this));
 
     document.addEventListener('keydown', this._arrowClicked.bind(this));
 
@@ -54,11 +53,11 @@ class SliderView extends View {
     // Activate dots
     document
       .querySelectorAll('.dots__dot')
-      .forEach(dot => dot.classList.remove('dots__dot--active'));
+      ?.forEach(dot => dot.classList.remove('dots__dot--active'));
 
     document
       .querySelector(`.dots__dot[data-slide="${slide}"]`)
-      .classList.add('dots__dot--active');
+      ?.classList.add('dots__dot--active');
 
     return this;
   }
@@ -92,45 +91,4 @@ class SliderView extends View {
     });
     return this;
   }
-
-  _generateMarkup() {
-    return (
-      this._data.map(this._generateItem.bind(this)).join('') +
-      this._generateExtraMarkup()
-    );
-  }
-
-  _generateExtraMarkup() {
-    return `
-        <button class="slider__btn slider__btn--left">&larr;</button>
-        <button class="slider__btn slider__btn--right">&rarr;</button>
-        <div class="dots"></div>
-      `;
-  }
-
-  _generateItem(testimonial, index) {
-    return `
-    <div class="slide slide--${index}">
-        <div class="testimonial">
-            <h5 class="testimonial__header">${testimonial.title}</h5>
-            <blockquote class="testimonial__text">
-            ${testimonial.text}
-            </blockquote>
-            <address class="testimonial__author">
-                <img 
-                    src="${testimonial.image}" 
-                    alt="" class="testimonial__photo" />
-                <h6 class="testimonial__name">
-                    ${testimonial.author}
-                </h6>
-                <p class="testimonial__location">
-                    ${'⭐'.repeat(testimonial.stars)}
-                </p>
-            </address>
-        </div>
-    </div>
-      `;
-  }
 }
-
-export default new SliderView();

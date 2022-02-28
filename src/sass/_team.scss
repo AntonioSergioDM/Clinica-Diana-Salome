@@ -27,7 +27,14 @@
   }
 
   &__content {
-    display: none;
+    // &-container {
+    //   overflow: hidden;
+    //   display: inline-flex;
+    // }
+
+    // position: absolute;
+    // display: none;
+    opacity: 0;
     font-size: medium;
     width: max(60%, 400px);
     // min-width: 500px;

@@ -10,7 +10,7 @@ import sectionView from './Views/sectionView';
 import chronoView from './Views/chronoView';
 import servicesView from './Views/servicesView';
 import map from './Views/map';
-import sliderView from './Views/sliderView';
+import testimonialView from './Views/testimonialView';
 import faqView from './Views/faqView';
 import footerView from './Views/footerView';
 import modalView from './Views/modalView';
@@ -44,7 +44,7 @@ const controlDisplay = function () {
       chronoView.show();
       break;
     case 'team':
-      teamView.show();
+      teamView.setActive(-1).show();
       break;
     case 'services':
       servicesView.show();
@@ -64,7 +64,7 @@ const controlDisplay = function () {
       headerView.show();
       homeView.show();
       agreementsView.show();
-      sliderView.show();
+      testimonialView.show();
       map.show();
       openHoursView.show();
       break;
@@ -96,7 +96,7 @@ const controlLang = function (lang) {
   chronoView.update(model.state.chrono);
   teamView.update(model.state.team); //.members);
   servicesView.update(model.state.services);
-  sliderView.update(model.state.testimonials);
+  testimonialView.update(model.state.testimonials);
   faqView.update(model.state.faq);
   footerView.update(model.state.footer);
   contactsView.update(model.state.contacts);
@@ -166,7 +166,7 @@ const init = function () {
   // .setDescription(model.state.team.description)
   // .addHandlerClickMember(controlTeam);
   servicesView.render(model.state.services);
-  sliderView.render(model.state.testimonials);
+  testimonialView.render(model.state.testimonials);
   faqView.render(model.state.faq).addHandlerQuestion(controlFAQ);
   footerView.render(model.state.footer);
   contactsView.render(model.state.contacts);
