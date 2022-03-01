@@ -163,7 +163,7 @@ const init = function () {
   navView
     .render(model.state.nav)
     // .addHandlerLinkClicked(controlNavLinkClick)
-    .addHandlerLanguage(controlLang)
+    // .addHandlerLanguage(controlLang)
     .setLang(model.state.language);
   openHoursView.render(model.state.openHours);
   sectionView.render(model.state.labels);
