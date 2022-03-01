@@ -56,7 +56,7 @@
   - [x] FAQ
   - [x] Footer
   - [x] About Us
-  - [x] Team
+  - [ ] Team
 - Data - pt & en - add more in the Config and data folders
   - [x] Titles and intros
   - [x] Open hours

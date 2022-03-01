@@ -25,7 +25,7 @@ class ContactsView extends DoubleContainerView {
         class="btn contacts__tab contacts__tab--${i + 1}"
         data-id="${i}"
       >
-        <span>0${i + 1}</span>${data.title}
+      ${data.title}
       </button>
     `;
   }

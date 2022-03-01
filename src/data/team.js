@@ -47,7 +47,7 @@ export const TEAM = {
       description: `Person 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim est, rutrum non commodo id, venenatis vitae elit. Praesent posuere elit sapien, eu malesuada nibh suscipit ac. Donec vitae purus neque. Vestibulum mollis sapien in risus tempus sollicitudin. Proin porta porta sodales. Suspendisse at porttitor nisi. Vestibulum vitae erat volutpat, fringilla purus nec, mollis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`,
     },
     {
-      name: 'Dr Qualquer Coisa',
+      name: 'Dr Afonso',
       image: imgAfonso,
       description: `Person 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim est, rutrum non commodo id, venenatis vitae elit. Praesent posuere elit sapien, eu malesuada nibh suscipit ac. Donec vitae purus neque. Vestibulum mollis sapien in risus tempus sollicitudin. Proin porta porta sodales. Suspendisse at porttitor nisi. Vestibulum vitae erat volutpat, fringilla purus nec, mollis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`,
     },

@@ -27,7 +27,7 @@ export const state = {
   faq: [],
   nav: [],
   footer: [],
-  team: { members: [], description: '', _descriptions: [] },
+  team: [],
   contacts: [],
   home: [],
   agreements: [],
@@ -70,14 +70,11 @@ const loadChrono = function () {
   state.chrono = CHRONOLOGY[state.language];
   const year = new Date().getFullYear();
   if (!state.chrono.includes(year)) state.chrono.push(year);
-  state.chrono.push(TODAY_ACHIEV[state.language]);
+  if (!state.chrono.includes(TODAY_ACHIEV[state.language]))
+    state.chrono.push(TODAY_ACHIEV[state.language]);
 };
 const loadTeam = function () {
   state.team = TEAM[state.language];
-  // TEAM[state.language].forEach((person, i) => {
-  //   state.team.members[i] = { name: person.name, image: person.image };
-  //   state.team._descriptions[i] = person.description;
-  // });
 };
 const loadContacts = function () {
   state.contacts = CONTACTS[state.language];

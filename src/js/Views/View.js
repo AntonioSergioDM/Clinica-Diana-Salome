@@ -24,11 +24,12 @@ export default class View extends OverView {
 
     try {
       const newDOM = document.createRange().createContextualFragment(newMarkup);
-      const newElements = Array.from(newDOM.querySelectorAll('*'));
-
+      const newElements = Array.from(newDOM.querySelectorAll('*')).filter(
+        el => !(el.nodeName === 'BR' || el.nodeName === 'SPAN')
+      );
       const currElements = Array.from(
         this._parentElement.querySelectorAll('*')
-      );
+      ).filter(el => !(el.nodeName === 'BR' || el.nodeName === 'SPAN'));
 
       newElements.forEach((newEl, i) => {
         const currEl = currElements[i];
@@ -38,7 +39,7 @@ export default class View extends OverView {
           newEl.firstChild?.nodeValue.trim() !== '' &&
           !newEl.isEqualNode(currEl)
         )
-          currEl.textContent = newEl.textContent;
+          currEl.innerHTML = newEl.innerHTML;
 
         // Update changed attributes
         if (!newEl.isEqualNode(currEl))

@@ -36,10 +36,10 @@ const controlDisplay = function () {
   OverView.hideAll().loading();
 
   switch (id) {
-    case 'development':
-      OverView.showAll();
-      modalView.closeWindow();
-      break;
+    // case 'development':
+    //   OverView.showAll();
+    //   modalView.closeWindow();
+    //   break;
     case 'about':
       chronoView.show();
       break;
@@ -100,6 +100,8 @@ const controlLang = function (lang) {
   faqView.update(model.state.faq);
   footerView.update(model.state.footer);
   contactsView.update(model.state.contacts);
+  homeView.update(model.state.home);
+
   // agreementsView.update(model.state.agreements);
 
   map.setLang(model.state.language);
@@ -121,7 +123,7 @@ const controlLang = function (lang) {
 
 ///////////////////// MAP /////////////////////
 
-//////////////////// SLIDER ////////////////////
+///////////////// Testimonials /////////////////
 
 ///////////////////// FAQ /////////////////////
 const controlFAQ = function (id) {
