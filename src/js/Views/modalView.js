@@ -13,7 +13,7 @@ class ModalView extends View {
   constructor() {
     super();
     // this._addHandlerShowWindow();
-    this._addHandlerHideWindow();
+    // this._addHandlerHideWindow();
   }
 
   addHandlerSubmitForm(handler) {

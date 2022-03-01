@@ -36,10 +36,10 @@ const controlDisplay = function () {
   OverView.hideAll().loading();
 
   switch (id) {
-    case 'development':
-      OverView.showAll();
-      modalView.closeWindow();
-      break;
+    // case 'development':
+    //   OverView.showAll();
+    //   // modalView.closeWindow();
+    //   break;
     case 'about':
       headerView.show();
       chronoView.show();
@@ -183,6 +183,6 @@ const init = function () {
   map.loadMap().setLang(model.state.language);
 
   // Handlers
-  modalView.addHandlerSubmitForm(controlSendEmail);
+  // modalView.addHandlerSubmitForm(controlSendEmail);
 };
 init();
