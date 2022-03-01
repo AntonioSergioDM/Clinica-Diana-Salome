@@ -91,6 +91,7 @@
 
 ## Other TODOS
 
+- [ ] Google search optimization
 - [ ] Polyfilling and transpiling
 - [ ] Mobile compatible
 - [x] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)

@@ -184,6 +184,6 @@ const init = function () {
   map.loadMap().setLang(model.state.language);
 
   // Handlers
-  // modalView.addHandlerSubmitForm(controlSendEmail);
+  modalView.addHandlerSubmitForm(controlSendEmail);
 };
 init();
