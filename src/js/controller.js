@@ -62,6 +62,7 @@ const controlDisplay = function () {
       break;
     case 'home':
       headerView.show();
+      chronoView.show();
       homeView.show();
       agreementsView.show();
       testimonialView.show();
@@ -95,7 +96,7 @@ const controlLang = function (lang) {
   footerView.update(model.state.footer);
 
   openHoursView.update(model.state.openHours);
-  chronoView.update(model.state.chrono);
+  // chronoView.update(model.state.chrono);
   teamView.update(model.state.team);
   servicesView.update(model.state.services);
   testimonialView.update(model.state.testimonials);
@@ -165,7 +166,7 @@ const init = function () {
     .setLang(model.state.language);
   openHoursView.render(model.state.openHours);
   sectionView.render(model.state.labels);
-  chronoView.render(model.state.chrono);
+  // chronoView.render(model.state.chrono);
   teamView.render(model.state.team); //.members)
   // .setDescription(model.state.team.description)
   // .addHandlerClickMember(controlTeam);

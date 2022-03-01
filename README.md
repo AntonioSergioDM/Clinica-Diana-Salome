@@ -76,7 +76,7 @@
 - Map
   - [ ] Icon ([markerIconPath](./src/js/Config/mapConfig.js))
   - [ ] Design ([TILES.url](./src/js/Config/mapConfig.js) - providers)
-  - [ ] Popup ([\_map.scss](./src/sass/_map.scss))
+  - [x] Popup ([\_map.scss](./src/sass/_map.scss))
 - Testimonials
   - [ ] Fix arrow buttons (to svg?)
 - Nav
@@ -87,7 +87,7 @@
 - Footer
   - [ ] Social media
 - Team
-  - [ ] Change description animation (like in the headerView)
+  - [ ] ~~Change description animation (like in the headerView)~~
 
 ## Other TODOS
 

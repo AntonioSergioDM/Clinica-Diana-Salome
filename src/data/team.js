@@ -5,7 +5,7 @@ import imgCris from 'url:../img/team/cris.jpeg';
 export const TEAM = {
   pt: [
     {
-      name: 'Dra Diana Salomé',
+      name: 'Dr<sup>a</sup> Diana Salomé',
       image: imgDiana,
       description: `
       Diretora Clínica <br>

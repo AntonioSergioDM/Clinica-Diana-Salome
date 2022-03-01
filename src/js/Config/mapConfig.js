@@ -25,7 +25,7 @@ export const TILES = {
 };
 
 export const POPUP_TEXT = {
-  pt: 'Direções',
+  pt: 'Ver Direções',
   en: 'See Directions',
 };
 
@@ -34,5 +34,5 @@ export const POPUP_OPTIONS = {
   minWidth: 100,
   autoClose: true,
   closeOnClick: false,
-  // className: `${workout.type}-popup`,
+  className: `map__popup`,
 };

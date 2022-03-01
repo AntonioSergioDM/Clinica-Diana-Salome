@@ -12,7 +12,7 @@ export const LANG_LABELS = {
     },
     map: {
       title: 'Localização',
-      intro: 'Venha ter connosco',
+      intro: 'Venha visitar-nos',
     },
     testimonials: {
       title: 'Testemunhos',
@@ -24,11 +24,11 @@ export const LANG_LABELS = {
     },
     about: {
       title: 'Sobre nós',
-      intro: 'As nossas conquistas',
+      intro: `Texto aqui`,
     },
     team: {
       title: 'Equipa',
-      intro: 'A nossa fantástica equipa',
+      intro: 'A nossa equipa',
     },
     contacts: {
       title: 'Contactos',
@@ -66,7 +66,7 @@ export const LANG_LABELS = {
     },
     team: {
       title: 'Team',
-      intro: 'Our amazing team',
+      intro: 'Our team',
     },
     contacts: {
       title: 'Contacts',
