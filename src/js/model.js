@@ -33,7 +33,10 @@ export const state = {
   agreements: [],
 };
 
-const loadLabels = function () {
+export const loadLabels = function () {
+  if (state._labelsLang === state.language) return state.labels;
+  state._labelsLang = state._navLang = state._footerLang = state.language;
+
   state.labels = LANG_LABELS[state.language];
   state.labels.logo = LOGO_URL;
 
@@ -45,8 +48,12 @@ const loadLabels = function () {
     ...state.labels[id],
     id,
   }));
+  return state.labels;
 };
-const loadOpenHours = function () {
+export const loadOpenHours = function () {
+  if (state._openHoursLang === state.language) return state.openHours;
+  state._openHoursLang = state.language;
+
   WEEK_ORDER.forEach(
     (day, i) =>
       (state.openHours[day] = {
@@ -55,39 +62,72 @@ const loadOpenHours = function () {
       })
   );
   state.openHours.closeLabel = CLOSE_LABELS[state.language];
+  return state.openHours;
 };
-const loadServices = function () {
+export const loadServices = function () {
+  if (state._servicesLang === state.language) return state.services;
+  state._servicesLang = state.language;
+
   state.services = SERVICES[state.language];
   state.services.learnMore = LEARN_MORE_BTN[state.language];
+  return state.services;
 };
-const loadTestimonials = function () {
+export const loadTestimonials = function () {
+  if (state._testimonialsLang === state.language) return state.testimonials;
+  state._testimonialsLang = state.language;
+
   state.testimonials = TESTIMONIALS[state.language];
+  return state.testimonials;
 };
-const loadFAQ = function () {
+export const loadFAQ = function () {
+  if (state._faqLang === state.language) return state.faq;
+  state._faqLang = state.language;
+
   state.faq = FAQ[state.language];
+  return state.faq;
 };
-const loadChrono = function () {
+export const loadChrono = function () {
+  if (state._chronoLang === state.language) return state.chrono;
+  state._chronoLang = state.language;
+
   state.chrono = CHRONOLOGY[state.language];
   const year = new Date().getFullYear();
   if (!state.chrono.includes(year)) state.chrono.push(year);
   if (!state.chrono.includes(TODAY_ACHIEV[state.language]))
     state.chrono.push(TODAY_ACHIEV[state.language]);
+  return state.chrono;
 };
-const loadTeam = function () {
+export const loadTeam = function () {
+  if (state._teamLang === state.language) return state.team;
+  state._teamLang = state.language;
+
   state.team = TEAM[state.language];
+  return state.team;
 };
-const loadContacts = function () {
+export const loadContacts = function () {
+  if (state._contactsLang === state.language) return state.contacts;
+  state._contactsLang = state.language;
+
   state.contacts = CONTACTS[state.language];
+  return state.contacts;
 };
-const loadHome = function () {
+export const loadHome = function () {
+  if (state._homeLang === state.language) return state.openHours;
+  state._openHoursLang = state.language;
+
   state.home = HOME[state.language];
   state.home.learnMore = LEARN_MORE_BTN[state.language];
+  return state.home;
 };
-const loadAgreements = function () {
+export const loadAgreements = function () {
+  if (state._agreementsLang === state.language) return state.agreements;
+  state._agreementsLang = state.language;
+
   state.agreements = AGREEMENTS;
+  return state.agreements;
 };
 
-const load = function () {
+export const load = function () {
   loadLabels();
   loadOpenHours();
   loadServices();
@@ -120,6 +160,7 @@ export const changeLang = function (lang = DEFAULT_LANG) {
     throw new Error('Language not available');
 
   state.language = lang;
+  state._agreementsLang = state.language; //does'nt change with language
   load();
 };
 

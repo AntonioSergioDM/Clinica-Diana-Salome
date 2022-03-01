@@ -1,3 +1,4 @@
+/**@abstract */
 export default class OverView {
   // _parentSection;
   _auxparentSection = false;

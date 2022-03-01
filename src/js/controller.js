@@ -36,10 +36,10 @@ const controlDisplay = function () {
   OverView.hideAll().loading();
 
   switch (id) {
-    // case 'development':
-    //   OverView.showAll();
-    //   modalView.closeWindow();
-    //   break;
+    case 'development':
+      OverView.showAll();
+      modalView.closeWindow();
+      break;
     case 'about':
       chronoView.show();
       break;
@@ -90,15 +90,16 @@ const controlLang = function (lang) {
 
   model.changeLang(lang);
 
-  navView.update(model.state.nav);
-  openHoursView.update(model.state.openHours);
   sectionView.update(model.state.labels);
+  navView.update(model.state.nav).setLang(model.state.language);
+  footerView.update(model.state.footer);
+
+  openHoursView.update(model.state.openHours);
   chronoView.update(model.state.chrono);
-  teamView.update(model.state.team); //.members);
+  teamView.update(model.state.team);
   servicesView.update(model.state.services);
   testimonialView.update(model.state.testimonials);
   faqView.update(model.state.faq);
-  footerView.update(model.state.footer);
   contactsView.update(model.state.contacts);
   homeView.update(model.state.home);
 
@@ -160,7 +161,8 @@ const init = function () {
   navView
     .render(model.state.nav)
     // .addHandlerLinkClicked(controlNavLinkClick)
-    .addHandlerLanguage(controlLang);
+    .addHandlerLanguage(controlLang)
+    .setLang(model.state.language);
   openHoursView.render(model.state.openHours);
   sectionView.render(model.state.labels);
   chronoView.render(model.state.chrono);

@@ -29,6 +29,19 @@
   }
   &__lang {
     margin-left: 1rem;
+    display: inline-block;
+    background: none;
+    font-size: 1.7rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: $color-primary;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    &.active {
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
   }
 
   &__links {

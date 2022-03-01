@@ -38,6 +38,13 @@ class NavView extends View {
     return this;
   }
 
+  setLang(lang) {
+    this._nav.querySelectorAll('.nav__lang').forEach(function (element) {
+      if (element.textContent === lang) element.classList.add('active');
+      else element.classList.remove('active');
+    });
+  }
+
   // addHandlerLinkClicked(handler) {
   //   this._parentElement.addEventListener(
   //     'click',
@@ -102,17 +109,17 @@ class NavView extends View {
     `;
   }
 
-  _generateBtnContact(data) {
-    return `
-    <li class="nav__item">
-      <a 
-        class="nav__link nav__link--btn btn--show-modal" 
-        href="#">
-          ${data.nav}
-      </a>
-    </li>
-    `;
-  }
+  // _generateBtnContact(data) {
+  //   return `
+  //   <li class="nav__item">
+  //     <a
+  //       class="nav__link nav__link--btn btn--show-modal"
+  //       href="#">
+  //         ${data.nav}
+  //     </a>
+  //   </li>
+  //   `;
+  // }
 }
 
 export default new NavView();

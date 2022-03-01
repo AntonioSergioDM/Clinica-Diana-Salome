@@ -56,7 +56,7 @@
   - [x] FAQ
   - [x] Footer
   - [x] About Us
-  - [ ] Team
+  - [x] Team
 - Data - pt & en - add more in the Config and data folders
   - [x] Titles and intros
   - [x] Open hours
@@ -80,8 +80,8 @@
 - Testimonials
   - [ ] Fix arrow buttons (to svg?)
 - Nav
-  - [ ] Opaque (change color?) on hover ([\_nav.scss](./src/sass/_nav.scss))
-  - [ ] Language buttons underline ([\_nav.scss](./src/sass/_nav.scss))
+  - [x] Opaque (change color?) on hover ([\_nav.scss](./src/sass/_nav.scss))
+  - [x] Language buttons underline ([\_nav.scss](./src/sass/_nav.scss))
 - FAQ
   - [x] All style ([\_faq.scss](./src/sass/_faq.scss))
 - Footer
