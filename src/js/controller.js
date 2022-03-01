@@ -62,6 +62,7 @@ const controlDisplay = function () {
       agreementsView.show();
       break;
     case 'home':
+      contactsView.show();
       headerView.show();
       chronoView.show();
       homeView.show();

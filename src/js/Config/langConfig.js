@@ -8,7 +8,7 @@ export const LANG_LABELS = {
   pt: {
     services: {
       title: 'Tratamentos',
-      intro: 'Os tratamentos que temos para oferecer',
+      intro: 'Atuamos nas diversas áreas da Medicina Dentária',
     },
     map: {
       title: 'Localização',
@@ -20,7 +20,7 @@ export const LANG_LABELS = {
     },
     faq: {
       title: 'FAQ',
-      intro: 'O que os nos costumam perguntar',
+      intro: 'O que nos costumam perguntar',
     },
     about: {
       title: 'Sobre nós',
