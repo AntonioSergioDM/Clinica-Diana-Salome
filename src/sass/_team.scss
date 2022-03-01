@@ -15,8 +15,9 @@
     & .photo {
       border: 1px solid $color-grey-light-3;
       width: 240px;
-      height: 240px;
+      height: 280px;
       object-fit: cover;
+      box-shadow: 3px 3px 5px 3px $color-grey-dark-2;
     }
 
     &-container {

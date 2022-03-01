@@ -41,6 +41,7 @@ const controlDisplay = function () {
       modalView.closeWindow();
       break;
     case 'about':
+      headerView.show();
       chronoView.show();
       break;
     case 'team':

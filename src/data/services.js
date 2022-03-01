@@ -8,6 +8,7 @@ import img3 from 'url:../img/services/estetica.jpeg';
 import img4 from 'url:../img/services/crianca1.jpeg';
 import img5 from 'url:../img/services/paciente1.jpeg';
 import img6 from 'url:../img/services/selfie2.jpeg';
+import img7 from 'url:../img/services/branqueamento.jpeg';
 
 export const LEARN_MORE_BTN = {
   pt: 'Saiba mais',
@@ -70,19 +71,19 @@ export const SERVICES = {
     {
       title: 'Branqueamento Dentário',
       imageLazy: imgLazy3,
-      image: img6,
+      image: img7,
       icon: '', //not sure
       text: `Quer um sorriso bonito e radiante? Faça o seu branqueamento dentário, de forma segura, simples, sem desgaste dentário e com resultados incríveis.`,
       link: '',
     },
-    {
-      title: '',
-      imageLazy: imgLazy3,
-      image: img6,
-      icon: '', //not sure
-      text: ``,
-      link: '',
-    },
+    // {
+    //   title: '',
+    //   imageLazy: imgLazy3,
+    //   image: img6,
+    //   icon: '', //not sure
+    //   text: ``,
+    //   link: '',
+    // },
   ],
   en: [
     {

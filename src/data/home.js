@@ -1,5 +1,5 @@
 import img1 from 'url:../img/logo.jpg';
-import img2 from 'url:../img/logo.jpg';
+import img2 from 'url:../img/placeholder/tratamentos_bw.jpeg';
 
 export const HOME = {
   pt: [

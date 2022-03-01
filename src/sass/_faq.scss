@@ -44,6 +44,9 @@
     font-size: 2rem;
     border-top: 4px solid $color-grey-light-2;
     // transition: $transition-time;
+    a {
+      font-size: 2rem;
+    }
 
     &--active {
       display: block;

@@ -51,7 +51,7 @@ class HeaderView extends View {
         <div class="header__h1">
           <h1>
             Clínica Médica Dentária <br />
-            Dra Diana Salomé
+            Drª Diana Salomé
           </h1>
         </div>
       `;

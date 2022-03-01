@@ -24,7 +24,11 @@ export const LANG_LABELS = {
     },
     about: {
       title: 'Sobre nós',
-      intro: `Texto aqui`,
+      intro: `A nossa Clínica, situada no centro da cidade de Vila Real, tem como missão dar-lhe todos os motivos para <b>Sorrir</b>! <br>
+      O bem estar dos nossos pacientes é o que nos move e, por isso mesmo, oferecemos um serviço especializado de acordo com os seus desejos e necessidades.<br>
+      A nossa esquipa de profissionais faz uso de valores como a Dedicação, Proximidade, Confiança e Excelência.<br><br>
+      Que sorrir seja o nosso objetivo de todos os dias!<br>Venha sorrir connosco!
+       `,
     },
     team: {
       title: 'Equipa',
