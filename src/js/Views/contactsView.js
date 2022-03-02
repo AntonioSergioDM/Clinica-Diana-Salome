@@ -1,4 +1,5 @@
 import DoubleContainerView from './DoubleContainerView';
+import img from 'url:../../img/contacts/*';
 
 class ContactsView extends DoubleContainerView {
   constructor() {
@@ -8,7 +9,7 @@ class ContactsView extends DoubleContainerView {
     return `
     <div class="contacts__content contacts__content--${i + 1}" data-id="${i}">
       <div class="contacts__icon contacts__icon--${i + 1}">
-        <img src="${data.image}" alt="contact medium" />
+        <img src="${img[data.image]}" alt="contact medium" />
       </div>
       <h5 class="contacts__header">${data.text}</h5>
       <p>

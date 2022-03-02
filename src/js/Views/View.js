@@ -1,4 +1,4 @@
-import { ICON_PATH } from '../config';
+import { ICON_PATH } from '../Config/config';
 import OverView from './OverView';
 
 /**

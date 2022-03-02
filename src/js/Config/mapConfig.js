@@ -3,7 +3,7 @@ export const COORDS = [41.29822701133623, -7.747412611051245];
 export const MAP_ZOOM_LEVEL = 15;
 
 /** Images for marker on map */
-import markerIconPath from '../../img/mapIcon.png';
+import markerIconPath from '../../img/map/mapIcon.png';
 
 /** Map icon options - https://leafletjs.com/reference.html#icon */
 export const MARKER_ICON_OPTIONS = {
@@ -22,11 +22,6 @@ export const TILES = {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   },
-};
-
-export const POPUP_TEXT = {
-  pt: 'Ver Direções',
-  en: 'See Directions',
 };
 
 export const POPUP_OPTIONS = {

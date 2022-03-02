@@ -1,39 +1,35 @@
-import img1 from 'url:../img/agreements/medicare.png';
-import img2 from 'url:../img/agreements/ADMG.png';
-import img3 from 'url:../img/agreements/Agilcare.png';
-import img4 from 'url:../img/agreements/UBHPlan.png';
-import img5 from 'url:../img/agreements/SAMS Quadros.png';
-import img6 from 'url:../img/agreements/Associacao Sindical de Professores Licensiados.png';
-import img7 from 'url:../img/agreements/Servico Medico Permanente.png';
-import img8 from 'url:../img/agreements/MeltiMalon.png';
-import img9 from 'url:../img/agreements/sorriso.png';
-import img10 from 'url:../img/agreements/BS Care.png';
-import img11 from 'url:../img/agreements/placeholder.png';
-import img12 from 'url:../img/agreements/SS GNR.png';
-import img13 from 'url:../img/agreements/Bombeiros Voluntarios Cruz Verde.png';
-import img14 from 'url:../img/agreements/Bombeiros Voluntarios Cruz Branca.png';
-import img15 from 'url:../img/agreements/Laboratorio Pioledo Unilabs.png';
-import img16 from 'url:../img/agreements/placeholder.png';
-import img17 from 'url:../img/agreements/Farmacia Baptista.png';
-import img18 from 'url:../img/agreements/GimnosCult Ginasio.png';
-
 export const AGREEMENTS = [
-  { title: 'Medicare', image: img1 },
-  { title: 'ADMG (GNR)', image: img2 },
-  { title: 'Agilcare', image: img3 },
-  { title: 'UBH Plan', image: img4 },
-  { title: 'SAMS Quadros', image: img5 },
-  { title: 'Associação Sindical de Professores Licensiados', image: img6 },
-  { title: 'Serviço Médico Permanente', image: img7 },
-  { title: 'MeltiMalon', image: img8 },
-  { title: 'sorriso', image: img9 },
-  { title: 'BS Care', image: img10 },
+  { title: 'Medicare', image: 'medicare.png' },
+  { title: 'ADMG (GNR)', image: 'ADMG.png' },
+  { title: 'Agilcare', image: 'Agilcare.png' },
+  { title: 'UBH Plan', image: 'UBHPlan.png' },
+  { title: 'SAMS Quadros', image: 'SAMS Quadros.png' },
+  {
+    title: 'Associação Sindical de Professores Licensiados',
+    image: 'Associacao Sindical de Professores Licensiados.png',
+  },
+  {
+    title: 'Serviço Médico Permanente',
+    image: 'Servico Medico Permanente.png',
+  },
+  { title: 'MeltiMalon', image: 'MeltiMalon.png' },
+  { title: 'sorriso', image: 'sorriso.png' },
+  { title: 'BS Care', image: 'BS Care.png' },
   { title: 'Lar Nossa Senhora das Dores' },
-  { title: 'SS GNR', image: img12 },
-  { title: 'Bombeiros Voluntários Cruz Verde', image: img13 },
-  { title: 'Bombeiros Voluntários Cruz Branca', image: img14 },
-  { title: 'Laboratório Pioledo Unilabs', image: img15 },
+  { title: 'SS GNR', image: 'SS GNR.png' },
+  {
+    title: 'Bombeiros Voluntários Cruz Verde',
+    image: 'Bombeiros Voluntarios Cruz Verde.png',
+  },
+  {
+    title: 'Bombeiros Voluntários Cruz Branca',
+    image: 'Bombeiros Voluntarios Cruz Branca.png',
+  },
+  {
+    title: 'Laboratório Pioledo Unilabs',
+    image: 'Laboratorio Pioledo Unilabs.png',
+  },
   { title: 'UTAD Erasmus' },
-  { title: 'Farmácia Baptista', image: img17 },
-  { title: 'GimnosCult Ginásio', image: img18 },
+  { title: 'Farmácia Baptista', image: 'Farmacia Baptista.png' },
+  { title: 'GimnosCult Ginásio', image: 'GimnosCult Ginasio.png' },
 ];

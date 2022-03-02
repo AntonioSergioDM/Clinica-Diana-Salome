@@ -1,4 +1,5 @@
 import View from './View';
+import img from 'url:../../img/chrono/*';
 
 class ChronoView extends View {
   _parentElement = document.querySelector('.chrono');
@@ -47,7 +48,7 @@ class ChronoView extends View {
   }
 
   _generateEvent(data) {
-    const image = data => `<img src="${data.image}" alt="${data.text}" />`;
+    const image = data => `<img src="${img[data.image]}" alt="${data.text}" />`;
     const text = data => `<h4>${data.date}</h4><h3>${data.text}</h3>`;
 
     return `

@@ -1,4 +1,5 @@
 import View from './View';
+import img from 'url:../../img/services/*';
 
 class ServicesView extends View {
   _parentElement = document.querySelector('.features');
@@ -56,15 +57,15 @@ class ServicesView extends View {
   _generateImage(data) {
     return `
         <img
-          src="${data.image}"
+          src="${img[data.image]}"
           alt="${data.title}"
           class="features__img "
         />
     `;
     // return `
     //     <img
-    //       src="${data.imageLazy}"
-    //       data-src="${data.image}"
+    //       src="${img[data.imageLazy]}"
+    //       data-src="${img[data.image]}"
     //       alt="${data.title}"
     //       class="features__img lazy-img"
     //     />

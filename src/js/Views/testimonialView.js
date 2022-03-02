@@ -1,4 +1,5 @@
 import SliderView from './sliderView';
+import img from 'url:../../img/testimonials/*';
 
 class TestimonialView extends SliderView {
   _parentElement = document.querySelector('.slider');
@@ -18,23 +19,23 @@ class TestimonialView extends SliderView {
       `;
   }
 
-  _generateItem(testimonial, index) {
+  _generateItem(data, index) {
     return `
     <div class="slide slide--${index}">
         <div class="testimonial">
-            <h5 class="testimonial__header">${testimonial.title}</h5>
+            <h5 class="testimonial__header">${data.title}</h5>
             <blockquote class="testimonial__text">
-            ${testimonial.text}
+            ${data.text}
             </blockquote>
             <address class="testimonial__author">
                 <img 
-                    src="${testimonial.image}" 
+                    src="${img[data.image]}" 
                     alt="" class="testimonial__photo" />
                 <h6 class="testimonial__name">
-                    ${testimonial.author}
+                    ${data.author}
                 </h6>
                 <p class="testimonial__location">
-                    ${'⭐'.repeat(testimonial.stars)}
+                    ${'⭐'.repeat(data.stars)}
                 </p>
             </address>
         </div>

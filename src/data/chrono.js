@@ -1,20 +1,14 @@
-import img1 from 'url:../img/chrono/paciente1.jpeg';
-import img2 from 'url:../img/chrono/temp_xray.jpg';
-import img3 from 'url:../img/chrono/operacao1.jpeg';
-import imgToday from 'url:../img/chrono/selfie2.jpeg';
-
-export const IMG_TODAY = imgToday;
 export const TODAY_ACHIEV = {
   pt: {
     date: 'Hoje',
     text: 'Estamos à sua espera',
-    image: imgToday,
+    image: 'selfie2.jpeg',
     // icon:'icon-disc'
   },
   en: {
     date: 'Today',
     text: 'We are waiting for you',
-    image: imgToday,
+    image: 'selfie2.jpeg',
     // icon:'icon-disc'
   },
 };
@@ -37,18 +31,18 @@ export const CHRONOLOGY = {
     {
       date: randomDate('pt'),
       text: 'Primeiro Paciente',
-      image: img1,
+      image: 'paciente1.jpeg',
     },
     {
       date: randomDate('pt'),
       text: 'Primeiro Raio-X',
-      image: img2,
+      image: 'temp_xray.jpg',
     },
     2020,
     {
       date: randomDate('pt'),
       text: 'Acordo com MediCare',
-      image: img3,
+      image: 'operacao1.jpeg',
     },
   ],
   en: [
@@ -56,18 +50,18 @@ export const CHRONOLOGY = {
     {
       date: randomDate('en'),
       text: 'First Patient',
-      image: img1,
+      image: 'paciente1.jpeg',
     },
     {
       date: randomDate('en'),
       text: 'Lorem ipsum dolor sit amet',
-      image: img2,
+      image: 'temp_xray.jpg',
     },
     2020,
     {
       date: randomDate('en'),
       text: 'Lorem ipsum dolor sit amet',
-      image: img3,
+      image: 'operacao1.jpeg',
     },
   ],
 };

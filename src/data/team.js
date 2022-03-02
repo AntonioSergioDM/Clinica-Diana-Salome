@@ -1,12 +1,8 @@
-import imgDiana from 'url:../img/team/diana.jpeg';
-import imgAfonso from 'url:../img/team/afonso.jpeg';
-import imgCris from 'url:../img/team/cris.jpeg';
-
 export const TEAM = {
   pt: [
     {
       name: 'Drª Diana Salomé',
-      image: imgDiana,
+      image: 'diana.jpeg',
       description: `
       Diretora Clínica <br>
       Mestre em Medicina Dentária pela FMDUP <br>
@@ -20,7 +16,7 @@ export const TEAM = {
     },
     {
       name: 'Dr Afonso Silva',
-      image: imgAfonso,
+      image: 'afonso.jpeg',
       description: `
       Médico Dentista Especialista em Ortodontia <br>
       Experiência de muitos anos na área da Medicina Dentária, Implantologia e Ortodontia <br>
@@ -30,7 +26,7 @@ export const TEAM = {
     },
     {
       name: 'Cristina Costa',
-      image: imgCris,
+      image: 'cris.jpeg',
       description: `
       Assistente de Consultório Médico e Dentário <br>
       Formação em Serviço Clínico e Atendimento ao Público <br>
@@ -43,17 +39,17 @@ export const TEAM = {
   en: [
     {
       name: 'Dra Diana Salomé',
-      image: imgDiana,
+      image: 'diana.jpeg',
       description: `Person 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim est, rutrum non commodo id, venenatis vitae elit. Praesent posuere elit sapien, eu malesuada nibh suscipit ac. Donec vitae purus neque. Vestibulum mollis sapien in risus tempus sollicitudin. Proin porta porta sodales. Suspendisse at porttitor nisi. Vestibulum vitae erat volutpat, fringilla purus nec, mollis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`,
     },
     {
       name: 'Dr Afonso',
-      image: imgAfonso,
+      image: 'afonso.jpeg',
       description: `Person 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim est, rutrum non commodo id, venenatis vitae elit. Praesent posuere elit sapien, eu malesuada nibh suscipit ac. Donec vitae purus neque. Vestibulum mollis sapien in risus tempus sollicitudin. Proin porta porta sodales. Suspendisse at porttitor nisi. Vestibulum vitae erat volutpat, fringilla purus nec, mollis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`,
     },
     {
       name: 'Cris',
-      image: imgCris,
+      image: 'cris.jpeg',
       description: `Person 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim est, rutrum non commodo id, venenatis vitae elit. Praesent posuere elit sapien, eu malesuada nibh suscipit ac. Donec vitae purus neque. Vestibulum mollis sapien in risus tempus sollicitudin. Proin porta porta sodales. Suspendisse at porttitor nisi. Vestibulum vitae erat volutpat, fringilla purus nec, mollis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.`,
     },
   ],

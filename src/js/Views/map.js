@@ -1,10 +1,10 @@
 import * as L from 'leaflet';
+import { MAP_POPUP_TEXT } from '../Config/langConfig';
 import {
   COORDS,
   MAP_ZOOM_LEVEL,
   MARKER_ICON_OPTIONS,
   POPUP_OPTIONS,
-  POPUP_TEXT,
   TILES,
 } from '../Config/mapConfig';
 import OverView from './OverView';
@@ -43,7 +43,7 @@ class Map extends OverView {
   }
 
   setLang(lang) {
-    this._popupText = POPUP_TEXT[lang];
+    this._popupText = MAP_POPUP_TEXT[lang];
     this._marker.setPopupContent(this._generateMarkup());
     return this;
   }

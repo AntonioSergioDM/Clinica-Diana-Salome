@@ -1,16 +1,26 @@
-import { AVAIL_LANG, DEFAULT_LANG, LOGO_URL, WEEK_ORDER } from './config';
-import { CLOSE_LABELS, OPEN_HOURS, WEEK_LABELS } from '../data/openHours';
+import { WEEK_ORDER } from './Config/constants';
+import { FOOTER, NAV, LOGO_URL } from './Config/config';
+import {
+  AVAIL_LANG,
+  DEFAULT_LANG,
+  LEARN_MORE_BTN,
+  CLOSE_LABELS,
+  WEEK_LABELS,
+} from './Config/langConfig';
+import { LANG_LABELS } from '../data/sections';
+import { OPEN_HOURS } from '../data/openHours';
 import { TESTIMONIALS } from '../data/testimonials';
-import { FOOTER, LANG_LABELS, NAV } from './Config/langConfig';
-import { LEARN_MORE_BTN, SERVICES } from '../data/services';
+import { SERVICES } from '../data/services';
 import { FAQ } from '../data/faq';
-import { CHRONOLOGY, TODAY_ACHIEV } from '../data/about';
+import { CHRONOLOGY, TODAY_ACHIEV } from '../data/chrono';
 import { TEAM } from '../data/team';
 import { CONTACTS } from '../data/contacts';
 import { HOME } from '../data/home';
 import { AGREEMENTS } from '../data/agreements';
+// import data from 'url:../data/json/**';
+// console.log(data);
 
-// import OPEN_HOURS_URL from 'url:../data/test.json.data';
+// import OPEN_HOURS_URL from 'url:../data/json/agreements.json.data';
 // (async function (url) {
 //   console.log(url);
 //   const open_response = await fetch(OPEN_HOURS_URL);

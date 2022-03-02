@@ -69,9 +69,9 @@ const controlDisplay = function () {
       chronoView.show();
       homeView.show();
       agreementsView.show();
-      testimonialView.show();
       map.show();
       openHoursView.show();
+      testimonialView.show();
       break;
     default:
       window.history.pushState(null, '', '#home');

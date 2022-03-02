@@ -1,4 +1,5 @@
 import View from './View';
+import img from 'url:../../img/agreements/*';
 
 class AgreementsView extends View {
   _parentElement = document.querySelector('.agreements');
@@ -15,7 +16,7 @@ class AgreementsView extends View {
               ? `
               <img
                 class="agreements__img"
-                src="${data.image}"
+                src="${img[data.image]}"
                 alt="${data.title}"
               />`
               : data.title //`<p class="agreements__img">${data.title}</p>`

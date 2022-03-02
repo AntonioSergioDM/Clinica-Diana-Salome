@@ -1,88 +1,33 @@
-/** nav section names */
-export const NAV = ['about', 'services', 'team', 'contacts'];
-/** footer section names */ //prettier-ignore
-export const FOOTER = ['about', 'services', 'agreements', 'team', 'faq', 'contacts'];
+/** Default language for the website*/
+export const DEFAULT_LANG = 'pt';
 
-/** Labels to use based on language */
-export const LANG_LABELS = {
-  pt: {
-    services: {
-      title: 'Tratamentos',
-      intro: 'Atuamos nas diversas áreas da Medicina Dentária',
-    },
-    map: {
-      title: 'Localização',
-      intro: 'Venha visitar-nos',
-    },
-    testimonials: {
-      title: 'Testemunhos',
-      intro: 'O que os nossos pacientes dizem de nós',
-    },
-    faq: {
-      title: 'FAQ',
-      intro: 'O que nos costumam perguntar',
-    },
-    about: {
-      title: 'Sobre nós',
-      intro: `A nossa Clínica, situada no centro da cidade de Vila Real, tem como missão dar-lhe todos os motivos para <b>Sorrir</b>! <br>
-      O bem estar dos nossos pacientes é o que nos move e, por isso mesmo, oferecemos um serviço especializado de acordo com os seus desejos e necessidades.<br>
-      A nossa esquipa de profissionais faz uso de valores como a Dedicação, Proximidade, Confiança e Excelência.<br><br>
-      Que sorrir seja o nosso objetivo de todos os dias!<br>Venha sorrir connosco!
-       `,
-    },
-    team: {
-      title: 'Equipa',
-      intro: 'A nossa equipa',
-    },
-    contacts: {
-      title: 'Contactos',
-      intro: 'Fale connosco',
-    },
-    openhours: {
-      title: 'Horário',
-      intro: '',
-    },
-    agreements: {
-      title: 'Acordos e Protocolos',
-      intro: '',
-    },
-  },
-  en: {
-    services: {
-      title: 'Treatments',
-      intro: 'Treatments to offer',
-    },
-    map: {
-      title: 'Location',
-      intro: 'Come to us',
-    },
-    testimonials: {
-      title: 'Testimonials',
-      intro: 'Our patients opinions',
-    },
-    faq: {
-      title: 'FAQ',
-      intro: 'Questions for us',
-    },
-    about: {
-      title: 'About Us',
-      intro: 'Our achievments',
-    },
-    team: {
-      title: 'Team',
-      intro: 'Our team',
-    },
-    contacts: {
-      title: 'Contacts',
-      intro: 'Talk to us',
-    },
-    openhours: {
-      title: 'Working Hours',
-      intro: '',
-    },
-    agreements: {
-      title: 'Insurance and agreements',
-      intro: '',
-    },
-  },
+/** Text used in the 'Leran more' button by language.*/
+export const LEARN_MORE_BTN = {
+  pt: 'Saiba mais',
+  en: 'Learn more',
 };
+
+/** Labels for the week days by language. Starting sunday. */
+export const WEEK_LABELS = {
+  // prettier-ignore
+  pt: ['Domingo e Feriado','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+  // prettier-ignore
+  en: ['Sunday and Holidays','Monday','Tuesday','Wednsday','Thursday','Friday','Saturday'],
+};
+
+/** Label to show when NO open hours are defined for the day (by language) */
+export const CLOSE_LABELS = {
+  pt: 'Encerrado',
+  en: 'Closed',
+};
+
+/** Label to show in the map after click by language */
+export const MAP_POPUP_TEXT = {
+  pt: 'Ver Direções',
+  en: 'See Directions',
+};
+
+/** Available languages - used as language confirmation when changing language.
+ * Add the translations in all files in the ../../data/ folder and langConfig.js before adding here
+ */
+export const AVAIL_LANG = ['pt', 'en'];

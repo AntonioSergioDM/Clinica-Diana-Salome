@@ -18,7 +18,12 @@
     "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.3.1",
-    "parcel": "^2.3.1"
+    "@parcel/packager-raw-url": "^2.3.2",
+    "@parcel/packager-xml": "^2.3.2",
+    "@parcel/resolver-glob": "^2.3.2",
+    "@parcel/transformer-sass": "^2.3.2",
+    "@parcel/transformer-webmanifest": "^2.3.2",
+    "@parcel/transformer-xml": "^2.3.2",
+    "parcel": "^2.3.2"
   }
 }

@@ -1,5 +1,6 @@
 import View from './View';
 import Holidays from 'date-holidays';
+import { WEEK_ORDER } from '../Config/constants';
 
 class OpenHoursView extends View {
   _parentElement = document.querySelector('.open-hours');
@@ -13,7 +14,7 @@ class OpenHoursView extends View {
     const hd = new Holidays('PT');
     const today = hd.isHoliday(Date.now()) ? 0 : new Date().getDay(); // Sunday is 0
 
-    const html = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].map(
+    const html = WEEK_ORDER.map(
       (day, i) => `
         <li class="day ${i == today ? 'today' : ''}">
           ${this._data[day].label}

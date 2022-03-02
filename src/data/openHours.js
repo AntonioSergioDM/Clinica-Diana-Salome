@@ -31,22 +31,3 @@ export const OPEN_HOURS = {
     close: [''],
   },
 };
-
-export const WEEK_LABELS = {
-  pt: [
-    'Domingo e Feriado',
-    'Segunda',
-    'Terça',
-    'Quarta',
-    'Quinta',
-    'Sexta',
-    'Sábado',
-  ],
-  // prettier-ignore
-  en: ['Sunday and Holidays', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday'],
-};
-
-export const CLOSE_LABELS = {
-  pt: 'Encerrado',
-  en: 'Closed',
-};

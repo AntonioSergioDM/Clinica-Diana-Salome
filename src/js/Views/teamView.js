@@ -1,4 +1,5 @@
 import DoubleContainerView from './DoubleContainerView';
+import img from 'url:../../img/team/*';
 
 class TeamView extends DoubleContainerView {
   constructor() {
@@ -8,7 +9,7 @@ class TeamView extends DoubleContainerView {
   _generateItemTab(person, i) {
     return `
     <div class="team__tab" data-id="${i}">
-      <img class="photo" src="${person.image}" alt="${person.name}" />
+      <img class="photo" src="${img[person.image]}" alt="${person.name}" />
       <h4 class="name">${person.name}</h4>
     </div>
     `;

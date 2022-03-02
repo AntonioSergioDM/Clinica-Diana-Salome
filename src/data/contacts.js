@@ -1,7 +1,3 @@
-import imgPhone from 'url:../img/temp_cellphone.png';
-import imgTele from 'url:../img/temp_telephone.png';
-import imgEmail from 'url:../img/temp_mail.png';
-
 export const CONTACTS = {
   pt: [
     {
@@ -9,21 +5,21 @@ export const CONTACTS = {
       value: 'tlm.: 932 220 731',
       text: 'Ligue-nos agora!',
       link: 'tel:932220731',
-      image: imgPhone,
+      image: 'telemovel.png',
     },
     {
       title: 'Telefone',
       value: 'tel.: 259 104 774',
       text: 'Ligue-nos agora!',
       link: 'tel:259104774',
-      image: imgTele,
+      image: 'temp_telephone.png',
     },
     {
       title: 'Email',
       value: 'clinicadianasalome@gmail.com',
       text: 'Envie-nos <br> um e-mail!',
       link: 'mailto:clinicadianasalome@gmail.com',
-      image: imgEmail,
+      image: 'temp_mail.png',
     },
   ],
   en: [
@@ -32,21 +28,21 @@ export const CONTACTS = {
       value: '+351 932 220 731',
       text: 'Call us now!',
       link: 'tel:+351932220731',
-      image: imgPhone,
+      image: 'telemovel.png',
     },
     {
       title: 'Telephone',
       value: '+351 259 104 774',
       text: 'Call us now!',
       link: 'tel:+351259104774',
-      image: imgTele,
+      image: 'temp_telephone.png',
     },
     {
       title: 'Email',
       value: 'clinicadianasalome@gmail.com',
       text: 'Send us <br> an e-mail!',
       link: 'mailto:clinicadianasalome@gmail.com',
-      image: imgEmail,
+      image: 'temp_mail.png',
     },
   ],
 };
