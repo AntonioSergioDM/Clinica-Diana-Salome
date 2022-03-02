@@ -38,7 +38,7 @@
   - [x] Logic
   - [x] Decide what to put
   - [x] Action - Do something on click (w/smooth scroll)
-- [About Us](./src/js/Views/chronoView.js)
+- ~~[About Us](./src/js/Views/chronoView.js)~~(removed)
   - [x] Logic
   - [ ] Action - Smooth scrolling (without nav bar over the year)
   - [ ] Line with rigth heigth
@@ -71,8 +71,11 @@
 
 ## Website Style
 
-- [ ] Colors ([\_base.scss](./src/sass/_base.scss))
-- [ ] Images
+- [x] Colors ([\_base.scss](./src/sass/_base.scss))
+- Images
+  - [ ] Logo, favicon, ...
+  - [x] From clinic
+  - [ ] Contacts
 - Map
   - [ ] Icon ([markerIconPath](./src/js/Config/mapConfig.js))
   - [ ] Design ([TILES.url](./src/js/Config/mapConfig.js) - providers)
@@ -85,23 +88,23 @@
 - FAQ
   - [x] All style ([\_faq.scss](./src/sass/_faq.scss))
 - Footer
-  - [ ] Social media
+  - [x] Social media
 - Team
   - [ ] ~~Change description animation (like in the headerView)~~
 
 ## Other TODOS
 
 - [ ] Google search optimization
-- [ ] Polyfilling and transpiling
+- [x] Polyfilling and transpiling
 - [ ] Mobile compatible
 - [x] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)
 - [ ] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)
 - [ ] ¿¿¿ Dark mode ???
 - Code
   - [ ] ~~¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???~~
-  - [ ] ¿¿¿ Create parent class to the nav&footer bars ???
+  - [ ] ~~Create parent class to the nav&footer bars~~
   - [x] contact reference
-  - [ ] .update() method to work always (special atention at openhours, footer, chrono)
+  - [x] .update() method to work always (special atention at openhours, team, footer, chrono)
 
 ## License
 
@@ -115,4 +118,4 @@ Not yet
 
 ### Images
 
-[Carlos Daniel](https://)
+<!-- [Carlos Daniel](https://) -->

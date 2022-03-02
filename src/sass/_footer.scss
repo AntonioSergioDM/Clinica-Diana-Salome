@@ -1,6 +1,6 @@
 .footer {
   padding: 10rem 3rem 0.5rem;
-  background-color: #37383d;
+  background-color: $color-grey-dark-0;
 
   &__nav {
     list-style: none;
@@ -11,20 +11,33 @@
 
   &__item {
     margin-right: 4rem;
+    display: flex;
   }
 
   /* see components */
   &__link {
     font-size: 1.6rem;
-    color: #eee;
+    color: $color-grey-light-0;
     text-decoration: none;
+    margin: auto;
   }
 
   &__logo {
-    height: 5rem;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 5rem;
+    $color: $color-grey-dark-0;
+    background-color: $color-grey-light-0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.2rem;
+    width: 4.2rem;
+    border-radius: 50%;
+    border: 2px solid $color;
+    fill: $color;
+    margin: auto 8%;
+    svg {
+      padding: 15%;
+    }
   }
 
   &__copyright {
