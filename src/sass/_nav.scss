@@ -10,6 +10,10 @@
 
   &:hover {
     background-color: $color-terciary;
+
+    .nav__logo {
+      opacity: 1;
+    }
   }
 
   &.sticky {
@@ -20,6 +24,7 @@
   &__logo {
     height: 4.5rem;
     transition: $transition-time;
+    opacity: calc(2 * $opacity-color);
   }
 
   &__langs {

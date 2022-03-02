@@ -1,6 +1,8 @@
 // Polyfiling
-// import 'core-js/stable';
-// import 'regenerator-runtime/runtime';
+// array methods and such
+import 'core-js/stable/array';
+// async functions
+import 'regenerator-runtime/runtime';
 
 // import the model and views
 import * as model from './model';

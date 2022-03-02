@@ -85,7 +85,7 @@ class NavView extends View {
       this._nav.querySelectorAll('.nav__lang').forEach(element => {
         if (!element.isEqualNode(link)) element.style.opacity = opacity;
       });
-      this._logo.style.opacity = opacity;
+      // this._logo.style.opacity = opacity;
     };
   }
 

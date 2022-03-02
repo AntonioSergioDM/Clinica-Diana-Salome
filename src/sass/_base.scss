@@ -1,17 +1,24 @@
 $color-primary: #ff9f88; //#5ec576;
 $color-secondary: #ffc788; // #ffcb03;
 $color-terciary: #db759e; // #ff585f;
-$color-primary-darker: darken($color-primary, 5%); //#4bbb7d;
-$color-secondary-darker: darken($color-secondary, 5%); //#ffbb00;
-$color-terciary-darker: darken($color-terciary, 5%); //#fd424b;
-$color-primary-opacity: rgba($color-primary, 0.3);
-$color-secondary-opacity: rgba($color-secondary, 0.3);
-$color-terciary-opacity: rgba($color-terciary, 0.3);
 
-$color-grad-primary-1: lighten($color-primary, 0.2); //#9be15d;
-$color-grad-primary-2: darken($color-primary-darker, 0.2); //#39b385;
-$color-grad-secondary-1: lighten($color-secondary, 0.2); //#ffcb03;
-$color-grad-secondary-2: darken($color-secondary-darker, 0.2); //#ffb003;
+$darken-value: 0.2;
+$color-primary-darker: darken($color-primary, $darken-value); //#4bbb7d;
+$color-secondary-darker: darken($color-secondary, $darken-value); //#ffbb00;
+$color-terciary-darker: darken($color-terciary, $darken-value); //#fd424b;
+
+$opacity-color: 0.3;
+$color-primary-opacity: rgba($color-primary, $opacity-color);
+$color-secondary-opacity: rgba($color-secondary, $opacity-color);
+$color-terciary-opacity: rgba($color-terciary, $opacity-color);
+
+$color-grad-primary-1: lighten($color-primary, $darken-value); //#9be15d;
+$color-grad-primary-2: darken($color-primary-darker, $darken-value); //#39b385;
+$color-grad-secondary-1: lighten($color-secondary, $darken-value); //#ffcb03;
+$color-grad-secondary-2: darken(
+  $color-secondary-darker,
+  $darken-value
+); //#ffb003;
 
 // Light background
 $color-grey-light-1: #f9f5f3;
