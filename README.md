@@ -81,7 +81,7 @@
   - [ ] Design ([TILES.url](./src/js/Config/mapConfig.js) - providers)
   - [x] Popup ([\_map.scss](./src/sass/_map.scss))
 - Testimonials
-  - [ ] Fix arrow buttons (to svg?)
+  - [x] Fix arrow buttons (to svg?)
 - Nav
   - [x] Opaque (change color?) on hover ([\_nav.scss](./src/sass/_nav.scss))
   - [x] Language buttons underline ([\_nav.scss](./src/sass/_nav.scss))

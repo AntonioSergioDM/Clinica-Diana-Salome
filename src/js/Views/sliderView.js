@@ -91,4 +91,33 @@ export default class SliderView extends View {
     });
     return this;
   }
+
+  _generateMarkup() {
+    return (
+      this._data.map(this._generateItem.bind(this)).join('') +
+      this._generateExtraMarkup()
+    );
+  }
+
+  _generateExtraMarkup() {
+    return `${this._buttons ? this._generateButtons() : ''}
+    ${this._dots ? this._generateDotContainer() : ''}`;
+  }
+  _generateButtons() {
+    return `
+    <button class="slider__btn slider__btn--left">
+      <svg>
+      <use xlink:href="${this._icons}#icon-arrow-left"></use>
+      </svg>
+    </button>
+    <button class="slider__btn slider__btn--right">
+      <svg>
+        <use xlink:href="${this._icons}#icon-arrow-right"></use>
+      </svg>
+    </button>
+    `;
+  }
+  _generateDotContainer() {
+    return '<div class="dots"></div>';
+  }
 }

@@ -4,20 +4,8 @@ import img from 'url:../../img/testimonials/*';
 class TestimonialView extends SliderView {
   _parentElement = document.querySelector('.slider');
 
-  _generateMarkup() {
-    return (
-      this._data.map(this._generateItem.bind(this)).join('') +
-      this._generateExtraMarkup()
-    );
-  }
-
-  _generateExtraMarkup() {
-    return `
-        <button class="slider__btn slider__btn--left">&larr;</button>
-        <button class="slider__btn slider__btn--right">&rarr;</button>
-        <div class="dots"></div>
-      `;
-  }
+  _dots = true;
+  _buttons = true;
 
   _generateItem(data, index) {
     return `

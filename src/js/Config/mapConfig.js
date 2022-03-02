@@ -15,7 +15,7 @@ export const MARKER_ICON_OPTIONS = {
 
 /** Map tiles
  * DOC: https://leafletjs.com/reference.html#tilelayer
- * Providers (url): https://leaflet-extras.github.io/leaflet-providers/preview/*/
+ * Providers (url): https://leaflet-extras.github.io/leaflet-providers/preview/ */
 export const TILES = {
   url: 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
   opt: {
