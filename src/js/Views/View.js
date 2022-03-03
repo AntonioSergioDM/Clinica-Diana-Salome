@@ -31,6 +31,9 @@ export default class View extends OverView {
         this._parentElement.querySelectorAll('*')
       ).filter(el => !(el.nodeName === 'BR' || el.nodeName === 'SPAN'));
 
+      if (currElements.length !== newElements.length)
+        throw new Error('Unmatched markups');
+
       newElements.forEach((newEl, i) => {
         const currEl = currElements[i];
 
@@ -50,6 +53,7 @@ export default class View extends OverView {
     } catch {
       this._clear();
       this._parentElement.insertAdjacentHTML(position, newMarkup);
+      this._failUpdate();
     }
     return this;
   }
@@ -131,5 +135,9 @@ export default class View extends OverView {
   _clear() {
     this._parentElement.innerHTML = '';
     return this;
+  }
+  /** if update fails the markup is rendered and this function called*/
+  _failUpdate() {
+    //do nothing
   }
 }

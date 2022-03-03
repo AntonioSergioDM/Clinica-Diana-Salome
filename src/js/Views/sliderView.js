@@ -2,7 +2,12 @@ import View from './View';
 
 /** @abstract */
 export default class SliderView extends View {
-  _init() {
+  /** creates dots if true - default true */
+  _dots = true;
+  /** creates arrow buttons if true - default true */
+  _buttons = true;
+
+  _failUpdate() {
     this._slides = this._parentElement.querySelectorAll('.slide');
     this._btnLeft = this._parentElement.querySelector('.slider__btn--left');
     this._btnRight = this._parentElement.querySelector('.slider__btn--right');
@@ -14,11 +19,14 @@ export default class SliderView extends View {
     if (this._dotContainer) this._createDots();
     this.goToSlide();
 
+    this._addEventHandlers();
+
     return this;
   }
 
   render(data) {
-    super.render(data, 'beforeend')._init()._addEventHandlers();
+    super.render(data, 'beforeend');
+    this._failUpdate();
     return this;
   }
 
@@ -45,6 +53,7 @@ export default class SliderView extends View {
   }
 
   goToSlide(slide = this._curSlide) {
+    this._curSlide = slide;
     // Side by side
     this._slides.forEach(
       (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)

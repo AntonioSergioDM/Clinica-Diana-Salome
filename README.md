@@ -90,7 +90,7 @@
 - Footer
   - [x] Social media
 - Team
-  - [ ] ~~Change description animation (like in the headerView)~~
+  - ~~[ ] Change description animation (like in the headerView)~~
 
 ## Other TODOS
 
@@ -98,11 +98,12 @@
 - [x] Polyfilling and transpiling
 - [ ] Mobile compatible
 - [x] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)
-- [ ] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)
+- ~~[ ] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)~~
+- [x] Lazy loading images by only load sections on display.
 - [ ] ¿¿¿ Dark mode ???
 - Code
-  - [ ] ~~¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???~~
-  - [ ] ~~Create parent class to the nav&footer bars~~
+  - ~~[ ] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???~~
+  - ~~[ ] Create parent class to the nav&footer bars~~
   - [x] contact reference
   - [x] .update() method to work always (special atention at openhours, team, footer, chrono)
 

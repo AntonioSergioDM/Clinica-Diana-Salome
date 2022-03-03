@@ -4,9 +4,6 @@ import img from 'url:../../img/testimonials/*';
 class TestimonialView extends SliderView {
   _parentElement = document.querySelector('.slider');
 
-  _dots = true;
-  _buttons = true;
-
   _generateItem(data, index) {
     return `
     <div class="slide slide--${index}">

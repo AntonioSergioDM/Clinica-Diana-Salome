@@ -2,7 +2,7 @@
 // array methods and such
 import 'core-js/stable/array';
 // async functions
-import 'regenerator-runtime/runtime';
+// import 'regenerator-runtime/runtime';
 
 // import the model and views
 import * as model from './model';
@@ -23,17 +23,9 @@ import homeView from './Views/homeView';
 import agreementsView from './Views/agreementsView';
 import OverView from './Views/OverView';
 
-// Change ID in URL
-// window.history.pushState(null, '', `#${model.state.recipe.id}`);
-// get ID in URL
-// const id = window.location.hash.slice(1);
-// control when changeid in url
-// ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
-
 const controlDisplay = function () {
   // Get ID in URL
   const id = window.location.hash.slice(1);
-  // if (!id) return;
 
   OverView.hideAll().loading();
 
@@ -47,31 +39,31 @@ const controlDisplay = function () {
       chronoView.show();
       break;
     case 'team':
-      teamView.setActive(-1).show();
+      teamView.update(model.state.team).setActive(-1).show();
       break;
     case 'services':
-      servicesView.show();
+      servicesView.update(model.state.services).show();
       break;
     case 'faq':
-      faqView.show();
+      faqView.update(model.state.faq).show();
       break;
     case 'contacts':
-      contactsView.show();
+      contactsView.update(model.state.contacts).show();
       map.show();
-      openHoursView.show();
+      openHoursView.update(model.state.openHours).show();
       break;
     case 'agreements':
       agreementsView.show();
       break;
     case 'home':
-      contactsView.show();
       headerView.show();
       chronoView.show();
-      homeView.show();
+      homeView.update(model.state.home).show();
       agreementsView.show();
+      contactsView.update(model.state.contacts).show();
       map.show();
-      openHoursView.show();
-      testimonialView.show();
+      openHoursView.update(model.state.openHours).show();
+      testimonialView.update(model.state.testimonials).show();
       break;
     default:
       window.history.pushState(null, '', '#home');
@@ -83,30 +75,23 @@ const controlDisplay = function () {
   window.addEventListener(ev, controlDisplay)
 );
 //////////////// PAGE NAVIGATION ////////////////
-// const controlNavLinkClick = function (id) {
-//   window.history.pushState(null, '', `#${id}`);
-//   console.log('controlLinkClick', id);
-//   if (id) document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-//   else modalView.openWindow();
-// };
-
 const controlLang = function (lang) {
   if (lang === model.state.language) return;
 
   model.changeLang(lang);
 
-  sectionView.update(model.state.labels);
   navView.update(model.state.nav).setLang(model.state.language);
   footerView.update(model.state.footer);
+  sectionView.update(model.state.labels);
 
-  openHoursView.update(model.state.openHours);
+  // openHoursView.update(model.state.openHours);
   // chronoView.update(model.state.chrono);
-  teamView.update(model.state.team);
-  servicesView.update(model.state.services);
-  testimonialView.update(model.state.testimonials);
-  faqView.update(model.state.faq);
-  contactsView.update(model.state.contacts);
-  homeView.update(model.state.home);
+  // teamView.update(model.state.team);
+  // servicesView.update(model.state.services);
+  // testimonialView.update(model.state.testimonials);
+  // faqView.update(model.state.faq);
+  // contactsView.update(model.state.contacts);
+  // homeView.update(model.state.home);
 
   // agreementsView.update(model.state.agreements);
 
@@ -120,10 +105,6 @@ const controlLang = function (lang) {
 ///////////////////// ABOUT /////////////////////
 
 ///////////////////// TEAM /////////////////////
-// const controlTeam = function (id) {
-//   model.changeTeamMember(id);
-//   teamView.setDescription(model.state.team.description).changeActiveMember(id);
-// };
 
 /////////////////// SERVICES /////////////////////
 
@@ -145,17 +126,6 @@ const controlFAQ = function (id) {
   faqView.showAnswer(id, { behavior: 'smooth' });
 };
 
-//////////////// MODAL WINDOW ////////////////
-const controlSendEmail = function (data) {
-  const { name, phone, email, message } = data;
-  console.log(name, email, phone, message);
-  // window.open(
-  //   `mailto:test@example.com?subject=Hello There&body=Hi,I found this website and thought you might like it http://www.geocities.com/wowhtml/`
-  // );
-
-  // window.open('tel:259 104 774');
-};
-
 /////////////////// FOOTER ///////////////////
 
 /////////////////////////////////////////////////
@@ -165,27 +135,28 @@ const init = function () {
   // Render
   navView
     .render(model.state.nav)
-    // .addHandlerLinkClicked(controlNavLinkClick)
-    // .addHandlerLanguage(controlLang)
+    .addHandlerLanguage(controlLang)
     .setLang(model.state.language);
-  openHoursView.render(model.state.openHours);
-  sectionView.render(model.state.labels);
-  // chronoView.render(model.state.chrono);
-  teamView.render(model.state.team); //.members)
-  // .setDescription(model.state.team.description)
-  // .addHandlerClickMember(controlTeam);
-  servicesView.render(model.state.services);
-  testimonialView.render(model.state.testimonials);
-  faqView.render(model.state.faq).addHandlerQuestion(controlFAQ);
   footerView.render(model.state.footer);
-  contactsView.render(model.state.contacts);
-  homeView.render(model.state.home);
+  sectionView.render(model.state.labels);
+
+  // openHoursView.render(model.state.openHours);
+  // chronoView.render(model.state.chrono);
+  // teamView.render(model.state.team);
+  // servicesView.render(model.state.services);
+  // testimonialView.render(model.state.testimonials);
+  // faqView.render(model.state.faq);
+  // contactsView.render(model.state.contacts);
+  // homeView.render(model.state.home);
   agreementsView.render(model.state.agreements);
 
-  // Map
+  // Initializers
   map.loadMap().setLang(model.state.language);
 
   // Handlers
-  modalView.addHandlerSubmitForm(controlSendEmail);
+  faqView.addHandlerQuestion(controlFAQ);
+  // modalView.addHandlerSubmitForm(controlSendEmail);
+
+  controlDisplay();
 };
 init();
