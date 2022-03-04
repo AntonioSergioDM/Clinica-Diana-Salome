@@ -19,14 +19,17 @@ class HeaderView extends View {
     this._currentImg++;
     if (this._currentImg >= this._data.length) this._currentImg = 0;
 
-    this._currentDiv ? (this._currentDiv = 0) : (this._currentDiv = 1);
-
-    this._imgElements[this._currentDiv].src = img[this._data[this._currentImg]];
+    this._imgElements[this._currentImg].src
+      ? this.changeVisibleImage()
+      : (this._imgElements[this._currentImg].src =
+          img[this._data[this._currentImg]]);
     return this;
   }
 
   changeVisibleImage() {
-    this._imgElements.forEach(el => el.classList.toggle('fade'));
+    console.log('change image');
+    this._imgElements.forEach(el => el.classList.add('fade'));
+    this._imgElements[this._currentImg].classList.remove('fade');
     return this;
   }
 
@@ -36,7 +39,7 @@ class HeaderView extends View {
   }
 
   _generateMarkup() {
-    return `
+    return `${this._data.map(this._generteItem)}<!--
         <img
           src="${img[this._data[this._currentImg]]}"
           class="header__img"
@@ -46,7 +49,7 @@ class HeaderView extends View {
           src="${img[this._data[this._currentImg + 1]]}"
           class="header__img img2 fade"
           alt="Clinica Diana Salomé"
-        />
+        />-->
         <div class="header__h1">
           <h1>
             Clínica Médica Dentária <br />
@@ -54,6 +57,15 @@ class HeaderView extends View {
           </h1>
         </div>
       `;
+  }
+  _generteItem(data, i) {
+    return `
+        <img
+          class="header__img ${i ? 'img2 fade' : ''}"
+          alt="Clinica Diana Salomé"
+          ${i ? '' : `src="${img[data]}"`}
+        />
+        `;
   }
 }
 

@@ -8,8 +8,8 @@
   - [x] Logic
   - [x] Language buttons
 - [Header](./src/js/Views/headerView.js)
-  - [ ] Logic
-  - [ ] Lazy Load
+  - [x] Logic
+  - [x] Lazy Load
 - [Open hours](./src/js/Views/openHoursView.js)
   - [x] Logic
 - [Services](./src/js/Views/servicesView.js)
@@ -47,6 +47,7 @@
   - [x] Logic
 - [Agreements](./src/js/Views/agreementsView.js)
   - [x] Logic
+  - [ ] Lazy-load
 - Multi-languages
   - [x] Titles and intros
   - [x] Open hours
