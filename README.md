@@ -8,7 +8,8 @@
   - [x] Logic
   - [x] Language buttons
 - [Header](./src/js/Views/headerView.js)
-  - [x] Logic
+  - [ ] Logic
+  - [ ] Lazy Load
 - [Open hours](./src/js/Views/openHoursView.js)
   - [x] Logic
 - [Services](./src/js/Views/servicesView.js)
@@ -98,7 +99,7 @@
 - [x] Polyfilling and transpiling
 - [ ] Mobile compatible
 - [x] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)
-- ~~[ ] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)~~
+- [x] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)
 - [x] Lazy loading images by only load sections on display.
 - [ ] ¿¿¿ Dark mode ???
 - Code
@@ -106,6 +107,7 @@
   - ~~[ ] Create parent class to the nav&footer bars~~
   - [x] contact reference
   - [x] .update() method to work always (special atention at openhours, team, footer, chrono)
+- [ ] Remove modal
 
 ## License
 

@@ -2,7 +2,7 @@
 // array methods and such
 import 'core-js/stable/array';
 // async functions
-// import 'regenerator-runtime/runtime';
+import 'regenerator-runtime/runtime';
 
 // import the model and views
 import * as model from './model';
@@ -22,6 +22,7 @@ import headerView from './Views/headerView';
 import homeView from './Views/homeView';
 import agreementsView from './Views/agreementsView';
 import OverView from './Views/OverView';
+import { MAX_LOAD_ATTEMPS } from './Config/config';
 
 const controlDisplay = function () {
   // Get ID in URL
@@ -71,48 +72,34 @@ const controlDisplay = function () {
   }
   OverView.scroll2Top();
 };
-['hashchange', 'load'].forEach(ev =>
-  window.addEventListener(ev, controlDisplay)
-);
-//////////////// PAGE NAVIGATION ////////////////
-const controlLang = function (lang) {
-  if (lang === model.state.language) return;
 
-  model.changeLang(lang);
-
-  navView.update(model.state.nav).setLang(model.state.language);
-  footerView.update(model.state.footer);
-  sectionView.update(model.state.labels);
-
-  // openHoursView.update(model.state.openHours);
-  // chronoView.update(model.state.chrono);
-  // teamView.update(model.state.team);
-  // servicesView.update(model.state.services);
-  // testimonialView.update(model.state.testimonials);
-  // faqView.update(model.state.faq);
-  // contactsView.update(model.state.contacts);
-  // homeView.update(model.state.home);
-
-  // agreementsView.update(model.state.agreements);
-
-  map.setLang(model.state.language);
+const fail2Load = function (cascate = 0) {
+  OverView.hideAll().loading();
+  if (cascate < MAX_LOAD_ATTEMPS) init(false, cascate + 1);
+  else
+    headerView
+      .renderError(
+        'Something went wrong :(<br>Refresh the page to try again<br>If the problem persist try again later'
+      )
+      .show();
 };
 
-////////////////// OPENING HOURS //////////////////
+const controlLang = async function (lang) {
+  if (lang === model.state.language) return;
+  try {
+    await model.changeLang(lang);
 
-///////////////// SECTION TITLES /////////////////
+    footerView.update(model.state.footer);
+    sectionView.update(model.state.labels);
+    navView.update(model.state.nav).setLang(model.state.language);
 
-///////////////////// ABOUT /////////////////////
+    map.setLang(model.state.language);
+    controlDisplay();
+  } catch {
+    fail2Load();
+  }
+};
 
-///////////////////// TEAM /////////////////////
-
-/////////////////// SERVICES /////////////////////
-
-///////////////////// MAP /////////////////////
-
-///////////////// Testimonials /////////////////
-
-///////////////////// FAQ /////////////////////
 const controlFAQ = function (id) {
   if (faqView.isActive(id)) {
     faqView.hideAnswer(id);
@@ -126,37 +113,34 @@ const controlFAQ = function (id) {
   faqView.showAnswer(id, { behavior: 'smooth' });
 };
 
-/////////////////// FOOTER ///////////////////
+const init = async function (handler = true, cascate = 0) {
+  try {
+    await model.load();
+    // Render
+    navView
+      .render(model.state.nav)
+      .addHandlerLanguage(controlLang)
+      .setLang(model.state.language);
+    footerView.render(model.state.footer);
+    sectionView.render(model.state.labels);
 
-/////////////////////////////////////////////////
-//////////////// Initialization ////////////////
-///////////////////////////////////////////////
-const init = function () {
-  // Render
-  navView
-    .render(model.state.nav)
-    .addHandlerLanguage(controlLang)
-    .setLang(model.state.language);
-  footerView.render(model.state.footer);
-  sectionView.render(model.state.labels);
+    // Independent of language - atfter first render are never updated
+    agreementsView.render(model.state.agreements);
+    headerView.render(model.state.header);
 
-  // openHoursView.render(model.state.openHours);
-  // chronoView.render(model.state.chrono);
-  // teamView.render(model.state.team);
-  // servicesView.render(model.state.services);
-  // testimonialView.render(model.state.testimonials);
-  // faqView.render(model.state.faq);
-  // contactsView.render(model.state.contacts);
-  // homeView.render(model.state.home);
-  agreementsView.render(model.state.agreements);
+    // Initializers
+    map.loadMap().setLang(model.state.language);
 
-  // Initializers
-  map.loadMap().setLang(model.state.language);
+    // Handlers
+    faqView.addHandlerQuestion(controlFAQ);
+    // modalView.addHandlerSubmitForm(controlSendEmail);
 
-  // Handlers
-  faqView.addHandlerQuestion(controlFAQ);
-  // modalView.addHandlerSubmitForm(controlSendEmail);
-
-  controlDisplay();
+    controlDisplay();
+    if (handler)
+      ['hashchange'].forEach(ev => window.addEventListener(ev, controlDisplay));
+  } catch {
+    fail2Load(cascate);
+  }
 };
+
 init();

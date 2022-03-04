@@ -1,5 +1,6 @@
-/** Labels to use based on language */
-export const LANG_LABELS = {
+// After any change go to ../js/model.js and uncoment the DEV section. run locally to download the json files to the ./json folder and recoment the Dev section.
+/** Titles and intros to use based on language */
+export const SECTION_TITLES = {
   pt: {
     services: {
       title: 'Tratamentos',

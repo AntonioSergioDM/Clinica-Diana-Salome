@@ -1,3 +1,4 @@
+// After any change go to ../js/model.js and uncoment the DEV section. run locally to download the json files to the ./json folder and recoment the Dev section.
 /** Open and close time for each weekday
  * (holidays have the same hours as sunday)*/
 export const OPEN_HOURS = {

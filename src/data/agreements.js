@@ -1,3 +1,4 @@
+// After any change go to ../js/model.js and uncoment the DEV section. run locally to download the json files to the ./json folder and recoment the Dev section.
 export const AGREEMENTS = [
   { title: 'Medicare', image: 'medicare.png' },
   { title: 'ADMG (GNR)', image: 'ADMG.png' },
@@ -13,7 +14,7 @@ export const AGREEMENTS = [
     image: 'Servico Medico Permanente.png',
   },
   { title: 'MeltiMalon', image: 'MeltiMalon.png' },
-  { title: 'sorriso', image: 'sorriso.png' },
+  { title: 'Sorriso+', image: 'sorriso.png' },
   { title: 'BS Care', image: 'BS Care.png' },
   { title: 'Lar Nossa Senhora das Dores' },
   { title: 'SS GNR', image: 'SS GNR.png' },

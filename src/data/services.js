@@ -1,3 +1,4 @@
+// After any change go to ../js/model.js and uncoment the DEV section. run locally to download the json files to the ./json folder and recoment the Dev section.
 export const SERVICES = {
   pt: [
     {
@@ -18,15 +19,6 @@ export const SERVICES = {
       link: 'https://www.sns24.gov.pt/servico/pedir-cheques-dentista/',
     },
     {
-      title: 'Medicina Estética Facial',
-      // imageLazy: 'logo-lazy.jpg',
-      image: 'estetica.jpeg',
-      icon: '', //not sure
-      text: `Aplicação de Toxina Botulínica (Botox) para tratamento de rugas e linhas de expressão, bruxismo, sorriso gengival, sudorese, dor cervical e cefaleia tensional.<br>
-      Preenchimento com Ácido Hialurónico: volume e contorno labial, sulco nasolabial, mesoterapia.`,
-      link: '',
-    },
-    {
       title: 'Odontopediatria',
       // imageLazy: 'logo-lazy.jpg',
       image: 'crianca1.jpeg',
@@ -36,12 +28,21 @@ export const SERVICES = {
       link: '#faq',
     },
     {
+      title: 'Medicina Estética Facial',
+      // imageLazy: 'logo-lazy.jpg',
+      image: 'estetica.jpeg',
+      icon: '', //not sure
+      text: `Aplicação de Toxina Botulínica (Botox) para tratamento de rugas e linhas de expressão, bruxismo, sorriso gengival, sudorese, dor cervical e cefaleia tensional.<br>
+      Preenchimento com Ácido Hialurónico: volume e contorno labial, sulco nasolabial, mesoterapia.`,
+      link: '',
+    },
+    {
       title: 'Reabilitação Oral',
       // imageLazy: 'logo-lazy.jpg',
       image: 'paciente1.jpeg',
       icon: '', //not sure
       text: `Recuperação do normal funcionamento da boca quando há perda de dentes e recuperar funções como a oclusão, a mastigação e a dicção, através de Implantes Dentários, Próteses fixas ou removíveis, Facetas, Coroas... `,
-      link: 'https://www.wikipedia.com',
+      link: '',
     },
     {
       title: 'Atendimento ao Domicílio',
