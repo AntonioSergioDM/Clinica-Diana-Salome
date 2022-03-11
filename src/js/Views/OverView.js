@@ -7,6 +7,7 @@ export default class OverView {
   static _allSections = document.querySelectorAll('section');
   static showAll() {
     this._allSections.forEach(sec => sec.classList.remove('hide'));
+    this.loading();
     return this;
   }
   static hideAll() {

@@ -28,7 +28,7 @@ const controlDisplay = function () {
   // Get ID in URL
   const id = window.location.hash.slice(1);
 
-  OverView.hideAll().loading();
+  OverView.hideAll();
 
   switch (id) {
     case 'development':
@@ -74,7 +74,7 @@ const controlDisplay = function () {
 };
 
 const fail2Load = function (cascate = 0) {
-  OverView.hideAll().loading();
+  OverView.hideAll();
   if (cascate < MAX_LOAD_ATTEMPS) init(false, cascate + 1);
   else
     headerView
@@ -82,6 +82,7 @@ const fail2Load = function (cascate = 0) {
         'Something went wrong :(<br>Refresh the page to try again<br>If the problem persist try again later'
       )
       .show();
+  setTimeout(OverView.showAll, 5000);
 };
 
 const controlLang = async function (lang) {
@@ -115,6 +116,7 @@ const controlFAQ = function (id) {
 
 const init = async function (handler = true, cascate = 0) {
   try {
+    OverView.hideAll();
     await model.load();
     // Render
     navView

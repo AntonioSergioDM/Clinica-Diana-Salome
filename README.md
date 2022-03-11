@@ -102,7 +102,7 @@
 - [x] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)
 - [x] Lazy-load data using fetch and json (¿¿¿ different languages, different files ???)
 - [x] Lazy loading images by only load sections on display.
-- [ ] ¿¿¿ Dark mode ???
+- ~~[ ] Dark mode ~~
 - Code
   - ~~[x] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???~~
   - ~~[ ] Create parent class to the nav&footer bars~~
@@ -114,13 +114,13 @@
 
 ## License
 
-Not yet
+&copy;2022 Clínica Médica Dentária Drª Diana Salomé
 
 ## Contributions
 
 ### Website
 
-[António Sérgio](https://github.com/AntonioSergioDM)
+Design and developed by [António Sérgio](https://github.com/AntonioSergioDM)
 
 ### Images
 
