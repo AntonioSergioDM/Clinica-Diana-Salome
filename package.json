@@ -6,8 +6,9 @@
     "removeholidays": "holidays2json --pick PT --min",
     "parcelstart": "parcel index.html",
     "parcelbuild": "parcel build index.html --dist-dir ./dist",
+    "copyrobot": "copyfiles robots.txt dist",
     "start": "npm run removeholidays && npm run parcelstart",
-    "build": "npm run removeholidays && npm run parcelbuild"
+    "build": "npm run removeholidays && npm run parcelbuild && npm run copyrobot"
   },
   "author": "AntonioSergio",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "@parcel/transformer-sass": "^2.3.2",
     "@parcel/transformer-webmanifest": "^2.3.2",
     "@parcel/transformer-xml": "^2.3.2",
-    "parcel": "^2.3.2"
+    "parcel": "^2.3.2",
+    "copyfiles": "^2.4.1"
   }
 }

@@ -15,7 +15,9 @@ class HomeView extends View {
           </div>
           <div class="section__title home__body">
             <h3 class="section__header">${data.text}</h3>
-            <img class="home__body__img" src="${img[data.image]}"/>
+            <img class="home__body__img" src="${img[data.image]}" alt="${
+      data.title
+    }"/>
             <a href="#${data.href}" > 
               <button class="btn--text btn--scroll-to">${
                 this._data.learnMore
