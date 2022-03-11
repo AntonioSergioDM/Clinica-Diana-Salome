@@ -27,7 +27,6 @@ class HeaderView extends View {
   }
 
   changeVisibleImage() {
-    console.log('change image');
     this._imgElements.forEach(el => el.classList.add('fade'));
     this._imgElements[this._currentImg].classList.remove('fade');
     return this;
@@ -39,17 +38,7 @@ class HeaderView extends View {
   }
 
   _generateMarkup() {
-    return `${this._data.map(this._generteItem)}<!--
-        <img
-          src="${img[this._data[this._currentImg]]}"
-          class="header__img"
-          alt="Clinica Diana Salomé"
-        />
-        <img
-          src="${img[this._data[this._currentImg + 1]]}"
-          class="header__img img2 fade"
-          alt="Clinica Diana Salomé"
-        />-->
+    return `${this._data.map(this._generteItem)}
         <div class="header__h1">
           <h1>
             Clínica Médica Dentária <br />

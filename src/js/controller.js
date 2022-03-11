@@ -31,10 +31,10 @@ const controlDisplay = function () {
   OverView.hideAll().loading();
 
   switch (id) {
-    // case 'development':
-    //   OverView.showAll();
-    //   // modalView.closeWindow();
-    //   break;
+    case 'development':
+      OverView.showAll();
+      // modalView.closeWindow();
+      break;
     case 'about':
       headerView.show();
       chronoView.show();
@@ -125,7 +125,7 @@ const init = async function (handler = true, cascate = 0) {
     sectionView.render(model.state.labels);
 
     // Independent of language - atfter first render are never updated
-    agreementsView.render(model.state.agreements);
+    agreementsView.update(model.state.agreements);
     headerView.render(model.state.header);
 
     // Initializers

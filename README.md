@@ -39,7 +39,7 @@
   - [x] Logic
   - [x] Decide what to put
   - [x] Action - Do something on click (w/smooth scroll)
-- ~~[About Us](./src/js/Views/chronoView.js)~~(removed)
+- ~~[Chrono](./src/js/Views/chronoView.js)~~(removed)
   - [x] Logic
   - [ ] Action - Smooth scrolling (without nav bar over the year)
   - [ ] Line with rigth heigth
@@ -47,7 +47,7 @@
   - [x] Logic
 - [Agreements](./src/js/Views/agreementsView.js)
   - [x] Logic
-  - [ ] Lazy-load
+  - [x] Lazy-load (not-really)
 - Multi-languages
   - [x] Titles and intros
   - [x] Open hours
@@ -96,7 +96,7 @@
 
 ## Other TODOS
 
-- [ ] Google search optimization
+- [x] Google search optimization
 - [x] Polyfilling and transpiling
 - [ ] Mobile compatible
 - [x] 'Separate' the sections - only one at a time - add to the url (eg.: .../#team)
@@ -104,11 +104,13 @@
 - [x] Lazy loading images by only load sections on display.
 - [ ] ¿¿¿ Dark mode ???
 - Code
-  - ~~[ ] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???~~
+  - ~~[x] ¿¿¿ Join all load functions in [model.js](./src/js/model.js) ???~~
   - ~~[ ] Create parent class to the nav&footer bars~~
   - [x] contact reference
   - [x] .update() method to work always (special atention at openhours, team, footer, chrono)
 - [ ] Remove modal
+- [ ] Post about medicina estética facial (Google business)
+- [x] About us to include 'Medicos dentistas'
 
 ## License
 
