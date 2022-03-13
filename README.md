@@ -124,4 +124,4 @@ Design and developed by [António Sérgio](https://github.com/AntonioSergioDM)
 
 ### Images
 
-<!-- [Carlos Daniel](https://) -->
+[Carlos Daniel](https://)
