@@ -99,11 +99,10 @@
     border-radius: 50%;
     margin: auto;
     grid-row: 1 / span 2;
-  }
-
-  .contacts__icon img {
-    max-width: 80%;
-    max-height: 80%;
+    img {
+      max-width: 70%;
+      max-height: 70%;
+    }
   }
 
   &__icon {

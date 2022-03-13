@@ -22,6 +22,7 @@ class FooterView extends View {
         class="footer__logo"
         href="https://www.facebook.com/clinicadianasalome/"
         target="_blank"
+        aria-label="facebook"
       >
         <svg>
           <use xlink:href="${this._icons}#icon-facebook"></use>
@@ -31,6 +32,7 @@ class FooterView extends View {
         class="footer__logo"
         href="https://www.instagram.com/clinicamddianasalome/"
         target="_blank"
+        aria-label="instagram"
       >
         <svg>
           <use xlink:href="${this._icons}#icon-instagram"></use>

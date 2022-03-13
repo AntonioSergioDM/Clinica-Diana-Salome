@@ -3,14 +3,14 @@ export const COORDS = [41.29822701133623, -7.747412611051245];
 export const MAP_ZOOM_LEVEL = 15;
 
 /** Images for marker on map */
-import markerIconPath from '../../img/map/mapIcon.png';
+import markerIconPath from '../../img/map/mapIcon4.png';
 
 /** Map icon options - https://leafletjs.com/reference.html#icon */
 export const MARKER_ICON_OPTIONS = {
   iconUrl: markerIconPath,
-  iconSize: [100, 100],
-  iconAnchor: [50, 100],
-  popupAnchor: [0, -100],
+  iconSize: [70, 70],
+  iconAnchor: [35, 70],
+  popupAnchor: [0, -70],
 };
 
 /** Map tiles

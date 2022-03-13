@@ -95,7 +95,7 @@ export default class SliderView extends View {
     this._slides.forEach((_, i) => {
       this._dotContainer.insertAdjacentHTML(
         'beforeend',
-        `<button class="dots__dot" data-slide="${i}"></button>`
+        `<button class="dots__dot" data-slide="${i}" aria-label="${i}"></button>`
       );
     });
     return this;
@@ -114,12 +114,12 @@ export default class SliderView extends View {
   }
   _generateButtons() {
     return `
-    <button class="slider__btn slider__btn--left">
+    <button class="slider__btn slider__btn--left" aria-label="arrow-left">
       <svg>
       <use xlink:href="${this._icons}#icon-arrow-left"></use>
       </svg>
     </button>
-    <button class="slider__btn slider__btn--right">
+    <button class="slider__btn slider__btn--right" aria-label="arrow-right">
       <svg>
         <use xlink:href="${this._icons}#icon-arrow-right"></use>
       </svg>
