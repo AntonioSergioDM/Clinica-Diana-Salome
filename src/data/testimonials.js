@@ -15,6 +15,13 @@ export const TESTIMONIALS = {
       author: 'João Sousa',
       stars: 5,
     },
+    {
+      title: 'Recomendo altamente, a melhor clínica Dentária de Vila Real!!',
+      text: 'Otimo atendimento, a simpatía da equipa deixa uma pessoa a vontade. Adorei o resultado do tratamento.',
+      image: 'teamMember1.png',
+      author: 'Sara Cristina Faria Amorim',
+      stars: 5,
+    },
     // {
     //   title: 'Meu título 3',
     //   text: 'Meu Texto 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim est, rutrum non commodo id, venenatis vitae elit. Praesent posuere elit sapien, eu malesuada nibh suscipit ac. Donec vitae purus neque. Vestibulum mollis sapien in risus tempus sollicitudin. Proin porta porta sodales. Suspendisse at porttitor nisi. Vestibulum vitae erat volutpat, fringilla purus nec, mollis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
