@@ -16,7 +16,7 @@
 
   /* see components */
   &__link {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: $color-grey-light-0;
     text-decoration: none;
     margin: auto;
@@ -42,11 +42,11 @@
   }
 
   &__copyright {
-    font-size: 1.6rem;
+    font-size: 0.65vw;
     color: #aaa;
     text-align: center;
   }
   &__copyright &__link {
-    font-size: 1.6rem;
+    font-size: 0.65vw;
   }
 }

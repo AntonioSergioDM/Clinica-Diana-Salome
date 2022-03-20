@@ -14,7 +14,7 @@ export const HEADER_TIMER_SEC = 4;
 export const MAX_LOAD_ATTEMPS = 3;
 
 /** nav links */
-export const NAV = ['about', 'services', 'team', 'contacts'];
+export const NAV = ['about', 'services', 'team', 'faq', 'contacts'];
 /** footer links */ //prettier-ignore
 export const FOOTER = ['about', 'services', 'agreements', 'team', 'faq', 'contacts'];
 
