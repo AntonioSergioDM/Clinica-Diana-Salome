@@ -7,8 +7,10 @@
     "parcelstart": "parcel index.html",
     "parcelbuild": "parcel build index.html --dist-dir ./dist",
     "copyrobot": "copyfiles robots.txt dist",
+    "copygoogle": "copyfiles google3de7c0f21f056c1b.html dist",
+    "copyall": "npm run copyrobot && npm run copygoogle",
     "start": "npm run removeholidays && npm run parcelstart",
-    "build": "npm run removeholidays && npm run parcelbuild && npm run copyrobot"
+    "build": "npm run removeholidays && npm run parcelbuild && npm run copyall"
   },
   "author": "AntonioSergio",
   "license": "ISC",
