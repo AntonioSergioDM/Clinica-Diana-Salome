@@ -15,7 +15,7 @@ import map from './Views/map';
 import testimonialView from './Views/testimonialView';
 import faqView from './Views/faqView';
 import footerView from './Views/footerView';
-import modalView from './Views/modalView';
+// import modalView from './Views/modalView';
 import teamView from './Views/teamView';
 import contactsView from './Views/contactsView';
 import headerView from './Views/headerView';
@@ -126,7 +126,7 @@ const init = async function (handler = true, cascate = 0) {
     footerView.render(model.state.footer);
     sectionView.render(model.state.labels);
 
-    // Independent of language - atfter first render are never updated
+    // Independent of language - after first render are never updated
     agreementsView.update(model.state.agreements);
     headerView.render(model.state.header);
 
