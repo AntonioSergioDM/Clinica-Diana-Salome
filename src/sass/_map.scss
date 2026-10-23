@@ -1,4 +1,4 @@
-$map-width: 50vw;
+$map-width: min(50vw, 65rem);
 
 #map {
   flex: 1;
@@ -9,6 +9,9 @@ $map-width: 50vw;
   background-color: #f3f3f3;
   margin: auto;
   z-index: 1;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 3rem rgba($color-grey-dark-0, .1);
 }
 
 .map__popup {
@@ -21,7 +24,7 @@ $map-width: 50vw;
   }
   & a {
     font-size: 110%;
-    color: $color-primary;
+    color: $color-primary-darker;
   }
 }
 .address {

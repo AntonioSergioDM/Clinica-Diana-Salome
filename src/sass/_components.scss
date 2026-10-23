@@ -10,17 +10,19 @@
   transition: $transition-time;
 
   background-color: $color-primary;
+  box-shadow: 0 8px 22px rgba($color-primary, .19);
   font-family: inherit;
   padding: 1.25rem 4.5rem;
 
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
 
     background-color: $color-primary-darker;
   }
 
   &:focus {
-    outline: none;
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
   }
 
   & > *:first-child {
@@ -49,6 +51,8 @@
     font-weight: 500;
     border-bottom: 1px solid currentColor;
     padding-bottom: 2px;
+    box-shadow: none;
+    &:hover { color: $color-primary-darker; background: transparent; }
   }
 }
 
@@ -112,10 +116,6 @@
     line-height: 1.5;
     font-weight: 600;
   }
-}
-
-p {
-  color: $color-grey-light-3;
 }
 
 img {

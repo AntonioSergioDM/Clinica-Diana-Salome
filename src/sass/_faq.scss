@@ -2,24 +2,29 @@
   display: block;
   list-style: none;
   margin: auto;
-  width: 70vw;
+  width: min(90rem, 100%);
 
   &__question {
-    border: 2px solid $color-grey-light-3;
-    margin: 2rem auto;
+    border: 1px solid $color-grey-light-2;
+    border-radius: 1.2rem;
+    margin: 1.4rem auto;
+    background: white;
+    overflow: hidden;
   }
 
   &__header {
-    padding: 1rem 2rem;
+    align-items: center;
+    padding: 1.8rem 2.2rem;
     cursor: pointer;
     display: flex;
     font-weight: 500;
-    font-size: 3rem;
+    font-size: clamp(1.7rem, 2.3vw, 2.2rem);
     text-align: left;
     color: $color-grey-dark-2;
 
     & span {
-      background-color: $color-grey-light-2;
+      flex: 0 0 3rem;
+      background-color: #edf3f0;
       margin: auto 2% auto auto;
 
       display: flex;
@@ -28,9 +33,9 @@
       height: 3rem;
       width: 3rem;
       border-radius: 50%;
-      border: 2px solid $color-grey-dark-2;
+      border: 0;
       & svg {
-        fill: $color-grey-dark-2;
+        fill: $color-primary;
         height: 2rem;
         width: 2rem;
       }
@@ -39,13 +44,15 @@
 
   &__answer {
     display: none;
-    margin: auto 5% 0;
-    padding: 2%;
-    font-size: 2rem;
-    border-top: 4px solid $color-grey-light-2;
+    margin: 0;
+    padding: 1.8rem 2.2rem 2.3rem;
+    color: $color-grey-dark-2;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    border-top: 1px solid $color-grey-light-2;
     // transition: $transition-time;
     a {
-      font-size: 2rem;
+      font-size: inherit;
     }
 
     &--active {

@@ -1,20 +1,27 @@
 .contacts {
   max-width: 100rem;
-  margin: 12rem auto 0 auto;
+  margin: 9rem auto 0;
 
-  background-color: $color-grey-light-2;
+  background: white;
+  border: 1px solid $color-grey-light-2;
+  border-radius: 1.8rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-grey-dark-0, .08);
 
   &__tab-container {
     display: flex;
     justify-content: center;
+    gap: 1.2rem;
   }
 
   &__tab:hover {
     transform: translateY(-67%);
   }
   &__tab {
-    margin-right: 2.5rem;
+    margin: 0;
+    border-radius: 5rem;
+    box-shadow: 0 8px 24px rgba($color-grey-dark-0, .12);
     transform: translateY(-50%);
+    color: $color-grey-dark-0;
 
     & span {
       margin-right: 1rem;
@@ -23,27 +30,26 @@
     }
 
     &--1 {
-      background-color: $color-secondary;
+      background-color: #e4efeb;
     }
 
     &--1:hover {
-      background-color: $color-secondary-darker;
+      background-color: #d3e6df;
     }
     &--2 {
-      background-color: $color-primary;
+      background-color: #e4efeb;
     }
 
     &--2:hover {
-      background-color: $color-primary-darker;
+      background-color: #d3e6df;
     }
 
     &--3 {
-      background-color: $color-terciary;
-      margin: 0;
+      background-color: #e4efeb;
     }
 
     &--3:hover {
-      background-color: $color-terciary-darker;
+      background-color: #d3e6df;
     }
 
     &--active {
@@ -56,8 +62,9 @@
     // overflow-x: auto;
 
     /* JUST PRESENTATIONAL */
-    font-size: 2.5rem;
-    padding: 2.5rem 7rem 6.5rem 7rem;
+    color: $color-grey-dark-2;
+    font-size: 1.8rem;
+    padding: 1rem clamp(2rem, 6vw, 7rem) 5rem;
 
     &--active {
       display: grid;
@@ -68,8 +75,8 @@
 
     & p {
       grid-column: 2;
-      text-align: right;
-      white-space: nowrap;
+      text-align: left;
+      white-space: normal;
 
       a:link,
       a:visited {
@@ -78,13 +85,14 @@
         // background-color: $color-grey-dark-2;
 
         text-decoration: none;
-        color: $color-grey-dark-1;
+        color: $color-primary-darker;
       }
     }
   }
 
   .contacts__header {
-    font-size: 4rem;
+    color: $color-grey-dark-0;
+    font-size: 2.5rem;
     font-weight: 500;
     align-self: center;
     text-align: right;
@@ -94,8 +102,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30rem;
-    width: 30rem;
+    height: min(24rem, 80vw);
+    width: min(24rem, 80%);
     border-radius: 50%;
     margin: auto;
     grid-row: 1 / span 2;

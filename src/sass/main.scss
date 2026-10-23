@@ -36,3 +36,55 @@
 @import 'about';
 
 @import 'modal';
+
+@media (max-width: 760px) {
+  .nav { height: auto; min-height: 6.4rem; padding: .8rem 1.6rem; flex-wrap: wrap; gap: .3rem; }
+  .nav__logo { height: 3.8rem; }
+  .nav__langs { display: none; }
+  .nav__links { flex: 1; justify-content: flex-end; gap: .3rem; }
+  .nav__item { margin: 0; }
+  .nav__link:link, .nav__link:visited { padding: .8rem .7rem; font-size: 1.25rem; }
+  .nav__link--btn:link, .nav__link--btn:visited { padding: .8rem 1rem; }
+  .header { padding: 1.2rem 1.2rem 0; }
+  .header__title { height: min(70vh, 54rem); min-height: 36rem; border-radius: 1.6rem; }
+  .header__h1 { left: 2.2rem; bottom: 3rem; width: calc(100% - 4.4rem); }
+  .section { padding: 6rem 2rem 7rem; }
+  .section__title { margin-bottom: 3rem; }
+  .home__body { display: flex; flex-direction: column; gap: 2.4rem; align-items: flex-start; }
+  .home__body__img { max-width: 100%; border-radius: 1.5rem; }
+  .features { grid-template-columns: 1fr; gap: 3rem; }
+  .features__feature { width: 100%; }
+  .team__content { width: 100%; min-width: 0; }
+  .contacts { margin-top: 6rem; }
+  .contacts__tab-container { padding: 0 1rem; gap: .6rem; }
+  .contacts__tab { padding: 1rem 1.2rem; font-size: 1.25rem; }
+  .contacts__content { grid-template-columns: 1fr; padding: 0 2rem 3rem; }
+  .contacts__icon { display: none; }
+  .contacts__header { grid-column: 1 !important; text-align: left !important; }
+  .contacts__content p { grid-column: 1; }
+  #map { width: 100%; height: 38rem; }
+  .address p { width: 100%; }
+  .faq { width: 100%; }
+  .testimonial { width: 80%; }
+  .slider, .slide { height: 38rem; }
+  .chrono__point { grid-template-columns: minmax(0, 1fr) 5rem minmax(0, 1fr); }
+  .chrono__left, .chrono__right { font-size: 1.8rem; }
+  .chrono__middle { width: 5rem; height: 5rem; }
+  .chrono__line { left: 47%; width: 6%; }
+  .modal { padding: 2.5rem; }
+  .modal__form { grid-template-columns: 1fr; gap: 1.2rem; }
+  .modal__form button { grid-column: 1 !important; }
+  .footer__nav { gap: 1rem 1.5rem; }
+}
+
+@media (max-width: 420px) {
+  .nav { padding-inline: 1rem; }
+  .nav__logo { height: 3.2rem; }
+  .nav__links { gap: 0; }
+  .nav__link:link, .nav__link:visited { padding: .7rem .45rem; font-size: 1.15rem; }
+  .contacts__tab { padding: .9rem .8rem; font-size: 1.15rem; }
+  .contacts__tab span { margin-right: .4rem; }
+  .chrono { width: 100%; }
+  .chrono__point { grid-template-columns: minmax(0, 1fr) 4rem minmax(0, 1fr); }
+  .chrono__middle { width: 4rem; height: 4rem; }
+}

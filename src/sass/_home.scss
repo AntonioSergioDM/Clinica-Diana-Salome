@@ -1,17 +1,20 @@
 .home {
   &__body {
     display: grid;
-    grid-template: 2fr 1fr / auto auto;
+    grid-template: auto auto / minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2.4rem 4rem;
     // justify-content: center;
     // flex-wrap: wrap;
     // margin: auto;
     &__img {
-      max-width: 90%;
+      width: 100%;
+      max-width: 100%;
       // float: right;
       grid-column: 2;
       grid-row: 1 / span 2;
       margin: auto;
-      box-shadow: 3px 3px 5px 3px $color-grey-dark-2;
+      border-radius: 1.6rem;
+      box-shadow: 0 1.5rem 4rem rgba($color-grey-dark-0, .12);
 
       // margin: auto 0 auto auto;
       // align-self: flex-end;

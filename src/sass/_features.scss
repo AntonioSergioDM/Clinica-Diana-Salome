@@ -1,15 +1,18 @@
 .features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin: 0 2vw;
+  gap: clamp(3rem, 6vw, 7rem);
+  max-width: 115rem;
+  margin: 0 auto;
   // margin: auto;
 
   // display: flex;
   // flex-wrap: wrap;
 
   &__header {
-    font-size: 2rem;
+    color: $color-grey-dark-0;
+    font-size: 2.2rem;
+    font-weight: 500;
     margin-bottom: 1rem;
     text-align: start;
   }
@@ -17,15 +20,17 @@
   &__img {
     width: 90%;
     object-fit: cover;
-    box-shadow: 3px 3px 5px 3px $color-grey-dark-2;
+    border-radius: 2rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-grey-dark-0, .12);
     // flex: 45%;
   }
 
   &__feature {
     align-self: center;
     justify-self: center;
-    width: 70%;
-    font-size: 1.5rem;
+    width: 85%;
+    color: $color-grey-dark-2;
+    font-size: 1.6rem;
 
     // flex: 45%;
   }
@@ -34,7 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $color-primary-opacity;
+    background-color: #e4efeb;
     height: 5.5rem;
     width: 5.5rem;
     border-radius: 50%;

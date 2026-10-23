@@ -1,22 +1,24 @@
 .footer {
-  padding: 10rem 3rem 0.5rem;
+  padding: 7rem 2rem 2rem;
   background-color: $color-grey-dark-0;
 
   &__nav {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
   }
 
   &__item {
-    margin-right: 4rem;
+    margin: 0;
     display: flex;
   }
 
   /* see components */
   &__link {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: $color-grey-light-0;
     text-decoration: none;
     margin: auto;
@@ -42,11 +44,11 @@
   }
 
   &__copyright {
-    font-size: 0.65vw;
+    font-size: 1.2rem;
     color: #aaa;
     text-align: center;
   }
   &__copyright &__link {
-    font-size: 0.65vw;
+    font-size: 1.2rem;
   }
 }

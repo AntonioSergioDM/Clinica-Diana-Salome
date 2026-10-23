@@ -1,7 +1,7 @@
 .chrono {
   // display: grid;
   // grid-template-columns: 4fr 1fr 4fr;
-  transform: translate(0%, -3vh);
+  position: relative;
   text-align: center;
   vertical-align: middle;
   width: 90%;
@@ -36,7 +36,8 @@
 
     & img {
       max-width: 90%;
-      box-shadow: 3px 3px 5px 3px $color-grey-dark-2;
+      border-radius: 1.4rem;
+      box-shadow: 0 1rem 3rem rgba($color-grey-dark-0, .13);
     }
 
     // date

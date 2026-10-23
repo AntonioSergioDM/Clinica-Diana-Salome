@@ -1,23 +1,26 @@
 .team {
   margin: auto;
-  max-width: 90%;
+  max-width: 110rem;
 
   &__tab {
     text-align: center;
-    margin: 4% 3%;
-    border-bottom: 5px solid $color-grey-light-3;
+    margin: 2rem 2rem 3rem;
+    padding: 1rem 1rem 1.8rem;
+    border: 0;
+    color: $color-grey-dark-2;
+    cursor: pointer;
     transition: $transition-time;
 
     &--active {
-      border-color: $color-primary;
+      color: $color-primary;
     }
 
     & .photo {
-      border: 1px solid $color-grey-light-3;
-      width: 240px;
-      height: 280px;
+      width: clamp(17rem, 19vw, 23rem);
+      height: clamp(20rem, 23vw, 28rem);
       object-fit: cover;
-      box-shadow: 3px 3px 5px 3px $color-grey-dark-2;
+      border-radius: 1.6rem;
+      box-shadow: 0 1.2rem 3rem rgba($color-grey-dark-0, .13);
     }
 
     &-container {
@@ -36,8 +39,10 @@
     // position: absolute;
     display: none;
     opacity: 0;
-    font-size: medium;
-    width: max(60%, 400px);
+    color: $color-grey-dark-2;
+    font-size: 1.7rem;
+    line-height: 1.85;
+    width: min(70rem, 100%);
     // min-width: 500px;
     // max-width: 100%;
     margin: auto;
