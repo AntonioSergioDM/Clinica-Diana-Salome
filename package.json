@@ -3,31 +3,16 @@
   "version": "1.0.0",
   "description": "website",
   "scripts": {
-    "removeholidays": "holidays2json --pick PT --min",
-    "parcelstart": "parcel index.html",
-    "parcelbuild": "parcel build index.html --dist-dir ./dist",
-    "copyrobot": "copyfiles robots.txt dist",
-    "copygoogle": "copyfiles google3de7c0f21f056c1b.html dist",
-    "copyall": "npm run copyrobot && npm run copygoogle",
-    "start": "npm run removeholidays && npm run parcelstart",
-    "build": "npm run removeholidays && npm run parcelbuild && npm run copyall"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "author": "AntonioSergio",
   "license": "ISC",
-  "dependencies": {
-    "core-js": "^3.21.1",
-    "date-holidays": "^3.14.2",
-    "leaflet": "^1.7.1",
-    "regenerator-runtime": "^0.13.9"
-  },
   "devDependencies": {
-    "@parcel/packager-raw-url": "^2.3.2",
-    "@parcel/packager-xml": "^2.3.2",
-    "@parcel/resolver-glob": "^2.3.2",
-    "@parcel/transformer-sass": "^2.3.2",
-    "@parcel/transformer-webmanifest": "^2.3.2",
-    "@parcel/transformer-xml": "^2.3.2",
-    "parcel": "^2.3.2",
-    "copyfiles": "^2.4.1"
+    "astro": "^7.4.2",
+    "sass": "^1.89.2",
+    "typescript": "^7.0.2"
   }
 }

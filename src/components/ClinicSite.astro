@@ -1,0 +1,289 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import Layout from '../layouts/Layout.astro';
+import type { SiteData } from '../types/site';
+
+interface Props {
+  site: SiteData;
+  lang: 'pt' | 'en';
+}
+
+const { site, lang } = Astro.props;
+const labels = site.labels;
+const label = (key: string) => labels[key] as { title: string; intro: string };
+const heroPhoto = site.header[0] || 'balcao.jpeg';
+const contactImage = (image: string) => {
+  const categoryImage = join(process.cwd(), 'public', 'images', 'contacts', image);
+  return existsSync(categoryImage)
+    ? `/images/contacts/${encodeURIComponent(image)}`
+    : `/images/${encodeURIComponent(image)}`;
+};
+const mapUrl = 'https://www.openstreetmap.org/export/embed.html?bbox=-7.7650%2C41.2860%2C-7.7300%2C41.3100&layer=mapnik&marker=41.298227%2C-7.747413';
+const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=41.29822701133623%2C-7.747412611051245';
+---
+
+<Layout
+  lang={lang}
+  title="Clínica Médica Dentária Drª Diana Salomé — Vila Real"
+  description={label('about').intro.replace(/<[^>]*>/g, ' ').trim()}
+>
+  <a class="skip-link" href="#main">{lang === 'pt' ? 'Saltar para o conteúdo' : 'Skip to content'}</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label={lang === 'pt' ? 'Navegação principal' : 'Main navigation'}>
+      <a class="brand" href="#top" aria-label="Clínica Diana Salomé">
+        <img src="/images/logo/logo.png" alt="Clínica Diana Salomé" width="164" height="72" />
+      </a>
+
+      <div class="nav-actions">
+        <nav class="language-switch" aria-label={lang === 'pt' ? 'Escolher idioma' : 'Choose language'}>
+          <a class="language-option" href="/" lang="pt" aria-current={lang === 'pt' ? 'page' : undefined}>PT</a>
+          <a class="language-option" href="/en/" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        </nav>
+        <details class="mobile-menu">
+          <summary aria-label={lang === 'pt' ? 'Abrir navegação' : 'Open navigation'}>
+            <span></span><span></span><span></span>
+          </summary>
+          <ul class="nav-links">
+            {site.nav.map(item => (
+              <li><a class:list={['nav-link', { 'nav-cta': item.id === 'contacts' }]} href={`#${item.id}`}>{item.title}</a></li>
+            ))}
+          </ul>
+        </details>
+      </div>
+
+      <ul class="desktop-links">
+        {site.nav.map(item => (
+          <li><a class:list={['nav-link', { 'nav-cta': item.id === 'contacts' }]} href={`#${item.id}`}>{item.title}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title" data-hero-images={JSON.stringify(site.header.map(photo => `/images/header/${photo}`))} style={`--hero-image: url('/images/header/${heroPhoto}')`}>
+      <div class="hero-copy">
+        <p class="eyebrow">{lang === 'pt' ? 'Vila Real · Medicina dentária' : 'Vila Real · Dental care'}</p>
+        <h1 id="hero-title">Clínica Médica Dentária<br />Drª Diana Salomé</h1>
+        <a class="button button-light" href="#services">{label('services').title}<span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="hero-scroll" href="#about"><span>{lang === 'pt' ? 'Conheça a clínica' : 'Discover the clinic'}</span><span aria-hidden="true">↓</span></a>
+  </section>
+
+  <main id="main">
+    <section class="intro section-wrap" id="about">
+      <div class="intro-side">
+        <h2>{label('about').title}</h2>
+      </div>
+      <div class="intro-copy" set:html={label('about').intro}></div>
+    </section>
+
+    <section class="hours-band" aria-label={label('openhours').title}>
+      <div class="hours-heading">
+        <h2>{label('openhours').title}</h2>
+      </div>
+      <ul class="hours-list">
+        {Object.entries(site.openHours).filter(([key]) => key !== 'closeLabel').map(([, day]) => {
+          const isClosed = !day.open?.some(Boolean);
+          return (
+            <li>
+              <span>{day.label}</span>
+            <strong>{isClosed ? site.openHours.closeLabel : day.open?.map((open, index) => `${open}–${day.close?.[index] || ''}`).join(' · ')}</strong>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+
+    <section class="feature-intro section-wrap">
+      <div>
+        <p class="eyebrow">{label('services').title}</p>
+        <h2>{label('services').intro}</h2>
+      </div>
+    </section>
+
+    <section class="services-grid section-wrap" id="services" aria-label={label('services').title}>
+      {site.services.map(service => (
+        <article class="service-card">
+          <img src={`/images/services/${service.image}`} alt={service.title} loading="lazy" />
+          <div class="service-copy">
+            <h3>{service.title}</h3>
+            <div class="body-copy" set:html={service.text}></div>
+            {service.link && (
+              <a class="text-link" href={service.link} target={service.link.startsWith('http') ? '_blank' : undefined} rel={service.link.startsWith('http') ? 'noreferrer' : undefined}>
+                {site.learnMore}<span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="team-section section-wrap" id="team">
+      <div class="section-heading">
+        <p class="eyebrow">{label('team').title}</p>
+        <h2>{label('team').intro}</h2>
+      </div>
+      <div class="team-layout">
+        <div class="team-list" role="tablist" aria-label={label('team').title}>
+          {site.team.map((person, index) => (
+            <button class:list={['team-person', { active: index === 0 }]} type="button" role="tab" aria-selected={index === 0 ? 'true' : 'false'} aria-controls={`team-panel-${index}`} id={`team-tab-${index}`} data-team-tab={index}>
+              <img src={`/images/team/${person.image}`} alt="" loading="lazy" />
+              <span>{person.name}</span>
+              <span class="team-arrow" aria-hidden="true">↗</span>
+            </button>
+          ))}
+        </div>
+        {site.team.map((person, index) => (
+          <div class:list={['team-bio', { active: index === 0 }]} id={`team-panel-${index}`} role="tabpanel" aria-labelledby={`team-tab-${index}`} data-team-panel={index} hidden={index !== 0} set:html={person.description}></div>
+        ))}
+      </div>
+    </section>
+
+    <section class="agreements-section section-wrap" id="agreements">
+      <div class="section-heading">
+        <p class="eyebrow">{label('agreements').title}</p>
+        <h2>{label('agreements').intro}</h2>
+      </div>
+      <ul class="agreements-grid">
+        {site.agreements.map(agreement => (
+          <li>
+            {agreement.image
+              ? <img src={`/images/agreements/${agreement.image}`} alt={agreement.title} loading="lazy" />
+              : <span>{agreement.title}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="testimonials-section section-wrap" id="testimonials">
+      <div class="section-heading">
+        <p class="eyebrow">{label('testimonials').title}</p>
+        <h2>{label('testimonials').intro}</h2>
+      </div>
+      <div class="testimonial-grid">
+        {site.testimonials.map(item => (
+          <figure class="testimonial-card">
+            <div class="stars" aria-label={`${item.stars} / 5`}>{'★'.repeat(item.stars)}</div>
+            <blockquote>
+              <h3>{item.title}</h3>
+              {item.text && <p>{item.text}</p>}
+            </blockquote>
+            <figcaption>
+              <img src={`/images/testimonials/${item.image}`} alt="" loading="lazy" />
+              <span>{item.author}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="faq-section section-wrap" id="faq">
+      <div class="section-heading">
+        <p class="eyebrow">{label('faq').title}</p>
+        <h2>{label('faq').intro}</h2>
+      </div>
+      <div class="faq-list">
+        {site.faq.map((item, index) => (
+          <details class="faq-item" open={index === 0}>
+            <summary>{item.question}<span aria-hidden="true">+</span></summary>
+            <div class="faq-answer" set:html={item.answer}></div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="contact-section section-wrap" id="contacts">
+      <div class="contact-heading">
+        <p class="eyebrow">{label('contacts').title}</p>
+        <h2>{label('contacts').intro}</h2>
+        <a class="button button-light" href={directionsUrl} target="_blank" rel="noreferrer">
+          {label('map').intro}<span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="contact-details">
+        {site.contacts.map(contact => (
+          <a class="contact-card" href={contact.link}>
+            <img src={contactImage(contact.image)} alt="" loading="lazy" />
+            <span><strong>{contact.title}</strong><span>{contact.value}</span></span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+      <div class="map-card">
+        <iframe src={mapUrl} title={label('map').title} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href={directionsUrl} target="_blank" rel="noreferrer">{label('map').intro}<span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#top"><img src="/images/logo/logo.png" alt="Clínica Diana Salomé" /></a>
+    <ul class="footer-links">
+      {site.footer.map(item => <li><a href={`#${item.id}`}>{item.title}</a></li>)}
+    </ul>
+    <div class="social-links">
+      <a href="https://www.facebook.com/clinicadianasalome/" target="_blank" rel="noreferrer" aria-label="Facebook"><svg aria-hidden="true"><use href="/images/icons.svg#icon-facebook"></use></svg></a>
+      <a href="https://www.instagram.com/clinicamddianasalome/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="/images/icons.svg#icon-instagram"></use></svg></a>
+    </div>
+    <p class="footer-contact">
+      {lang === 'pt' ? 'tlm.:' : 'Mobile:'} <a href="tel:932220731">932 220 731</a> · {lang === 'pt' ? 'tel.:' : 'Tel.:'} <a href="tel:259104774">259 104 774</a> ·
+      <a href="mailto:clinicadianasalome@gmail.com">clinicadianasalome@gmail.com</a>
+    </p>
+    <p class="copyright">&copy; {lang === 'pt' ? 'Todos os direitos reservados. Criado por' : 'All rights reserved. Created by'} <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/ant%C3%B3nio-s%C3%A9rgio-dias-morais-973296207">Antonio Sergio</a>. {lang === 'pt' ? 'Imagens de' : 'Images by'} <a target="_blank" rel="noreferrer" href="mailto:cddbarros26@gmail.com">Carlos Barros</a> {lang === 'pt' ? 'e' : 'and'} <a target="_blank" rel="noreferrer" href="https://www.flaticon.com/free-icons/app" title="app icons">Freepik - Flaticon</a>.</p>
+  </footer>
+</Layout>
+
+<script>
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>('[data-team-tab]')];
+  const panels = [...document.querySelectorAll<HTMLElement>('[data-team-panel]')];
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const selected = tab.dataset.teamTab;
+      tabs.forEach(item => {
+        const active = item === tab;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-selected', String(active));
+      });
+      panels.forEach(panel => {
+        const active = panel.dataset.teamPanel === selected;
+        panel.hidden = !active;
+        panel.classList.toggle('active', active);
+      });
+    });
+  });
+
+  const mobileMenu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+  document.querySelectorAll<HTMLAnchorElement>('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => { mobileMenu!.open = false; });
+  });
+
+  const hero = document.querySelector<HTMLElement>('.hero');
+  const heroPhotos = JSON.parse(hero?.dataset.heroImages || '[]') as string[];
+  if (hero && heroPhotos.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let photoIndex = 0;
+    window.setInterval(() => {
+      photoIndex = (photoIndex + 1) % heroPhotos.length;
+      const image = new Image();
+      image.onload = () => {
+        hero.classList.add('image-changing');
+        window.setTimeout(() => {
+          hero!.style.setProperty('--hero-image', `url('${heroPhotos[photoIndex]}')`);
+          hero!.classList.remove('image-changing');
+        }, 350);
+      };
+      image.src = heroPhotos[photoIndex];
+    }, 6500);
+  }
+
+  document.querySelectorAll<HTMLDetailsElement>('.faq-item').forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        document.querySelectorAll<HTMLDetailsElement>('.faq-item').forEach(other => {
+          if (other !== item) other.open = false;
+        });
+      }
+    });
+  });
+</script>

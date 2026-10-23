@@ -1,0 +1,11 @@
+---
+import { getEntry } from 'astro:content';
+import ClinicSite from '../../components/ClinicSite.astro';
+import type { SiteData } from '../../types/site';
+
+const entry = await getEntry('site', 'en');
+if (!entry) throw new Error('Missing English site content.');
+const site = entry.data as unknown as SiteData;
+---
+
+<ClinicSite site={site} lang="en" />

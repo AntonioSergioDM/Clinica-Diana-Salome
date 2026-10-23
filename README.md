@@ -125,3 +125,28 @@ Design and developed by [António Sérgio](https://github.com/AntonioSergioDM)
 ### Images
 
 [Carlos Daniel](https://)
+
+## Static rebuild
+
+The site is being rebuilt with **Astro, TypeScript, and Sass**. Astro generates
+plain static HTML files, so the deployed site does not need an application
+server or a database. Small interactions such as the team selector and FAQ are
+client-side enhancements; the main content is present in the generated HTML.
+
+### Development
+
+- `npm install` — install dependencies
+- `npm run dev` — start the local development server
+- `npm run build` — generate the static site in `dist/`
+- `npm run preview` — preview the generated site locally
+
+The Portuguese page is generated at `/` and the English page at `/en/`.
+Content lives in `src/content/site/pt.json` and `src/content/site/en.json`;
+images and other static assets live in `public/images/`.
+
+Netlify is configured to publish `dist/` as a static site. The site currently
+has no custom server or database; the contact details link directly to phone
+and email. A hosted form service can be added if a submission form is needed.
+
+The feature checklist above records the previous implementation and is retained
+as a content and feature reference during the rebuild.
