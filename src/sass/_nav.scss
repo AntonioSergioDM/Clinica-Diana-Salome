@@ -24,7 +24,7 @@
   &.sticky { position: sticky; }
 
   &__logo {
-    height: 4.5rem;
+    height: 5.2rem;
     transition: $transition-time;
     opacity: 1;
   }
@@ -59,6 +59,22 @@
 
   &__item {
     margin-left: clamp(1.4rem, 2.8vw, 3.8rem);
+
+    &:last-child .nav__link {
+      &:link,
+      &:visited {
+        padding: .9rem 1.8rem;
+        border-radius: 3rem;
+        background: $color-primary;
+        color: white;
+      }
+
+      &:hover,
+      &:active {
+        background: $color-primary-darker;
+        color: white;
+      }
+    }
   }
 
   &__link {
@@ -70,6 +86,12 @@
       text-decoration: none;
       display: block;
       transition: $transition-time;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-primary;
+      outline-offset: 4px;
+      border-radius: .3rem;
     }
 
     &--btn {

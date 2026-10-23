@@ -13,6 +13,10 @@
   }
 
   &__header {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
     align-items: center;
     padding: 1.8rem 2.2rem;
     cursor: pointer;
@@ -20,7 +24,12 @@
     font-weight: 500;
     font-size: clamp(1.7rem, 2.3vw, 2.2rem);
     text-align: left;
-    color: $color-grey-dark-2;
+    color: $color-grey-dark-0;
+
+    &:focus-visible {
+      outline: 3px solid $color-primary;
+      outline-offset: -3px;
+    }
 
     & span {
       flex: 0 0 3rem;

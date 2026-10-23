@@ -45,6 +45,9 @@ class FAQView extends View {
     this._question.querySelector(
       'use'
     ).href.baseVal = `${this._icons}#icon-chevron-${direction}`;
+    this._question
+      .querySelector('.faq__header')
+      .setAttribute('aria-expanded', direction === 'up');
     return this;
   }
 
@@ -63,15 +66,26 @@ class FAQView extends View {
   _generateItem(data, i) {
     return `
     <li class="faq__question" data-id="${i}">
-      <div class="faq__header">
+      <button
+        class="faq__header"
+        type="button"
+        id="faq-question-${i}"
+        aria-expanded="false"
+        aria-controls="faq-answer-${i}"
+      >
         ${data.question}
         <span>
           <svg>
             <use xlink:href="${this._icons}#icon-chevron-down"></use>
           </svg>
         </span>
-      </div>
-      <div class="faq__answer"><p>${data.answer}</p></div>
+      </button>
+      <div
+        class="faq__answer"
+        id="faq-answer-${i}"
+        role="region"
+        aria-labelledby="faq-question-${i}"
+      ><p>${data.answer}</p></div>
     </li>
     `;
   }

@@ -54,6 +54,7 @@
   .home__body__img { max-width: 100%; border-radius: 1.5rem; }
   .features { grid-template-columns: 1fr; gap: 3rem; }
   .features__feature { width: 100%; }
+  .service-card .features__img { height: 22rem; }
   .team__content { width: 100%; min-width: 0; }
   .contacts { margin-top: 6rem; }
   .contacts__tab-container { padding: 0 1rem; gap: .6rem; }
@@ -88,3 +89,5 @@
   .chrono__point { grid-template-columns: minmax(0, 1fr) 4rem minmax(0, 1fr); }
   .chrono__middle { width: 4rem; height: 4rem; }
 }
+
+@import 'revamp';

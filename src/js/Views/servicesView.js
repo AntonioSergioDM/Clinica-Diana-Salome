@@ -49,9 +49,12 @@ class ServicesView extends View {
   }
 
   _generateItem(data, i) {
-    if (i % 2)
-      return this._generateImage(data) + this._generateDescription(data);
-    else return this._generateDescription(data) + this._generateImage(data);
+    return `
+      <article class="service-card">
+        ${this._generateImage(data)}
+        ${this._generateDescription(data)}
+      </article>
+    `;
   }
 
   _generateImage(data) {
@@ -60,6 +63,7 @@ class ServicesView extends View {
           src="${img[data.image]}"
           alt="${data.title}"
           class="features__img "
+          loading="lazy"
         />
     `;
     // return `
@@ -75,16 +79,18 @@ class ServicesView extends View {
   _generateDescription(data) {
     return `
 		<div class="features__feature">
-			<h5 class="features__header">${data.title}</h5>
+          <h3 class="features__header">${data.title}</h3>
 			<p>
 				${data.text}
 			</p>
       ${
         data.link
           ? `
-          <a href="${data.link}" target="_blanck"> 
-            <button class="btn--text btn--scroll-to">${this._data.learnMore}</button> 
-          </a>
+          <a class="btn--text btn--scroll-to" href="${data.link}" ${
+            data.link.startsWith('http')
+              ? 'target="_blank" rel="noopener noreferrer"'
+              : ''
+          }>${this._data.learnMore}</a>
           `
           : ''
       }
