@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "website",
   "scripts": {
+    "predev": "node scripts/optimize-images.mjs",
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "node scripts/optimize-images.mjs",
     "build": "astro build",
     "preview": "astro preview"
   },
@@ -12,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "astro": "^7.4.2",
+    "sharp": "^0.35.5",
     "sass": "^1.89.2",
     "typescript": "^7.0.2"
   }

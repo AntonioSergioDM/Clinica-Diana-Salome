@@ -13,6 +13,8 @@ const { site, lang } = Astro.props;
 const labels = site.labels;
 const label = (key: string) => labels[key] as { title: string; intro: string };
 const heroPhoto = site.header[0] || 'balcao.jpeg';
+const optimizedImage = (folder: string, filename: string) =>
+  `/images/optimized/${folder}/${encodeURIComponent(filename.replace(/\.[^.]+$/, '.webp'))}`;
 const contactImage = (image: string) => {
   const categoryImage = join(process.cwd(), 'public', 'images', 'contacts', image);
   return existsSync(categoryImage)
@@ -21,13 +23,34 @@ const contactImage = (image: string) => {
 };
 const mapUrl = 'https://www.openstreetmap.org/export/embed.html?bbox=-7.7650%2C41.2860%2C-7.7300%2C41.3100&layer=mapnik&marker=41.298227%2C-7.747413';
 const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=41.29822701133623%2C-7.747412611051245';
+const siteUrl = Astro.site?.toString();
+const plainDescription = label('about').intro.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').replace(/\s+([,.!?])/g, '$1').trim();
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dentist',
+  name: 'Clínica Médica Dentária Dra. Diana Salomé',
+  telephone: '+351 259 104 774',
+  email: 'clinicadianasalome@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Rua Dom António Valente da Fonseca 26',
+    postalCode: '5000-539',
+    addressLocality: 'Vila Real',
+    addressCountry: 'PT',
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: 41.298227, longitude: -7.747413 },
+  availableLanguage: ['Portuguese', 'English'],
+  url: siteUrl ? new URL(lang === 'pt' ? '/' : '/en/', siteUrl).toString() : undefined,
+};
 ---
 
 <Layout
   lang={lang}
-  title="Clínica Médica Dentária Drª Diana Salomé — Vila Real"
-  description={label('about').intro.replace(/<[^>]*>/g, ' ').trim()}
+  title={`${lang === 'pt' ? 'Clínica Médica Dentária Drª Diana Salomé' : 'Diana Salomé Dental Clinic'} — Vila Real`}
+  description={plainDescription}
+  siteUrl={siteUrl}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <a class="skip-link" href="#main">{lang === 'pt' ? 'Saltar para o conteúdo' : 'Skip to content'}</a>
 
   <header class="site-header" id="top">
@@ -61,11 +84,14 @@ const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=41.298
     </nav>
   </header>
 
-  <section class="hero" aria-labelledby="hero-title" data-hero-images={JSON.stringify(site.header.map(photo => `/images/header/${photo}`))} style={`--hero-image: url('/images/header/${heroPhoto}')`}>
+<section class="hero" aria-labelledby="hero-title" data-hero-images={JSON.stringify(site.header.map(photo => optimizedImage('header', photo)))} style={`--hero-image: url('${optimizedImage('header', heroPhoto)}')`}>
       <div class="hero-copy">
         <p class="eyebrow">{lang === 'pt' ? 'Vila Real · Medicina dentária' : 'Vila Real · Dental care'}</p>
         <h1 id="hero-title">Clínica Médica Dentária<br />Drª Diana Salomé</h1>
-        <a class="button button-light" href="#services">{label('services').title}<span aria-hidden="true">↗</span></a>
+        <div class="hero-actions">
+          <a class="button button-light" href="#services">{label('services').title}<span aria-hidden="true">↗</span></a>
+          <a class="button button-call" href="tel:932220731">{lang === 'pt' ? 'Marque por telefone' : 'Call to book'} · 932 220 731</a>
+        </div>
       </div>
       <a class="hero-scroll" href="#about"><span>{lang === 'pt' ? 'Conheça a clínica' : 'Discover the clinic'}</span><span aria-hidden="true">↓</span></a>
   </section>
@@ -105,7 +131,7 @@ const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=41.298
     <section class="services-grid section-wrap" id="services" aria-label={label('services').title}>
       {site.services.map(service => (
         <article class="service-card">
-          <img src={`/images/services/${service.image}`} alt={service.title} loading="lazy" />
+          <img src={optimizedImage('services', service.image)} alt={service.title} loading="lazy" decoding="async" />
           <div class="service-copy">
             <h3>{service.title}</h3>
             <div class="body-copy" set:html={service.text}></div>
@@ -125,17 +151,17 @@ const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=41.298
         <h2>{label('team').intro}</h2>
       </div>
       <div class="team-layout">
-        <div class="team-list" role="tablist" aria-label={label('team').title}>
+        <div class="team-list">
           {site.team.map((person, index) => (
-            <button class:list={['team-person', { active: index === 0 }]} type="button" role="tab" aria-selected={index === 0 ? 'true' : 'false'} aria-controls={`team-panel-${index}`} id={`team-tab-${index}`} data-team-tab={index}>
-              <img src={`/images/team/${person.image}`} alt="" loading="lazy" />
+            <button class:list={['team-person', { active: index === 0 }]} type="button" aria-expanded={index === 0 ? 'true' : 'false'} aria-controls={`team-panel-${index}`} id={`team-tab-${index}`} data-team-tab={index}>
+              <img src={optimizedImage('team', person.image)} alt="" loading="lazy" decoding="async" />
               <span>{person.name}</span>
               <span class="team-arrow" aria-hidden="true">↗</span>
             </button>
           ))}
         </div>
         {site.team.map((person, index) => (
-          <div class:list={['team-bio', { active: index === 0 }]} id={`team-panel-${index}`} role="tabpanel" aria-labelledby={`team-tab-${index}`} data-team-panel={index} hidden={index !== 0} set:html={person.description}></div>
+          <div class:list={['team-bio', { active: index === 0 }]} id={`team-panel-${index}`} aria-labelledby={`team-tab-${index}`} data-team-panel={index} hidden={index !== 0} set:html={person.description}></div>
         ))}
       </div>
     </section>
@@ -170,7 +196,7 @@ const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=41.298
               {item.text && <p>{item.text}</p>}
             </blockquote>
             <figcaption>
-              <img src={`/images/testimonials/${item.image}`} alt="" loading="lazy" />
+              <img src={optimizedImage('testimonials', item.image)} alt="" loading="lazy" decoding="async" />
               <span>{item.author}</span>
             </figcaption>
           </figure>
@@ -244,7 +270,7 @@ const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=41.298
       tabs.forEach(item => {
         const active = item === tab;
         item.classList.toggle('active', active);
-        item.setAttribute('aria-selected', String(active));
+        item.setAttribute('aria-expanded', String(active));
       });
       panels.forEach(panel => {
         const active = panel.dataset.teamPanel === selected;

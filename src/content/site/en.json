@@ -122,7 +122,7 @@
       "image": "operacao.jpeg",
       "icon": "",
       "text": "Specialised care to correct the position and alignment of the teeth.<br>We offer a range of braces, including discreet cosmetic options and Invisalign clear aligners.",
-      "link": "https://pt.wikipedia.org/wiki/Aparelho_ortod%C3%B4ntico"
+      "link": "https://en.wikipedia.org/wiki/Orthodontics"
     },
     {
       "title": "Dental voucher programme",
@@ -255,59 +255,59 @@
   "nav": [
     {
       "title": "About",
-      "intro": "A nossa Clínica, situada no centro da cidade de Vila Real, tem como missão dar-lhe todos os motivos para <b>Sorrir</b>! <br>\n      O bem estar dos nossos pacientes é o que nos move e, por isso mesmo, oferecemos um serviço especializado de acordo com os seus desejos e necessidades.<br>\n      A nossa esquipa de profissionais faz uso de valores como a Dedicação, Proximidade, Confiança e Excelência.<br><br>\n      Que sorrir seja o nosso objetivo de todos os dias!<br>Venha sorrir connosco!\n       ",
+      "intro": "Our clinic, located in the centre of Vila Real, is committed to giving you every reason to <b>smile</b>!<br>Our patients’ well-being is what drives us, which is why we provide a specialised service tailored to your wishes and needs.<br>Our team of professionals is guided by dedication, care, trust and excellence.<br><br>Making you smile is our goal every day!<br>Come and smile with us!",
       "id": "about"
     },
     {
       "title": "Treatments",
-      "intro": "Atuamos nas diversas áreas da Medicina Dentária",
+      "intro": "Dental care for every stage of life",
       "id": "services"
     },
     {
       "title": "Team",
-      "intro": "A nossa equipa",
+      "intro": "Meet the people caring for your smile",
       "id": "team"
     },
     {
       "title": "FAQ",
-      "intro": "O que nos costumam perguntar",
+      "intro": "Answers to common questions",
       "id": "faq"
     },
     {
       "title": "Contact",
-      "intro": "Fale connosco",
+      "intro": "We’re here to help",
       "id": "contacts"
     }
   ],
   "footer": [
     {
       "title": "About",
-      "intro": "A nossa Clínica, situada no centro da cidade de Vila Real, tem como missão dar-lhe todos os motivos para <b>Sorrir</b>! <br>\n      O bem estar dos nossos pacientes é o que nos move e, por isso mesmo, oferecemos um serviço especializado de acordo com os seus desejos e necessidades.<br>\n      A nossa esquipa de profissionais faz uso de valores como a Dedicação, Proximidade, Confiança e Excelência.<br><br>\n      Que sorrir seja o nosso objetivo de todos os dias!<br>Venha sorrir connosco!\n       ",
+      "intro": "Our clinic, located in the centre of Vila Real, is committed to giving you every reason to <b>smile</b>!<br>Our patients’ well-being is what drives us, which is why we provide a specialised service tailored to your wishes and needs.<br>Our team of professionals is guided by dedication, care, trust and excellence.<br><br>Making you smile is our goal every day!<br>Come and smile with us!",
       "id": "about"
     },
     {
       "title": "Treatments",
-      "intro": "Atuamos nas diversas áreas da Medicina Dentária",
+      "intro": "Dental care for every stage of life",
       "id": "services"
     },
     {
       "title": "Agreements",
-      "intro": "",
+      "intro": "Our agreements and partners",
       "id": "agreements"
     },
     {
       "title": "Team",
-      "intro": "A nossa equipa",
+      "intro": "Meet the people caring for your smile",
       "id": "team"
     },
     {
       "title": "FAQ",
-      "intro": "O que nos costumam perguntar",
+      "intro": "Answers to common questions",
       "id": "faq"
     },
     {
       "title": "Contact",
-      "intro": "Fale connosco",
+      "intro": "We’re here to help",
       "id": "contacts"
     }
   ],

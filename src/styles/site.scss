@@ -92,6 +92,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     linear-gradient(0deg, rgba($pine-deep, .28), transparent 58%);
 }
 .hero-copy { width: min(90rem, 85%); margin: 0 0 0 clamp(2.4rem, 10vw, 14rem); padding: 9rem 0; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem; }
 .eyebrow {
   margin: 0 0 1.6rem; color: $pine; font-size: 1.2rem;
   font-weight: 700; letter-spacing: .17em; text-transform: uppercase;
@@ -112,6 +113,8 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .button span, .text-link span, .map-card>a span { font-size: 1.8rem; line-height: 1; }
 .button-light { color: $pine-deep; background: white; }
 .button-light:hover { background: $mint; }
+.button-call { color: white; border: 1px solid rgba(white, .65); background: rgba($pine-deep, .35); }
+.button-call:hover { color: $pine-deep; background: white; }
 .button-dark { color: white; background: $pine; }
 .button-dark:hover { background: $pine-deep; }
 .hero-scroll {
@@ -256,6 +259,8 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .hero { min-height: min(70svh, 62rem); margin-top: .8rem; border-radius: 1.8rem; }
   .hero::after { background: linear-gradient(90deg, rgba($pine-deep, .78), rgba($pine-deep, .28)), linear-gradient(0deg, rgba($pine-deep, .38), transparent 70%); }
   .hero-copy { width: auto; min-width: 0; margin-inline: 2.4rem; padding-block: 7rem 9rem; }
+  .hero-actions { align-items: stretch; flex-direction: column; }
+  .hero-actions .button { align-self: flex-start; }
   .hero h1 { font-size: clamp(4rem, 11vw, 6.8rem); }
   .hero-scroll { right: 2rem; bottom: 2rem; font-size: 1.15rem; }
   .section-wrap { width: min(100% - 3.2rem, 124rem); }
