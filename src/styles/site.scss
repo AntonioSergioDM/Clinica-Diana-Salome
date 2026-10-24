@@ -222,6 +222,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .contact-heading { grid-row: span 2; padding: clamp(3rem, 5vw, 6rem); border-radius: 1.8rem; color: white; background: $pine; }
 .contact-heading .eyebrow { color: #f1e3e1; }
 .contact-heading h2 { margin-bottom: 3rem; color: white; }
+.contact-social-links { margin-top: 2rem; }
 .contact-details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .contact-card { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 2rem; border: 1px solid $line; border-radius: 1.4rem; background: white; text-decoration: none; }
 .contact-card:hover { border-color: $sage; }

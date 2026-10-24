@@ -158,13 +158,6 @@
       "icon": "",
       "text": "Home appointments may be available for patients who have difficulty travelling to the clinic.",
       "link": "#contacts"
-    },
-    {
-      "title": "Teeth whitening",
-      "image": "branqueamento.jpeg",
-      "icon": "",
-      "text": "For a brighter smile, ask us about safe and simple whitening treatments that do not wear down the teeth.",
-      "link": ""
     }
   ],
   "testimonials": [
@@ -421,10 +414,14 @@
     }
   ],
   "header": [
+    "balcao2.jpeg",
+    "aberta.jpeg",
     "balcao.jpeg",
-    "corredor.jpeg",
     "balcao1.jpeg",
-    "entrada.jpeg"
+    "corredor.jpeg",
+    "entrada.jpeg",
+    "porta.jpeg",
+    "sala-espera.jpeg"
   ],
   "learnMore": "Learn more"
 }

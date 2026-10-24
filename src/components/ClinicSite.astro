@@ -49,6 +49,7 @@ const schema = {
   title={`${lang === 'pt' ? 'Clínica Médica Dentária Drª Diana Salomé' : 'Diana Salomé Dental Clinic'} — Vila Real`}
   description={plainDescription}
   siteUrl={siteUrl}
+  heroImage={optimizedImage('header', heroPhoto)}
 >
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <a class="skip-link" href="#main">{lang === 'pt' ? 'Saltar para o conteúdo' : 'Skip to content'}</a>
@@ -186,6 +187,33 @@ const schema = {
       </ul>
     </section>
 
+    <section class="contact-section section-wrap" id="contacts">
+      <div class="contact-heading">
+        <p class="eyebrow">{label('contacts').title}</p>
+        <h2>{label('contacts').intro}</h2>
+        <a class="button button-light" href={directionsUrl} target="_blank" rel="noreferrer">
+          {label('map').intro}<span aria-hidden="true">↗</span>
+        </a>
+        <div class="social-links contact-social-links">
+          <a href="https://www.facebook.com/clinicadianasalome/" target="_blank" rel="noreferrer" aria-label="Facebook"><svg aria-hidden="true"><use href="/images/icons.svg#icon-facebook"></use></svg></a>
+          <a href="https://www.instagram.com/clinicamddianasalome/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="/images/icons.svg#icon-instagram"></use></svg></a>
+        </div>
+      </div>
+      <div class="contact-details">
+        {site.contacts.map(contact => (
+          <a class="contact-card" href={contact.link}>
+            <img src={contactImage(contact.image)} alt="" loading="lazy" />
+            <span><strong>{contact.title}</strong><span>{contact.value}</span></span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+      <div class="map-card">
+        <iframe src={mapUrl} title={label('map').title} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href={directionsUrl} target="_blank" rel="noreferrer">{label('map').intro}<span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
     <section class="testimonials-section section-wrap" id="testimonials">
       <div class="section-heading">
         <p class="eyebrow">{label('testimonials').title}</p>
@@ -223,28 +251,7 @@ const schema = {
       </div>
     </section>
 
-    <section class="contact-section section-wrap" id="contacts">
-      <div class="contact-heading">
-        <p class="eyebrow">{label('contacts').title}</p>
-        <h2>{label('contacts').intro}</h2>
-        <a class="button button-light" href={directionsUrl} target="_blank" rel="noreferrer">
-          {label('map').intro}<span aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <div class="contact-details">
-        {site.contacts.map(contact => (
-          <a class="contact-card" href={contact.link}>
-            <img src={contactImage(contact.image)} alt="" loading="lazy" />
-            <span><strong>{contact.title}</strong><span>{contact.value}</span></span>
-            <span class="contact-arrow" aria-hidden="true">↗</span>
-          </a>
-        ))}
-      </div>
-      <div class="map-card">
-        <iframe src={mapUrl} title={label('map').title} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <a href={directionsUrl} target="_blank" rel="noreferrer">{label('map').intro}<span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
+
   </main>
 
   <footer class="site-footer">

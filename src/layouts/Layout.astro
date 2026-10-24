@@ -6,9 +6,10 @@ interface Props {
   title: string;
   description: string;
   siteUrl?: string;
+  heroImage: string;
 }
 
-const { lang, title, description, siteUrl } = Astro.props;
+const { lang, title, description, siteUrl, heroImage } = Astro.props;
 const canonicalUrl = siteUrl ? new URL(Astro.url.pathname, siteUrl).toString() : undefined;
 const alternatePt = siteUrl ? new URL('/', siteUrl).toString() : undefined;
 const alternateEn = siteUrl ? new URL('/en/', siteUrl).toString() : undefined;
@@ -49,7 +50,7 @@ const alternateEn = siteUrl ? new URL('/en/', siteUrl).toString() : undefined;
     <link rel="apple-touch-icon" href="/images/logo/apple-touch-icon2.png" />
     <link rel="manifest" href="/images/logo/site2.webmanifest" />
     <meta name="msapplication-config" content="/images/logo/browserconfig2.xml" />
-    <link rel="preload" as="image" href="/images/optimized/header/balcao.webp" />
+    <link rel="preload" as="image" href={heroImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
