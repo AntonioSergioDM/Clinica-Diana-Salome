@@ -22,9 +22,9 @@ en.labels.about.intro = 'Our clinic, located in the centre of Vila Real, is comm
 en.labels.logo = '/images/logo/logo2-wide-light.png';
 en.openHours = Object.fromEntries(Object.entries(pt.openHours).map(([key, day]) => [key, key === 'closeLabel' ? 'Closed' : {
   ...day,
-  label: ({ sun: 'Sunday & public holidays', mon: 'Monday', tue: 'Tuesday', wed: 'Wednesday', thu: 'Thursday', fri: 'Friday', sat: 'Saturday' })[key],
+  label: ({ sun: 'Weekends & public holidays', mon: 'Monday', tue: 'Tuesday', wed: 'Wednesday', thu: 'Thursday', fri: 'Friday' })[key],
   open: day.open.map(time => time ? ({ '09h30': '9:30 am', '14h30': '2:30 pm' })[time] || time : ''),
-  close: day.close.map(time => time ? ({ '12h30': '12:30 pm', '19h30': '7:30 pm' })[time] || time : ''),
+  close: day.close.map(time => time ? ({ '12h': '12:00 pm', '19h': '7:00 pm' })[time] || time : ''),
 }]));
 en.chrono = pt.chrono;
 en.services = [
@@ -64,10 +64,9 @@ en.nav = pt.nav.map(item => ({ ...item, title: navTitles[item.id] }));
 en.footer = pt.footer.map(item => ({ ...item, title: navTitles[item.id] }));
 en.team = pt.team.map((person, i) => ({
   ...person,
-  name: ['Dr Diana Salomé', 'Dr Afonso Silva', 'Cristina Costa'][i],
+  name: ['Dr Diana Salomé', 'Juliana Carvalho'][i],
   description: [
     'Clinical Director<br>Master’s degree in Dental Medicine, FMDUP<br>Certified in Facial Aesthetics<br>Certified in Implantology and Oral Rehabilitation<br>Certified in Aesthetic Dentistry<br>Certified in Endodontics<br>Further training in ceramic veneers<br>A paediatric dentist by vocation',
-    'Dentist specialising in orthodontics<br>Many years of experience in dentistry, implantology and orthodontics<br>Extensive academic and professional training<br>Known for dedication and a constant commitment to learning and development',
     'Medical and dental practice assistant<br>Training in clinical support and patient service<br>Emergency response training<br>Extensive experience in the field<br>Known for kindness and dedication',
   ][i],
 }));

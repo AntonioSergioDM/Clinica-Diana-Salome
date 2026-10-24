@@ -59,7 +59,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 }
 .language-option {
   display: grid; min-width: 3.5rem; min-height: 3.3rem; place-items: center;
-  padding: 0 .8rem; border-radius: 99rem; color: $muted; font-size: 1.15rem;
+  padding: 0 .8rem; border-radius: 99rem; color: $pine-deep; font-size: 1.15rem;
   font-weight: 700; letter-spacing: .04em; text-decoration: none;
 }
 .language-option:hover { color: $pine; }
@@ -178,9 +178,9 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .section-heading h2 { font-size: clamp(3rem, 4.3vw, 5rem); }
 .team-layout { display: grid; grid-template-columns: minmax(28rem, .7fr) minmax(0, 1.3fr); gap: clamp(2rem, 5vw, 6rem); align-items: start; }
 .team-list { display: grid; gap: 1rem; }
-.team-person { display: grid; grid-template-columns: 6.5rem 1fr auto; align-items: center; gap: 1.4rem; width: 100%; padding: 1rem 1.4rem 1rem 1rem; border: 1px solid transparent; border-radius: 1.3rem; color: $ink; background: transparent; text-align: left; cursor: pointer; transition: background .2s ease, border-color .2s ease; }
+.team-person { display: grid; grid-template-columns: 7.5rem 1fr auto; align-items: center; gap: 1.4rem; width: 100%; padding: 1rem 1.4rem 1rem 1rem; border: 1px solid transparent; border-radius: 1.3rem; color: $ink; background: transparent; text-align: left; cursor: pointer; transition: background .2s ease, border-color .2s ease; }
 .team-person:hover, .team-person.active { border-color: $line; background: white; }
-.team-person img { width: 6.5rem; height: 7.5rem; border-radius: .9rem; object-fit: cover; }
+.team-person img { width: 7.5rem; height: 7.5rem; max-height: 100%; border: 1px solid $pine; border-radius: .8rem; object-fit: cover; }
 .team-person>span:nth-child(2) { font-weight: 700; }
 .team-arrow { color: $pine; font-size: 1.8rem; }
 .team-bio { padding: clamp(2.4rem, 5vw, 5rem); border: 1px solid $line; border-radius: 1.8rem; color: $muted; background: white; font-size: 1.65rem; line-height: 2; }
@@ -301,9 +301,9 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .body-copy { font-size: 1.35rem; }
   .team-section, .testimonials-section { padding-inline: 1.6rem; }
   .team-layout { grid-template-columns: 1fr; gap: 1.5rem; }
-  .team-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
-  .team-person { display: flex; min-width: 0; flex-direction: column; gap: .8rem; padding: .8rem .5rem; text-align: center; }
-  .team-person img { width: clamp(6.2rem, 20vw, 10rem); height: clamp(7.2rem, 23vw, 11rem); }
+  .team-list { display: flex; justify-content: space-evenly; gap: .5rem; }
+  .team-person { display: flex; flex: 0 1 auto; width: auto; min-width: 0; flex-direction: column; gap: .8rem; padding: 1rem .8rem; text-align: center; }
+  .team-person img { width: clamp(6.2rem, 20vw, 10rem); height: clamp(6.2rem, 20vw, 10rem); }
   .team-person>span:nth-child(2) { font-size: 1.15rem; line-height: 1.3; }
   .team-arrow { display: none; }
   .team-bio { padding: 2rem; font-size: 1.45rem; }

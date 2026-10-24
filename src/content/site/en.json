@@ -40,15 +40,6 @@
     "logo": "/images/logo/logo2-wide-light.png"
   },
   "openHours": {
-    "sun": {
-      "label": "Sunday & public holidays",
-      "open": [
-        ""
-      ],
-      "close": [
-        ""
-      ]
-    },
     "mon": {
       "label": "Monday",
       "open": [
@@ -56,8 +47,8 @@
         "2:30 pm"
       ],
       "close": [
-        "12:30 pm",
-        "7:30 pm"
+        "12:00 pm",
+        "7:00 pm"
       ]
     },
     "tue": {
@@ -67,8 +58,8 @@
         "2:30 pm"
       ],
       "close": [
-        "12:30 pm",
-        "7:30 pm"
+        "12:00 pm",
+        "7:00 pm"
       ]
     },
     "wed": {
@@ -78,8 +69,8 @@
         "2:30 pm"
       ],
       "close": [
-        "12:30 pm",
-        "7:30 pm"
+        "12:00 pm",
+        "7:00 pm"
       ]
     },
     "thu": {
@@ -89,8 +80,8 @@
         "2:30 pm"
       ],
       "close": [
-        "12:30 pm",
-        "7:30 pm"
+        "12:00 pm",
+        "7:00 pm"
       ]
     },
     "fri": {
@@ -100,17 +91,17 @@
         "2:30 pm"
       ],
       "close": [
-        "12:30 pm",
-        "7:30 pm"
+        "12:00 pm",
+        "7:00 pm"
       ]
     },
-    "sat": {
-      "label": "Saturday",
+    "sun": {
+      "label": "Weekends & public holidays",
       "open": [
-        "9:30 am"
+        ""
       ],
       "close": [
-        "12:30 pm"
+        ""
       ]
     },
     "closeLabel": "Closed"
@@ -122,7 +113,7 @@
       "image": "operacao.jpeg",
       "icon": "",
       "text": "Specialised care to correct the position and alignment of the teeth.<br>We offer a range of braces, including discreet cosmetic options and Invisalign clear aligners.",
-      "link": "https://en.wikipedia.org/wiki/Orthodontics"
+      "link": "https://pt.wikipedia.org/wiki/Aparelho_ortod%C3%B4ntico"
     },
     {
       "title": "Dental voucher programme",
@@ -255,59 +246,59 @@
   "nav": [
     {
       "title": "About",
-      "intro": "Our clinic, located in the centre of Vila Real, is committed to giving you every reason to <b>smile</b>!<br>Our patients’ well-being is what drives us, which is why we provide a specialised service tailored to your wishes and needs.<br>Our team of professionals is guided by dedication, care, trust and excellence.<br><br>Making you smile is our goal every day!<br>Come and smile with us!",
+      "intro": "A nossa Clínica, situada no centro da cidade de Vila Real, tem como missão dar-lhe todos os motivos para <b>Sorrir</b>! <br>\n      O bem estar dos nossos pacientes é o que nos move e, por isso mesmo, oferecemos um serviço especializado de acordo com os seus desejos e necessidades.<br>\n      A nossa esquipa de profissionais faz uso de valores como a Dedicação, Proximidade, Confiança e Excelência.<br><br>\n      Que sorrir seja o nosso objetivo de todos os dias!<br>Vem sorrir connosco!\n       ",
       "id": "about"
     },
     {
       "title": "Treatments",
-      "intro": "Dental care for every stage of life",
+      "intro": "Atuamos nas diversas áreas da Medicina Dentária",
       "id": "services"
     },
     {
       "title": "Team",
-      "intro": "Meet the people caring for your smile",
+      "intro": "A nossa equipa",
       "id": "team"
     },
     {
       "title": "FAQ",
-      "intro": "Answers to common questions",
+      "intro": "O que nos costumam perguntar",
       "id": "faq"
     },
     {
       "title": "Contact",
-      "intro": "We’re here to help",
+      "intro": "Fale connosco",
       "id": "contacts"
     }
   ],
   "footer": [
     {
       "title": "About",
-      "intro": "Our clinic, located in the centre of Vila Real, is committed to giving you every reason to <b>smile</b>!<br>Our patients’ well-being is what drives us, which is why we provide a specialised service tailored to your wishes and needs.<br>Our team of professionals is guided by dedication, care, trust and excellence.<br><br>Making you smile is our goal every day!<br>Come and smile with us!",
+      "intro": "A nossa Clínica, situada no centro da cidade de Vila Real, tem como missão dar-lhe todos os motivos para <b>Sorrir</b>! <br>\n      O bem estar dos nossos pacientes é o que nos move e, por isso mesmo, oferecemos um serviço especializado de acordo com os seus desejos e necessidades.<br>\n      A nossa esquipa de profissionais faz uso de valores como a Dedicação, Proximidade, Confiança e Excelência.<br><br>\n      Que sorrir seja o nosso objetivo de todos os dias!<br>Vem sorrir connosco!\n       ",
       "id": "about"
     },
     {
       "title": "Treatments",
-      "intro": "Dental care for every stage of life",
+      "intro": "Atuamos nas diversas áreas da Medicina Dentária",
       "id": "services"
     },
     {
       "title": "Agreements",
-      "intro": "Our agreements and partners",
+      "intro": "",
       "id": "agreements"
     },
     {
       "title": "Team",
-      "intro": "Meet the people caring for your smile",
+      "intro": "A nossa equipa",
       "id": "team"
     },
     {
       "title": "FAQ",
-      "intro": "Answers to common questions",
+      "intro": "O que nos costumam perguntar",
       "id": "faq"
     },
     {
       "title": "Contact",
-      "intro": "We’re here to help",
+      "intro": "Fale connosco",
       "id": "contacts"
     }
   ],
@@ -318,12 +309,7 @@
       "description": "Clinical Director<br>Master’s degree in Dental Medicine, FMDUP<br>Certified in Facial Aesthetics<br>Certified in Implantology and Oral Rehabilitation<br>Certified in Aesthetic Dentistry<br>Certified in Endodontics<br>Further training in ceramic veneers<br>A paediatric dentist by vocation"
     },
     {
-      "name": "Dr Afonso Silva",
-      "image": "afonso.jpeg",
-      "description": "Dentist specialising in orthodontics<br>Many years of experience in dentistry, implantology and orthodontics<br>Extensive academic and professional training<br>Known for dedication and a constant commitment to learning and development"
-    },
-    {
-      "name": "Cristina Costa",
+      "name": "Juliana Carvalho",
       "image": "cris.jpeg",
       "description": "Medical and dental practice assistant<br>Training in clinical support and patient service<br>Emergency response training<br>Extensive experience in the field<br>Known for kindness and dedication"
     }

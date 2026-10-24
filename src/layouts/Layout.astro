@@ -19,7 +19,7 @@ const alternateEn = siteUrl ? new URL('/en/', siteUrl).toString() : undefined;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script is:inline>
+    <script>
       try {
         const savedTheme = localStorage.getItem('site-theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
