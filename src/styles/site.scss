@@ -79,6 +79,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   width: min(100%, 150rem); min-height: min(76rem, calc(100svh - 11rem));
   margin: 1.6rem auto 0; overflow: hidden; border-radius: 2.6rem;
   color: white; background: $pine-deep;
+  transition: width .35s ease, margin-top .35s ease, border-radius .35s ease;
 }
 .hero::before {
   position: absolute; z-index: -2; inset: 0; content: '';
@@ -197,11 +198,18 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .faq-item { border: 1px solid $line; border-radius: 1.3rem; background: white; }
 .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 7rem; padding: 1.8rem 2.2rem; color: $ink; font-size: 1.6rem; font-weight: 700; list-style: none; cursor: pointer; }
 .faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary span { display: grid; flex: 0 0 3rem; width: 3rem; height: 3rem; place-items: center; border-radius: 50%; color: $pine; background: $mint; font-size: 2rem; font-weight: 400; transition: transform .2s ease; }
-.faq-item[open] summary span { transform: rotate(45deg); }
-.faq-answer { padding: 0 2.2rem 2rem; color: $muted; font-size: 1.5rem; line-height: 1.8; }
-.faq-answer p { margin: 0; }
+.faq-item summary span { display: grid; flex: 0 0 3rem; width: 3rem; height: 3rem; place-items: center; border-radius: 50%; color: $pine; background: $mint; transition: transform .2s ease; }
+.faq-item summary span::before { width: .8rem; height: .8rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; content: ''; transform: translateY(-.2rem) rotate(45deg); }
+.faq-item[open] summary span::before { transform: translateY(.2rem) rotate(225deg); }
+.faq-answer { box-sizing: border-box; height: 0; overflow: hidden; color: $muted; font-size: 1.5rem; line-height: 1.8; transition: height .3s ease-in-out; }
+.faq-answer-text { padding: 0 2.2rem 2rem; opacity: 0; transition: opacity .2s ease; }
+.faq-item[open] .faq-answer-text { opacity: 1; }
+.faq-item[data-closing="true"] .faq-answer-text { opacity: 0; }
 .faq-answer a { color: $pine; }
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer-text { transition: none; }
+  .faq-item summary span, .faq-item summary span::before { transition: none; }
+}
 
 .contact-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2rem; padding-block: clamp(7rem, 9vw, 11rem); }
 .contact-heading { grid-row: span 2; padding: clamp(3rem, 5vw, 6rem); border-radius: 1.8rem; color: white; background: $pine; }
@@ -232,6 +240,11 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .footer-contact { padding-top: 1.8rem; border-top: 1px solid rgba(white, .16); }
 .copyright { color: rgba(white, .58); font-size: 1.15rem; }
 
+@media (max-width: 1720px) {
+  .site-header { height: 0; padding: 0; }
+  .hero { width: 100%; margin-top: 0; border-radius: 0; }
+}
+
 @media (max-width: 980px) {
   .desktop-links { gap: 1.3rem; }
   .desktop-links a { font-size: 1.25rem; }
@@ -243,7 +256,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 900px) {
   :root { scroll-padding-top: 8rem; }
-  .site-header { height: 7.3rem; padding: 0 .8rem; }
+  .site-header { height: 0; padding: 0; }
   .nav-shell { top: .8rem; width: calc(100% - 1.6rem); min-height: 6.5rem; gap: 1rem; padding: .8rem 1.2rem; border-radius: 1.3rem; }
   .brand img { width: 12rem; height: 5rem; }
   .desktop-links { display: none; }
@@ -256,7 +269,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .mobile-menu[open] .nav-links { position: absolute; top: calc(100% + .6rem); right: 0; left: 0; display: grid; gap: .4rem; margin: 0; padding: 1.2rem; border: 1px solid $line; border-radius: 1.4rem; background: white; box-shadow: 0 1.2rem 3rem rgba($pine-deep, .13); }
   .nav-links a { padding: 1.1rem 1.2rem; border-radius: .8rem; }
   .nav-links .nav-cta { border-radius: .8rem; }
-  .hero { min-height: min(70svh, 62rem); margin-top: .8rem; border-radius: 1.8rem; }
+  .hero { min-height: min(70svh, 62rem); margin-top: 0; border-radius: 0; }
   .hero::after { background: linear-gradient(90deg, rgba($pine-deep, .78), rgba($pine-deep, .28)), linear-gradient(0deg, rgba($pine-deep, .38), transparent 70%); }
   .hero-copy { width: auto; min-width: 0; margin-inline: 2.4rem; padding-block: 7rem 9rem; }
   .hero-actions { align-items: stretch; flex-direction: column; }

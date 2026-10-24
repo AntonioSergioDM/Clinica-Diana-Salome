@@ -212,8 +212,8 @@ const schema = {
       <div class="faq-list">
         {site.faq.map((item, index) => (
           <details class="faq-item" open={index === 0}>
-            <summary>{item.question}<span aria-hidden="true">+</span></summary>
-            <div class="faq-answer" set:html={item.answer}></div>
+            <summary>{item.question}<span aria-hidden="true"></span></summary>
+            <div class="faq-answer"><div class="faq-answer-text" set:html={item.answer}></div></div>
           </details>
         ))}
       </div>
@@ -303,12 +303,54 @@ const schema = {
     }, 6500);
   }
 
-  document.querySelectorAll<HTMLDetailsElement>('.faq-item').forEach(item => {
-    item.addEventListener('toggle', () => {
-      if (item.open) {
-        document.querySelectorAll<HTMLDetailsElement>('.faq-item').forEach(other => {
-          if (other !== item) other.open = false;
+  const faqItems = [...document.querySelectorAll<HTMLDetailsElement>('.faq-item')];
+  const closeTimers = new Map<HTMLDetailsElement, number>();
+  const motionDuration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+
+  const setFaqOpen = (item: HTMLDetailsElement, open: boolean) => {
+    const pendingClose = closeTimers.get(item);
+    if (pendingClose) window.clearTimeout(pendingClose);
+    closeTimers.delete(item);
+
+    if (open) {
+      delete item.dataset.closing;
+      item.open = true;
+      const answer = item.querySelector<HTMLElement>('.faq-answer');
+      if (answer) {
+        answer.style.height = '0px';
+        requestAnimationFrame(() => {
+          answer.style.height = `${answer.scrollHeight}px`;
         });
+      }
+      return;
+    }
+
+    if (!item.open) return;
+    item.dataset.closing = 'true';
+    const answer = item.querySelector<HTMLElement>('.faq-answer');
+    if (answer) {
+      answer.style.height = `${answer.getBoundingClientRect().height}px`;
+      requestAnimationFrame(() => { answer.style.height = '0px'; });
+    }
+    closeTimers.set(item, window.setTimeout(() => {
+      item.open = false;
+      delete item.dataset.closing;
+      closeTimers.delete(item);
+    }, motionDuration));
+  };
+
+  faqItems.forEach(item => {
+    const answer = item.querySelector<HTMLElement>('.faq-answer');
+    if (answer && item.open) answer.style.height = `${answer.scrollHeight}px`;
+    item.querySelector('summary')?.addEventListener('click', event => {
+      event.preventDefault();
+      if (item.open && !item.dataset.closing) {
+        setFaqOpen(item, false);
+      } else {
+        faqItems.forEach(other => {
+          if (other !== item && other.open) setFaqOpen(other, false);
+        });
+        setFaqOpen(item, true);
       }
     });
   });
