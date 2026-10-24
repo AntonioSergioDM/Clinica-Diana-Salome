@@ -196,7 +196,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .testimonial-card h3 { margin: 0 0 1.2rem; color: $pine-deep; font-family: 'Manrope', sans-serif; font-size: 1.9rem; line-height: 1.35; }
 .testimonial-card blockquote p { margin: 0; color: $muted; font-size: 1.45rem; line-height: 1.8; }
 .testimonial-card figcaption { display: flex; align-items: center; gap: 1.2rem; margin-top: auto; padding-top: 2.5rem; font-size: 1.35rem; font-weight: 700; }
-.testimonial-card figcaption img { width: 4.6rem; height: 4.6rem; border-radius: 50%; object-fit: cover; }
+.testimonial-card figcaption img { width: 4.6rem; height: 4.6rem; border: 1px solid black; border-radius: 50%; object-fit: cover; }
 
 .faq-list { display: grid; gap: 1rem; max-width: 92rem; }
 .faq-item { border: 1px solid $line; border-radius: 1.3rem; background: white; }
@@ -367,6 +367,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .team-section, .testimonials-section { background: #241d20; }
   .service-card, .team-bio, .agreements-grid li, .testimonial-card, .faq-item,
   .contact-card { border-color: #44363b; background: #241d20; }
+  .agreements-grid li { border-color: #e2d9d5; color: #59494d; background: #f2eeeb; }
   .team-person:hover, .team-person.active { border-color: #554149; background: #302529; }
   .faq-item summary span { background: #49323a; }
   .map-card { background: #302529; }
