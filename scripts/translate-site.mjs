@@ -56,7 +56,7 @@ en.faq = [
   ['What causes bad breath?', 'Around 90% of bad breath cases have an oral cause, such as plaque, gum disease, tooth decay or retained roots. Other causes can include medication, nasal obstruction and other health conditions.'],
   ['What should I know about Botox?', 'Botulinum toxin is one of the most common aesthetic treatments. The application is generally painless and results are natural-looking and quick to appear. It relaxes muscles, softens expression lines and can help with facial asymmetry, bruxism, gummy smile and excessive sweating.'],
   ['What should I know about hyaluronic acid?', 'Hyaluronic acid helps hydrate and improve skin elasticity, softening lines for a firmer, more youthful appearance. Lip filler is a generally comfortable treatment with immediate, natural-looking results.'],
-  ['I have another question…', 'You are welcome to call or visit us. <a class="nav__lang" href="#contacts">Get in touch</a>.'],
+  ['I have another question…', 'You are welcome to call or visit us.&nbsp;<a class="nav__lang" href="#contacts">Get in touch</a>.'],
 ].map(([question, answer]) => ({ question, answer }));
 
 const navTitles = { about: 'About', services: 'Treatments', team: 'Team', faq: 'FAQ', contacts: 'Contact', agreements: 'Agreements' };

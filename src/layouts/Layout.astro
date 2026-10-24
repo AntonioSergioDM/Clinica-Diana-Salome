@@ -19,8 +19,19 @@ const alternateEn = siteUrl ? new URL('/en/', siteUrl).toString() : undefined;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem('site-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = savedTheme === 'dark' || savedTheme === 'light'
+          ? savedTheme
+          : (systemPrefersDark ? 'dark' : 'light');
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    </script>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="theme-color" content="#faf6f3" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={lang === 'pt' ? 'pt_PT' : 'en_GB'} />
     <meta property="og:title" content={title} />

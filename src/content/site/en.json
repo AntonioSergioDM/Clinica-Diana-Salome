@@ -249,7 +249,7 @@
     },
     {
       "question": "I have another question…",
-      "answer": "You are welcome to call or visit us. <a class=\"nav__lang\" href=\"#contacts\">Get in touch</a>."
+      "answer": "You are welcome to call or visit us.&nbsp;<a class=\"nav__lang\" href=\"#contacts\">Get in touch</a>."
     }
   ],
   "nav": [
