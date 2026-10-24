@@ -56,7 +56,7 @@ const schema = {
   <header class="site-header" id="top">
     <nav class="nav-shell" aria-label={lang === 'pt' ? 'Navegação principal' : 'Main navigation'}>
       <a class="brand" href="#top" aria-label="Clínica Diana Salomé">
-        <img src="/images/logo/logo.png" alt="Clínica Diana Salomé" width="164" height="72" />
+        <img src="/images/logo/logo2-wide-light.png" data-light-logo="/images/logo/logo2-wide-light.png" data-dark-logo="/images/logo/logo2-wide-dark.png" alt="Clínica Diana Salomé" width="365" height="92" />
       </a>
 
       <div class="nav-actions">
@@ -248,7 +248,7 @@ const schema = {
   </main>
 
   <footer class="site-footer">
-    <a class="footer-brand" href="#top"><img src="/images/logo/logo.png" alt="Clínica Diana Salomé" /></a>
+    <a class="footer-brand" href="#top"><img src="/images/logo/logo2-wide-dark.png" alt="Clínica Diana Salomé" width="365" height="92" /></a>
     <ul class="footer-links">
       {site.footer.map(item => <li><a href={`#${item.id}`}>{item.title}</a></li>)}
     </ul>
@@ -294,6 +294,9 @@ const schema = {
   const setTheme = (theme: 'light' | 'dark') => {
     document.documentElement.dataset.theme = theme;
     const dark = theme === 'dark';
+    document.querySelectorAll<HTMLImageElement>('[data-light-logo][data-dark-logo]').forEach(image => {
+      image.src = dark ? image.dataset.darkLogo! : image.dataset.lightLogo!;
+    });
     themeToggle?.setAttribute('aria-pressed', String(dark));
     themeToggle?.setAttribute('aria-label', dark
       ? (document.documentElement.lang === 'pt' ? 'Ativar modo claro' : 'Enable light mode')
