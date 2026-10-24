@@ -118,18 +118,18 @@
   "chrono": [],
   "services": [
     {
-      "title": "Orthodontics",
-      "image": "operacao.jpeg",
-      "icon": "",
-      "text": "Specialised care to correct the position and alignment of the teeth.<br>We offer a range of braces, including discreet cosmetic options and Invisalign clear aligners.",
-      "link": "https://en.wikipedia.org/wiki/Orthodontics"
-    },
-    {
       "title": "Dental voucher programme",
       "image": "crianca2.jpeg",
       "icon": "",
       "text": "The Portuguese National Health Service dental voucher provides eligible patients with free preventive and restorative treatment. It is available to children and young people up to age 18, pregnant women, older people receiving the Solidarity Supplement, and people living with HIV.",
       "link": "https://www.sns24.gov.pt/servico/pedir-cheques-dentista/"
+    },
+    {
+      "title": "Home visits",
+      "image": "selfie2.jpeg",
+      "icon": "",
+      "text": "Age, reduced mobility or other limitations should not prevent anyone from taking care of their oral health.\nWe provide dental care at home, bringing our services to institutions, care homes and private residences.",
+      "link": "#contacts"
     },
     {
       "title": "Paediatric dentistry",
@@ -139,13 +139,6 @@
       "link": "#faq"
     },
     {
-      "title": "Facial aesthetics",
-      "image": "estetica.jpeg",
-      "icon": "",
-      "text": "Botulinum toxin (Botox) treatments for expression lines, bruxism, gummy smile, excessive sweating, neck pain and tension headaches.<br>Hyaluronic acid fillers are also available for natural-looking facial and lip rejuvenation.",
-      "link": ""
-    },
-    {
       "title": "Oral rehabilitation",
       "image": "paciente1.jpeg",
       "icon": "",
@@ -153,11 +146,18 @@
       "link": ""
     },
     {
-      "title": "Home visits",
-      "image": "selfie2.jpeg",
+      "title": "Orthodontics",
+      "image": "operacao.jpeg",
       "icon": "",
-      "text": "Home appointments may be available for patients who have difficulty travelling to the clinic.",
-      "link": "#contacts"
+      "text": "Specialised care to correct the position and alignment of the teeth.<br>We offer a range of braces, including discreet cosmetic options and Invisalign clear aligners.",
+      "link": "https://en.wikipedia.org/wiki/Orthodontics"
+    },
+    {
+      "title": "Facial aesthetics",
+      "image": "estetica.jpeg",
+      "icon": "",
+      "text": "Botulinum toxin (Botox) treatments for expression lines, bruxism, gummy smile, excessive sweating, neck pain and tension headaches.<br>Hyaluronic acid fillers are also available for natural-looking facial and lip rejuvenation.",
+      "link": ""
     }
   ],
   "testimonials": [
