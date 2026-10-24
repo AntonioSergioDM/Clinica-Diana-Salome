@@ -1,0 +1,427 @@
+{
+  "language": "en",
+  "labels": {
+    "services": {
+      "title": "Treatments",
+      "intro": "Dental care for every stage of life"
+    },
+    "map": {
+      "title": "Find us",
+      "intro": "Get directions"
+    },
+    "testimonials": {
+      "title": "Patient stories",
+      "intro": "What our patients say about us"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "intro": "Answers to common questions"
+    },
+    "about": {
+      "title": "About us",
+      "intro": "Our clinic, located in the centre of Vila Real, is committed to giving you every reason to <b>smile</b>!<br>Our patients’ well-being is what drives us, which is why we provide a specialised service tailored to your wishes and needs.<br>Our team of professionals is guided by dedication, care, trust and excellence.<br><br>Making you smile is our goal every day!<br>Come and smile with us!"
+    },
+    "team": {
+      "title": "Our team",
+      "intro": "Meet the people caring for your smile"
+    },
+    "contacts": {
+      "title": "Contact",
+      "intro": "We’re here to help"
+    },
+    "openhours": {
+      "title": "Opening hours",
+      "intro": ""
+    },
+    "agreements": {
+      "title": "Insurance and partnerships",
+      "intro": "Our agreements and partners"
+    },
+    "logo": "/images/logo/logo2-wide-light.png"
+  },
+  "openHours": {
+    "sun": {
+      "label": "Sunday & public holidays",
+      "open": [
+        ""
+      ],
+      "close": [
+        ""
+      ]
+    },
+    "mon": {
+      "label": "Monday",
+      "open": [
+        "9:30 am",
+        "2:30 pm"
+      ],
+      "close": [
+        "12:30 pm",
+        "7:30 pm"
+      ]
+    },
+    "tue": {
+      "label": "Tuesday",
+      "open": [
+        "9:30 am",
+        "2:30 pm"
+      ],
+      "close": [
+        "12:30 pm",
+        "7:30 pm"
+      ]
+    },
+    "wed": {
+      "label": "Wednesday",
+      "open": [
+        "9:30 am",
+        "2:30 pm"
+      ],
+      "close": [
+        "12:30 pm",
+        "7:30 pm"
+      ]
+    },
+    "thu": {
+      "label": "Thursday",
+      "open": [
+        "9:30 am",
+        "2:30 pm"
+      ],
+      "close": [
+        "12:30 pm",
+        "7:30 pm"
+      ]
+    },
+    "fri": {
+      "label": "Friday",
+      "open": [
+        "9:30 am",
+        "2:30 pm"
+      ],
+      "close": [
+        "12:30 pm",
+        "7:30 pm"
+      ]
+    },
+    "sat": {
+      "label": "Saturday",
+      "open": [
+        "9:30 am"
+      ],
+      "close": [
+        "12:30 pm"
+      ]
+    },
+    "closeLabel": "Closed"
+  },
+  "chrono": [],
+  "services": [
+    {
+      "title": "Dental voucher programme",
+      "image": "crianca2.jpeg",
+      "icon": "",
+      "text": "The Portuguese National Health Service dental voucher provides eligible patients with free preventive and restorative treatment. It is available to children and young people up to age 18, pregnant women, older people receiving the Solidarity Supplement, and people living with HIV.",
+      "link": "https://www.sns24.gov.pt/servico/pedir-cheques-dentista/"
+    },
+    {
+      "title": "Home visits",
+      "image": "selfie2.jpeg",
+      "icon": "",
+      "text": "Age, reduced mobility or other limitations should not prevent anyone from taking care of their oral health.\nWe provide dental care at home, bringing our services to institutions, care homes and private residences.",
+      "link": "#contacts"
+    },
+    {
+      "title": "Paediatric dentistry",
+      "image": "crianca1.jpeg",
+      "icon": "",
+      "text": "Dental care for babies, children and teenagers.<br>Preventive treatment helps children maintain good oral health throughout their lives.",
+      "link": "#faq"
+    },
+    {
+      "title": "Oral rehabilitation",
+      "image": "paciente1.jpeg",
+      "icon": "",
+      "text": "Restore comfort and everyday function after tooth loss. Dental implants and fixed or removable dentures can help bring back your bite, chewing and speech.",
+      "link": ""
+    },
+    {
+      "title": "Orthodontics",
+      "image": "operacao.jpeg",
+      "icon": "",
+      "text": "Specialised care to correct the position and alignment of the teeth.<br>We offer a range of braces, including discreet cosmetic options and Invisalign clear aligners.",
+      "link": "https://en.wikipedia.org/wiki/Orthodontics"
+    },
+    {
+      "title": "Facial aesthetics",
+      "image": "estetica.jpeg",
+      "icon": "",
+      "text": "Botulinum toxin (Botox) treatments for expression lines, bruxism, gummy smile, excessive sweating, neck pain and tension headaches.<br>Hyaluronic acid fillers are also available for natural-looking facial and lip rejuvenation.",
+      "link": ""
+    }
+  ],
+  "testimonials": [
+    {
+      "title": "Wonderful team",
+      "text": "Excellent care, combined with great kindness and gentleness. Outstanding professionals. I recommend them.",
+      "image": "teamMember1.png",
+      "author": "Maria Dias",
+      "stars": 5
+    },
+    {
+      "title": "The best team in Vila Real",
+      "text": "",
+      "image": "teamMember.png",
+      "author": "João Sousa",
+      "stars": 5
+    },
+    {
+      "title": "Highly recommended, the best dental clinic in Vila Real!",
+      "text": "Excellent service. The team’s warmth makes you feel at ease. I loved the result of my treatment.",
+      "image": "teamMember1.png",
+      "author": "Sara Cristina Faria Amorim",
+      "stars": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "Who is eligible for a dental voucher?",
+      "answer": "Children and young people up to age 18, pregnant women, older people receiving the Solidarity Supplement, and people living with HIV may be eligible."
+    },
+    {
+      "question": "When should a child first visit the dentist?",
+      "answer": "When the first baby teeth appear. A first appointment should be a positive experience, before there is decay or pain, helping children avoid developing a fear of the dentist."
+    },
+    {
+      "question": "Why should baby teeth be treated?",
+      "answer": "Baby teeth support normal chewing, speech, appearance and breathing. A decayed baby tooth can cause infection, affect the adult teeth developing beneath it and impact general health."
+    },
+    {
+      "question": "Which insurance plans and agreements do you accept?",
+      "answer": "See our insurance and partner agreements <a class=\"nav__lang\" href=\"#agreements\">here</a>."
+    },
+    {
+      "question": "Can I pay for treatment in instalments?",
+      "answer": "We offer interest-free instalments arranged directly with the clinic. For more information, <a class=\"nav__lang\" href=\"#contacts\">contact us</a>."
+    },
+    {
+      "question": "How much do treatments cost?",
+      "answer": "The cost depends on the treatment needed. At your assessment appointment, we will explain a treatment plan tailored to you and its associated fees."
+    },
+    {
+      "question": "How often should I visit the dentist?",
+      "answer": "You should have a check-up at least every six months. Prevention is the best treatment."
+    },
+    {
+      "question": "Is it safe to visit the dentist during pregnancy?",
+      "answer": "Yes. You can see your dentist safely. Our professionals will adapt any treatment to your needs."
+    },
+    {
+      "question": "How many times a day should I brush my teeth?",
+      "answer": "Brush at least twice a day, especially before bed. Young children should be helped by an adult so they can develop good oral hygiene habits."
+    },
+    {
+      "question": "What is the safest way to whiten teeth?",
+      "answer": "A gentler option is custom trays with whitening gel, used gradually at home according to your dentist’s instructions."
+    },
+    {
+      "question": "My gums are bleeding. What should I do?",
+      "answer": "Bleeding gums can be a sign of inflammation caused by plaque build-up. Visit your dentist so the problem does not progress to gum disease such as gingivitis or periodontitis."
+    },
+    {
+      "question": "What causes bad breath?",
+      "answer": "Around 90% of bad breath cases have an oral cause, such as plaque, gum disease, tooth decay or retained roots. Other causes can include medication, nasal obstruction and other health conditions."
+    },
+    {
+      "question": "What should I know about Botox?",
+      "answer": "Botulinum toxin is one of the most common aesthetic treatments. The application is generally painless and results are natural-looking and quick to appear. It relaxes muscles, softens expression lines and can help with facial asymmetry, bruxism, gummy smile and excessive sweating."
+    },
+    {
+      "question": "What should I know about hyaluronic acid?",
+      "answer": "Hyaluronic acid helps hydrate and improve skin elasticity, softening lines for a firmer, more youthful appearance. Lip filler is a generally comfortable treatment with immediate, natural-looking results."
+    },
+    {
+      "question": "I have another question…",
+      "answer": "You are welcome to call or visit us.&nbsp;<a class=\"nav__lang\" href=\"#contacts\">Get in touch</a>."
+    }
+  ],
+  "nav": [
+    {
+      "title": "About",
+      "intro": "Our clinic, located in the centre of Vila Real, is committed to giving you every reason to <b>smile</b>!<br>Our patients’ well-being is what drives us, which is why we provide a specialised service tailored to your wishes and needs.<br>Our team of professionals is guided by dedication, care, trust and excellence.<br><br>Making you smile is our goal every day!<br>Come and smile with us!",
+      "id": "about"
+    },
+    {
+      "title": "Treatments",
+      "intro": "Dental care for every stage of life",
+      "id": "services"
+    },
+    {
+      "title": "Team",
+      "intro": "Meet the people caring for your smile",
+      "id": "team"
+    },
+    {
+      "title": "FAQ",
+      "intro": "Answers to common questions",
+      "id": "faq"
+    },
+    {
+      "title": "Contact",
+      "intro": "We’re here to help",
+      "id": "contacts"
+    }
+  ],
+  "footer": [
+    {
+      "title": "About",
+      "intro": "Our clinic, located in the centre of Vila Real, is committed to giving you every reason to <b>smile</b>!<br>Our patients’ well-being is what drives us, which is why we provide a specialised service tailored to your wishes and needs.<br>Our team of professionals is guided by dedication, care, trust and excellence.<br><br>Making you smile is our goal every day!<br>Come and smile with us!",
+      "id": "about"
+    },
+    {
+      "title": "Treatments",
+      "intro": "Dental care for every stage of life",
+      "id": "services"
+    },
+    {
+      "title": "Agreements",
+      "intro": "Our agreements and partners",
+      "id": "agreements"
+    },
+    {
+      "title": "Team",
+      "intro": "Meet the people caring for your smile",
+      "id": "team"
+    },
+    {
+      "title": "FAQ",
+      "intro": "Answers to common questions",
+      "id": "faq"
+    },
+    {
+      "title": "Contact",
+      "intro": "We’re here to help",
+      "id": "contacts"
+    }
+  ],
+  "team": [
+    {
+      "name": "Dr Diana Salomé",
+      "image": "diana.jpeg",
+      "description": "Clinical Director<br>Master’s degree in Dental Medicine, FMDUP<br>Certified in Facial Aesthetics<br>Certified in Implantology and Oral Rehabilitation<br>Certified in Aesthetic Dentistry<br>Certified in Endodontics<br>Further training in ceramic veneers<br>A paediatric dentist by vocation"
+    },
+    {
+      "name": "Juliana Carvalho",
+      "image": "juliana.jpeg",
+      "description": "Medical and dental practice assistant<br>Training in clinical support and patient service<br>Emergency response training<br>Known for kindness and dedication"
+    }
+  ],
+  "contacts": [
+    {
+      "title": "Mobile",
+      "value": "+351 932 220 731",
+      "text": "Call us now!",
+      "link": "tel:+351932220731",
+      "image": "mobile-phone.png"
+    },
+    {
+      "title": "Telephone",
+      "value": "+351 259 104 774",
+      "text": "Call us now!",
+      "link": "tel:+351259104774",
+      "image": "telephone.png"
+    },
+    {
+      "title": "Email",
+      "value": "clinicadianasalome@gmail.com",
+      "text": "Send us<br>an email!",
+      "link": "mailto:clinicadianasalome@gmail.com",
+      "image": "email.png"
+    }
+  ],
+  "home": [
+    {
+      "title": "Treatments",
+      "text": "Discover how we can help you",
+      "image": "tratamentos_bw.jpeg",
+      "href": "services"
+    }
+  ],
+  "agreements": [
+    {
+      "title": "Medicare",
+      "image": "medicare.png"
+    },
+    {
+      "title": "ADMG (GNR)",
+      "image": "ADMG.png"
+    },
+    {
+      "title": "Agilcare",
+      "image": "Agilcare.png"
+    },
+    {
+      "title": "UBH Plan",
+      "image": "UBHPlan.png"
+    },
+    {
+      "title": "SAMS Quadros",
+      "image": "SAMS Quadros.png"
+    },
+    {
+      "title": "Associação Sindical de Professores Licensiados",
+      "image": "Associacao Sindical de Professores Licensiados.png"
+    },
+    {
+      "title": "Serviço Médico Permanente",
+      "image": "Servico Medico Permanente.png"
+    },
+    {
+      "title": "MeltiMalon",
+      "image": "MeltiMalon.png"
+    },
+    {
+      "title": "Sorriso+",
+      "image": "sorriso.png"
+    },
+    {
+      "title": "BS Care",
+      "image": "BS Care.png"
+    },
+    {
+      "title": "Advance Care",
+      "image": "advance care.png"
+    },
+    {
+      "title": "CGD",
+      "image": "cgd.png"
+    },
+    {
+      "title": "ADM",
+      "image": "adm.png"
+    },
+    {
+      "title": "Tranquilidade",
+      "image": "tranquilidade.png"
+    },
+    {
+      "title": "PlaniCare",
+      "image": "planicare.webp"
+    },
+    {
+      "title": "SS GNR",
+      "image": "SS GNR.png"
+    }
+  ],
+  "header": [
+    "balcao2.jpeg",
+    "aberta.jpeg",
+    "balcao.jpeg",
+    "balcao1.jpeg",
+    "corredor.jpeg",
+    "entrada.jpeg",
+    "porta.jpeg",
+    "sala-espera.jpeg"
+  ],
+  "learnMore": "Learn more"
+}
