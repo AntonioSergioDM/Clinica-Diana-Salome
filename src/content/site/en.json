@@ -318,14 +318,9 @@
       "description": "Clinical Director<br>Master’s degree in Dental Medicine, FMDUP<br>Certified in Facial Aesthetics<br>Certified in Implantology and Oral Rehabilitation<br>Certified in Aesthetic Dentistry<br>Certified in Endodontics<br>Further training in ceramic veneers<br>A paediatric dentist by vocation"
     },
     {
-      "name": "Dr Afonso Silva",
-      "image": "afonso.jpeg",
-      "description": "Dentist specialising in orthodontics<br>Many years of experience in dentistry, implantology and orthodontics<br>Extensive academic and professional training<br>Known for dedication and a constant commitment to learning and development"
-    },
-    {
-      "name": "Cristina Costa",
-      "image": "cris.jpeg",
-      "description": "Medical and dental practice assistant<br>Training in clinical support and patient service<br>Emergency response training<br>Extensive experience in the field<br>Known for kindness and dedication"
+      "name": "Juliana Carvalho",
+      "image": "juliana.jpeg",
+      "description": "Medical and dental practice assistant<br>Training in clinical support and patient service<br>Emergency response training<br>Known for kindness and dedication"
     }
   ],
   "contacts": [
@@ -401,7 +396,24 @@
       "image": "BS Care.png"
     },
     {
-      "title": "Lar Nossa Senhora das Dores"
+      "title": "Advance Care",
+      "image": "advance care.png"
+    },
+    {
+      "title": "CGD",
+      "image": "cgd.png"
+    },
+    {
+      "title": "ADM",
+      "image": "adm.png"
+    },
+    {
+      "title": "Tranquilidade",
+      "image": "tranquilidade.png"
+    },
+    {
+      "title": "PlaniCare",
+      "image": "planicare.webp"
     },
     {
       "title": "SS GNR",

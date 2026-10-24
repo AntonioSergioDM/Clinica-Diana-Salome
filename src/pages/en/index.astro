@@ -2,10 +2,18 @@
 import { getEntry } from 'astro:content';
 import ClinicSite from '../../components/ClinicSite.astro';
 import type { SiteData } from '../../types/site';
+import { englishSite } from '../../lib/localized-site';
 
-const entry = await getEntry('site', 'en');
-if (!entry) throw new Error('Missing English site content.');
-const site = entry.data as unknown as SiteData;
+const [portugueseEntry, englishEntry] = await Promise.all([
+  getEntry('site', 'pt'),
+  getEntry('site', 'en'),
+]);
+if (!portugueseEntry) throw new Error('Missing Portuguese site content.');
+if (!englishEntry) throw new Error('Missing English site translations.');
+const site = englishSite(
+  portugueseEntry.data as unknown as SiteData,
+  englishEntry.data as unknown as SiteData,
+);
 ---
 
 <ClinicSite site={site} lang="en" />
