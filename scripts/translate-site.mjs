@@ -19,7 +19,7 @@ const labels = {
 en.language = 'en';
 en.labels = Object.fromEntries(Object.entries(labels).map(([key, [title, intro]]) => [key, { title, intro }]));
 en.labels.about.intro = 'Our clinic, located in the centre of Vila Real, is committed to giving you every reason to <b>smile</b>!<br>Our patients’ well-being is what drives us, which is why we provide a specialised service tailored to your wishes and needs.<br>Our team of professionals is guided by dedication, care, trust and excellence.<br><br>Making you smile is our goal every day!<br>Come and smile with us!';
-en.labels.logo = '/images/logo/logo.png';
+en.labels.logo = '/images/logo/logo2-wide-light.png';
 en.openHours = Object.fromEntries(Object.entries(pt.openHours).map(([key, day]) => [key, key === 'closeLabel' ? 'Closed' : {
   ...day,
   label: ({ sun: 'Sunday & public holidays', mon: 'Monday', tue: 'Tuesday', wed: 'Wednesday', thu: 'Thursday', fri: 'Friday', sat: 'Saturday' })[key],

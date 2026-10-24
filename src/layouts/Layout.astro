@@ -36,14 +36,19 @@ const alternateEn = siteUrl ? new URL('/en/', siteUrl).toString() : undefined;
     <meta property="og:locale" content={lang === 'pt' ? 'pt_PT' : 'en_GB'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {siteUrl && <meta property="og:image" content={new URL('/images/header/balcao.jpeg', siteUrl).toString()} />}
+    {siteUrl && <meta property="og:image" content={new URL('/images/logo/logo2-social.png', siteUrl).toString()} />}
     <meta name="twitter:card" content="summary_large_image" />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
     {alternatePt && <link rel="alternate" hreflang="pt-PT" href={alternatePt} />}
     {alternateEn && <link rel="alternate" hreflang="en" href={alternateEn} />}
     {alternatePt && <link rel="alternate" hreflang="x-default" href={alternatePt} />}
-    <link rel="icon" href="/images/logo/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/images/logo/favicon2.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/images/logo/favicon2-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/logo/favicon2-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/images/logo/apple-touch-icon2.png" />
+    <link rel="manifest" href="/images/logo/site2.webmanifest" />
+    <meta name="msapplication-config" content="/images/logo/browserconfig2.xml" />
     <link rel="preload" as="image" href="/images/optimized/header/balcao.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
